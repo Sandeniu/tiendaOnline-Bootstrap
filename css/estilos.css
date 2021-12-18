@@ -62,10 +62,7 @@ body{
     display: flex;
 }
 
-.section1__divContent__row{
- /*padding: 0rem 3rem;
-    gap: 3rem; */
-}
+
 .section1__divContent__row__col{
     display: flex;
     justify-content: center;
@@ -265,7 +262,7 @@ body{
     }
 }
 
-//*******     (4)   DISPOSITIVO LG LARGE      ********/
+/*******     (4)   DISPOSITIVO LG LARGE      ********/
 @media only screen and (min-width: 992px) and (max-width: 1199px){ 
     body {
         background: rgb(200, 200, 200);
