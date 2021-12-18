@@ -6,7 +6,20 @@
 a{
     text-decoration: none;
 }
+h1, h2, h3, h4, h5, h6{
+    color: #25282c;
+    font-weight:normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.header, .nav, .main, .section .aside, .footer, .body{
+    border: 1px solid rgb(150, 150, 150);
+    background: #ffffff;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
 
+}
 .header{
     background-color:  #FAAA8D;
     padding-top: 25px;
@@ -31,6 +44,72 @@ a{
     box-shadow: #feefdd 1px 1px 5px 1px;
     border-radius: 5px;
 }
+.body--carousel-inner{
+    height: 500px;
+}
+.main {
+    padding-top: 30px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section1__divTitulo__h{
+    text-align: center;
+}
+.section1__divContent{
+    padding: 20px 0; 
+    display: flex;
+}
+
+.section1__divContent__row{
+ /*padding: 0rem 3rem;
+    gap: 3rem; */
+}
+.section1__divContent__row__col{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.section1__divContent__row__col__card{
+    width: 20.5rem; 
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    
+}
+.section1__divContent__row__col__card__img{
+    /*border: 1px solid rgb(200, 200, 200);*/
+    width: 100%;
+    /*padding-top: 1rem;*/
+}
+.section1__divContent__row__col__card__p{
+    color:red;
+}
+
+.aside{
+    padding-top: 2rem;
+}
+.aside_divPublicidad{
+    width: 100%;
+    padding: 2rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .footer{
     position: relative;
     background: #27272b;
@@ -110,7 +189,9 @@ a{
 /*       R  E  S  P  O  N  S  I  V  E       */
 /********************************************/
 
-@media only screen and (min-width: 200px) and (max-width: 439px){
+
+/******    (1)     DISPOSITIVO XS ETRA-SMALL    *********/
+@media only screen and (min-width: 200px) and (max-width: 575px){
     body{background: blueviolet;}
     .header__divTitulo__h1{
         font-size: 1rem;
@@ -118,12 +199,15 @@ a{
     .header__divInteractivo__buscador {
         width: 60%;
     }
+    .body--carousel-inner{
+        height: 150px;
+    }
+    
     .footer__fila1{
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-  
     .footer__divMenu__ul{
         flex-direction: column;
         justify-content: center;
@@ -135,11 +219,14 @@ a{
     }
 }
 
-
-@media only screen and (min-width: 440px) and (max-width: 768px){
+/*******    (2)  DISPOSITIVO SM SMALL*********/
+@media only screen and (min-width: 576px) and (max-width: 767px){
     body{background: tomato;}
     .header__divTitulo__h1{
         font-size: 1.5rem;
+    }
+    .body--carousel-inner{
+        height: 220px;
     }
     .footer__divSocial {
         display: flex;
@@ -160,7 +247,9 @@ a{
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1199px){
+
+/********     (3)   DISPOSITIVO MD MEDIANO      *********/
+@media only screen and (min-width: 768px) and (max-width: 991px){ 
     body {
         background: green;
     }
@@ -170,5 +259,30 @@ a{
     }
     .footer__divMenu__ul__a, .footer__divSocial__divSiguenos__p {
         font-size: 0.9rem;
+    }
+    .body--carousel-inner{
+        height: 300px;
+    }
+}
+
+//*******     (4)   DISPOSITIVO LG LARGE      ********/
+@media only screen and (min-width: 992px) and (max-width: 1199px){ 
+    body {
+        background: rgb(200, 200, 200);
+    }
+}
+
+/*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
+@media only screen and (min-width: 992px) and (max-width: 1199px){ 
+    body {
+        background: #ffffff;
+    }
+}
+
+
+/********  (6)   DISPOSITIVO XXL EXTRA/EXTRA-LARGE     *******/
+@media only screen and (min-width: 1200px) and (max-width: 1400px){ 
+    body {
+        background: #ffffff;
     }
 }

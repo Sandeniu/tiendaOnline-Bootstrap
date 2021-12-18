@@ -117,97 +117,279 @@
             </div> <!-- Fin container-fluid" -->
         </nav>
 
-        <!-- main ------------------------------------------------------------------------->
-        <main class="main">
-            <div class="content">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner body--carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./multimedia/Portada/4.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./multimedia/Portada/1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./multimedia/Portada/3.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div> <!-- fin carrusel de bootstrap -->
+
+        <main class="content-fluid main">
+            <!-- El main tendrá una fila con 2 columnas. Uno para las secciones y otro para el Aside  -->
+            <div class="content-fuid">
                 <div class="row">
+
+                    <!-- SECCIONES - en esta col Se crean 2 secciones.-->
                     <div class="col-lg-9">
 
-                        <!-- section #1---------------------- -->
-                        <section>
+                        <!-- Section #1 Contenido ----------------------->
+                        <section class="section section1">
 
-                        </section>
+                            <!-- section1 tien 2 div: divTitulo y divContent  -->
+                            <div class="section1__divTitulo">
+                                <h4 class="section1__divTitulo__h">PRODUCTOS DESTACADOS</h4>
+                            </div>
 
-                        <!-- section #2---------------------- -->
-                        <section>
+                            <!-- se crea un content con un row y 6 columnas -->
+                            <div class="content section1__divContent">
+                                <div class="row section1__divContent__row">
 
-                        </section>
-
-                        <!-- aside ------------------------------------------------------------------------->
-                        <aside>
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-lg-3">
-
-                                    </div> <!-- end col aside------------->
-                                </div> <!-- end row aside------------->
-                            </div> <!-- end content aside------------->
-
-                        </aside>
-
-                    </div> <!-- end col main------------->
-                </div> <!-- end row main------------->
-            </div> <!-- end content main------------->
-
-        </main>
+                                    <div class="col section1__divContent__row__col"">
+                                        <div class=" card section1__divContent__row__col__card">
+                                        <img src="http://loremflickr.com/200/200/cake"
+                                            class="card-img-top section1__divContent__row__col__card__img" alt=" ...">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Producto Destacado</h6>
+                                            <p class="card-text section1__divContent__row__col__card__p">$ 9.999</p>
+                                            <a href="#" class="btn btn-primary">Agregar al Carro</a>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-        <!-- footer ------------------------------------------------------------------------->
-        <footer class="footer">
-            <div class="content">
-                <div class="row">
-                    <div class="col-lg-12">
+                                <div class="col section1__divContent__row__col">
+                                    <div class="card section1__divContent__row__col__card">
+                                        <img src="http://loremflickr.com/200/200/gateau"
+                                            class="card-img-top section1__divContent__row__col__card__img" alt=" ...">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Producto Destacado</h6>
+                                            <p class="card-text section1__divContent__row__col__card__p">$ 9.999</p>
+                                            <a href="#" class="btn btn-primary">Agregar al Carro</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col section1__divContent__row__col">
+                                    <div class="card section1__divContent__row__col__card">
+                                        <img src="http://loremflickr.com/200/200/donuts"
+                                            class="card-img-top section1__divContent__row__col__card__img" alt=" ...">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Producto Destacado</h6>
+                                            <p class="card-text section1__divContent__row__col__card__p">$ 9.999</p>
+                                            <a href="#" class="btn btn-primary">Agregar al Carro</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col section1__divContent__row__col">
+                                    <div class="card section1__divContent__row__col__card">
+                                        <img src="http://loremflickr.com/200/200/cookie"
+                                            class="card-img-top section1__divContent__row__col__card__img" alt=" ...">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Producto Destacado</h6>
+                                            <p class="card-text section1__divContent__row__col__card__p">$ 9.999</p>
+                                            <a href="#" class="btn btn-primary">Agregar al Carro</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col section1__divContent__row__col">
+                                    <div class="card section1__divContent__row__col__card">
+                                        <img src="http://loremflickr.com/200/200/cupcake"
+                                            class="card-img-top section1__divContent__row__col__card__img" alt=" ...">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Producto Destacado</h6>
+                                            <p class="card-text section1__divContent__row__col__card__p">$ 9.999</p>
+                                            <a href="#" class="btn btn-primary">Agregar al Carro</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col section1__divContent__row__col">
+                                    <div class="card section1__divContent__row__col__card">
+                                        <img src="http://loremflickr.com/200/200/choclolate"
+                                            class="card-img-top section1__divContent__row__col__card__img" alt=" ...">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Producto Destacado</h6>
+                                            <p class="card-text section1__divContent__row__col__card__p">$ 9.999</p>
+                                            <a href="#" class="btn btn-primary">Agregar al Carro</a>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 
-                        <div class="footer__fila1">
-                            <div class="footer__divMenu">
-                                <ul class="footer__divMenu__ul">
-                                    <li class="footer__divMenu__ul__li"><a class="footer__divMenu__ul__a" href="#">Políticas de Privacidad</a></li>
-                                    <li class="footer__divMenu__ul__li"><a class="footer__divMenu__ul__a" href="#">Medios de pago</a></li>
-                                    <li class="footer__divMenu__ul__li"><a class="footer__divMenu__ul__a" href="#">Servicios de entrega</a></li>
-                                    <li class="footer__divMenu__ul__li"><a class="footer__divMenu__ul__a" href="#"">Opiniones</a></li>
+
+                            </div>
+                    </div>
+                    </section>
+
+                    <!-- Section #2 paginación ----------------------->
+                    <section class="section">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+
+                <!-- ASIDE --------------------------------------------------- -->
+                <div class="col-lg-3">
+                    <aside class="aside">
+
+                        <div>
+                            <h6>SOLICITA INFORMACIÓN</h6><br>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nom" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nom" aria-describedby="nomHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mail" class="form-label">Correo</label>
+                                <input type="mail" class="form-control" id="mail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tel" class="form-label">Celular</label>
+                                <input type="tel" class="form-control" id="mail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mail" class="form-label">Correo</label>
+                                <input type="mail" class="form-control" id="mail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="msj" class="form-label">Déjanos tu mensaje</label>
+                                <textarea class="form-control" id="msj"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+              
+
+                <!-- Aquí Publicidad ASIDE -->
+                <div class="col-lg-3 aside_divPublicidad">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dark card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="col-lg-3 aside_divPublicidad">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dark card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>  <!-- fin col#2 (aside)--------- -->
+            </aside>
+
+            </div> <!-- fin row que envuelve a Sectión + aside-------- -->
+    </div> <!-- fin del content que envuelve a Sectión + aside-------- -->
+    </main>
+
+
+
+
+
+
+    <!-- footer ------------------------------------------------------------------------->
+    <footer class="footer">
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-12">
+
+
+
+                    <div class="footer__fila1">
+                        <div class="footer__divMenu">
+                            <ul class="footer__divMenu__ul">
+                                <li class="footer__divMenu__ul__li"><a class="footer__divMenu__ul__a" href="#">Políticas
+                                        de Privacidad</a></li>
+                                <li class="footer__divMenu__ul__li"><a class="footer__divMenu__ul__a" href="#">Medios de
+                                        pago</a></li>
+                                <li class="footer__divMenu__ul__li"><a class="footer__divMenu__ul__a" href="#">Servicios
+                                        de entrega</a></li>
+                                <li class="footer__divMenu__ul__li"><a class="footer__divMenu__ul__a"
+                                        href="./paginas/columnas.html"">Opiniones</a></li>
                                 </ul>
                             </div>
         
-                            <div class="footer__divSocial">
-                                 
-                                 <div class="footer__divSocial__divSiguenos">
-                                    <p class="footer__divSocial__divSiguenos__p">Siguenos</p>
-                                 </div>
-        
-                                 <div class="footer__divSocial__divIconos">
-                                      <a class="footer__divSocial__divIconos__a" href="#">
-                                           <img class="footer__divSocial__divIconos__a__img"
-                                                src="./multimedia/rrss/logos-facebook.svg">
-                                      </a>
-                                      <a class="footer__divSocial__divIconos__a" href="#">
-                                           <img class="footer__divSocial__divIconos__a__img"
-                                                src="./multimedia/rrss/logos-twitter.svg">
-                                      </a>
-                                      <a class="footer__divSocial__divIconos__a" href="#">
-                                           <img class="footer__divSocial__divIconos__a__img"
-                                                src="./multimedia/rrss/logos-instagram.svg">
-                                      </a>
-                                 </div>
-                            </div>
-                       </div> <!-- FIN FILA 1 FOOTER---------------------->
-                       
+                            <div class=" footer__divSocial">
 
-                       <div class="footer__fila2">
-                            <div class="footer__divCopyrigt">
-                                 <p class="footer__divCopyrigt__p">&copy; Todos los Derechos Reservados 2021</p>
-                            </div>
-                       </div> <!-- FIN FILA 2 FOOTER---------------------->
+                                        <div class="footer__divSocial__divSiguenos">
+                                            <p class="footer__divSocial__divSiguenos__p">Siguenos</p>
+                                        </div>
+
+                                        <div class="footer__divSocial__divIconos">
+                                            <a class="footer__divSocial__divIconos__a" href="#">
+                                                <img class="footer__divSocial__divIconos__a__img"
+                                                    src="./multimedia/rrss/logos-facebook.svg">
+                                            </a>
+                                            <a class="footer__divSocial__divIconos__a" href="#">
+                                                <img class="footer__divSocial__divIconos__a__img"
+                                                    src="./multimedia/rrss/logos-twitter.svg">
+                                            </a>
+                                            <a class="footer__divSocial__divIconos__a" href="#">
+                                                <img class="footer__divSocial__divIconos__a__img"
+                                                    src="./multimedia/rrss/logos-instagram.svg">
+                                            </a>
+                                        </div>
+                        </div>
+                    </div> <!-- FIN FILA 1 FOOTER---------------------->
 
 
+                    <div class="footer__fila2">
+                        <div class="footer__divCopyrigt">
+                            <p class="footer__divCopyrigt__p">&copy; Todos los Derechos Reservados 2021</p>
+                        </div>
+                    </div> <!-- FIN FILA 2 FOOTER---------------------->
 
 
-                    </div> <!-- end col footer------------->
-                </div> <!-- end row footer------------->
-            </div> <!-- end content footer------------->
 
-        </footer>
+
+                </div> <!-- end col footer------------->
+            </div> <!-- end row footer------------->
+        </div> <!-- end content footer------------->
+
+    </footer>
 
 
     </div>
