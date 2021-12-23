@@ -13,13 +13,14 @@ h1, h2, h3, h4, h5, h6{
     text-transform: uppercase;
 }
 .header, .nav, .main, .section .aside, .footer, .body{
-    border: 1px solid rgb(150, 150, 150);
+   /* border: 1px solid rgb(150, 150, 150);*/
     background: #ffffff;
 }
 body{
     font-family: 'Montserrat', sans-serif;
 
 }
+
 .header{
     background-color:  #FAAA8D;
     padding-top: 25px;
@@ -86,11 +87,48 @@ body{
 }
 
 .aside{
-    padding-top: 2rem;
+    padding: 2rem 3rem 3rem 0;
 }
-.aside_divPublicidad{
+.aside__h{
+    text-align: center;
+}
+.aside__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.aside__form__mb-3__input{
+    /*box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid rgb(200, 200, 200);*/
+    width : 18rem;
+    height: 1.8em; /* for IE */
+}
+.aside__form__mb-3__label{
+    width : 18rem;
+    height: 1rem; /* for IE */
+    /*padding: 10px 0 0 0;*/
+}
+.aside__form__mb-3__textarea{
+    width : 18rem;
+    height: 7rem; /* for IE */
+}
+.aside__form__button{
+    width : 8rem;
+    height: 2.5em; /* for IE */
+}
+.aside__divPublicidad{
     width: 100%;
     padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+.aside__divPublicidad__divCard{
+    text-align: center;
+}
+.aside__divPublicidad__divCard__divBodyCard__h{
+    color: #FB6900;
 }
 
 
@@ -199,7 +237,13 @@ body{
     .body--carousel-inner{
         height: 150px;
     }
-    
+    .aside__form__mb-3__input,
+    .aside__form__mb-3__label,
+    .aside__form__mb-3__textarea{
+        width : 14rem;
+        padding-left: 2rem;
+        padding-right: 0rem;
+    }
     .footer__fila1{
         flex-direction: column;
         justify-content: center;
@@ -265,7 +309,14 @@ body{
 /*******     (4)   DISPOSITIVO LG LARGE      ********/
 @media only screen and (min-width: 992px) and (max-width: 1199px){ 
     body {
-        background: rgb(200, 200, 200);
+        background: blue;
+    }
+    .aside__form__mb-3__input,
+    .aside__form__mb-3__label,
+    .aside__form__mb-3__textarea{
+        width : 14rem;
+        padding-left: 2rem;
+        padding-right: 0rem;
     }
 }
 
