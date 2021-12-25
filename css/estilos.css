@@ -130,27 +130,11 @@ body{
 .aside__divPublicidad__divCard__divBodyCard__h{
     color: #FB6900;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .footer{
     position: relative;
     background: #27272b;
     /*height: 5.0em; /*(120px aprox)*/
 }
-
 .footer__fila1{
     display: flex;
     flex-wrap: wrap;
@@ -171,7 +155,6 @@ body{
 .footer__divMenu__ul__li{
     display: flex;
 }
-
 .footer__divMenu__ul__a {
     color: white;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -219,6 +202,80 @@ body{
     font-weight: 500;
     text-align: center;
 }
+.prod__aside_div1{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+.prod__section2__divPag{
+    padding: 3rem;
+}
+/*///////////////////////////////////////////
+///////       productos.html           //////                              
+///////////////////////////////////////////*/
+
+/*menú categorías*/
+.prod__aside__div1--divMenu__h{
+    color: #ffffff;
+    border-bottom: 1px solid #FB6900 ;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all 0.3s;
+    background-color: transparent;
+}
+
+.prod__aside__div1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+.prod__aside__div1__h{ /* Este es el Título de las categorías, pero es mejor borrarlo (por eso las letras color blanco)*/
+    font-size: 14px;
+    font-weight: normal;
+    color: #ffffff;
+
+}
+.prod__aside__div1--divMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+.prod__aside__div1--divMenu__h__a{
+    display: block;
+    text-align: center;
+}
+.prod__section1__divContent{
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem 0;
+}
+.prod__section1__divContent__divCard{
+    max-width: 12.5rem;
+}
+.prod__section1__divContent__divCard__divDescr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.prod__section1__divContent__divCard__divDescr__h{
+    text-align: center;
+}
+.prod__section1__divContent__divCard__divDescr__p{
+    color: red;
+    font-size: 1.2rem;
+}
+
 
 /********************************************/
 /*       R  E  S  P  O  N  S  I  V  E       */
@@ -258,6 +315,14 @@ body{
     .footer__divMenu__ul__a, .footer__divSocial__divSiguenos__p{
         font-size: 0.9rem;
     }
+
+
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 }
 
 /*******    (2)  DISPOSITIVO SM SMALL*********/
@@ -286,8 +351,13 @@ body{
     .footer__divMenu__ul{
         padding: 0;
     }
-}
 
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
 
 /********     (3)   DISPOSITIVO MD MEDIANO      *********/
 @media only screen and (min-width: 768px) and (max-width: 991px){ 
@@ -303,6 +373,12 @@ body{
     }
     .body--carousel-inner{
         height: 300px;
+    }
+
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
