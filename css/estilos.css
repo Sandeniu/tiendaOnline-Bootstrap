@@ -91,7 +91,7 @@ body{
     height: 500px;
 }
 .main {
-    padding-top: 30px; 
+    padding: 3rem; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,27 +103,24 @@ body{
 .section1__divContent{
     padding: 20px 0; 
     display: flex;
-}
-.section1__divContent__row__col{
-    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
     justify-content: center;
-    padding-bottom: 2rem;
 }
-
-.section1__divContent__row__col__card{
-    width: 20.5rem; 
+.section1__divContent__divCard{
+    max-width: 20.5rem; 
     text-align: center;
     align-content: center;
     align-items: center;
     
 }
-.section1__divContent__row__col__card__img{
+.section1__divContent__divCard__img{
     /*border: 1px solid rgb(200, 200, 200);*/
     width: 100%;
     /*padding-top: 1rem;*/
 }
 
-.section1__divContent__row__col__card__img:hover {
+.section1__divContent__divCard__img:hover {
     animation: prodDestacado 1s ease 0s 1 normal forwards;
 }
 @keyframes prodDestacado {
@@ -135,7 +132,7 @@ body{
     }
   }
 
-.section1__divContent__row__col__card__p{
+.section1__divContent__divCard__divDescrip__p{
     color:red;
 }
 
