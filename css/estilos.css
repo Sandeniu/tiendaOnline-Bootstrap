@@ -5,21 +5,22 @@
 
 a{
     text-decoration: none;
+    color: #27272b;
 }
 h1, h2, h3, h4, h5, h6{
-    color: #25282c;
+    color: #27272b;
     font-weight:normal;
     letter-spacing: 3px;
     text-transform: uppercase;
 }
 .header, .nav, .main, .section .aside, .footer, .body{
-    border: 1px solid rgb(150, 150, 150);
+   /* border: 1px solid rgb(150, 150, 150);*/
     background: #ffffff;
 }
 body{
     font-family: 'Montserrat', sans-serif;
-
 }
+
 .header{
     background-color:  #FAAA8D;
     padding-top: 25px;
@@ -27,7 +28,31 @@ body{
     border-top: 0.5rem #50B2C0 solid;
     border-bottom: 0.5rem #50B2C0 solid;
     /*height: 5.0em; /*(120px aprox)*/
+
+    /*ANIMACIÓN PARA EL HEADER
+    Parámetros de la animación:
+    1) animation-name (para usar varias animaciones se deben separar con coma)
+    2) animation-duration (duración total de animación en segundos)
+    3) animation-timing-function (forma en que se reproduce la animación)
+        •	ease-in: comenzará la animación lentamente y finalizará a toda velocidad.
+        •	ease-out: iniciará la animación a toda velocidad, luego terminará lentamente.
+        •	ease-in-out. comenzará lentamente, será más rápido en el medio de la animación y luego terminará lentamente.
+        •	ease: es como easy-in-out, excepto que comienza ligeramente más rápido de lo que termina.
+        •	Linear: no usa relajación
+    4) animation-delay (tiempo que debe esperar el navegador para iniciar animación)
+    5) animation-iteration-count (cantidad de iteraciones. Acepta un número entero o el valor infinite)
+    6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
+    7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
+   */
+   animation: mianimation 4s ease-in-out 0s infinite normal none; 
 }
+@keyframes mianimation {
+    0%{background: #feefdd;}
+    35%{background: #FAAA8D;}
+    70%{background: #50b2c0;}
+    100%{background: #FAAA8D;}
+}
+
 .header__divTitulo__h1{
     font-size: 2rem;
     letter-spacing: 0.8rem;
@@ -43,6 +68,24 @@ body{
     border-color: rgb(150, 150, 150);
     box-shadow: #feefdd 1px 1px 5px 1px;
     border-radius: 5px;
+}
+.nav{
+    background-color: #FEEFDD;
+}
+.nav__divBarra__divMenu__ul__li:hover {
+    background:  #50B2C0;
+}
+.nav__divBarra__divMenu__ul__li__a:hover {
+    animation: navMenu 1s ease 0s 1 normal forwards;
+}
+@keyframes navMenu{
+    0% {
+      transform: scale(0.5);
+    }  
+    100% {
+      transform: scale(1);
+      color: #ffffff;
+    }
 }
 .body--carousel-inner{
     height: 500px;
@@ -79,38 +122,72 @@ body{
     width: 100%;
     /*padding-top: 1rem;*/
 }
+
+.section1__divContent__row__col__card__img:hover {
+    animation: prodDestacado 1s ease 0s 1 normal forwards;
+}
+@keyframes prodDestacado {
+    0% {
+      transform: scale(0.5);
+    }  
+    100% {
+      transform: scale(1);
+    }
+  }
+
 .section1__divContent__row__col__card__p{
     color:red;
 }
 
 .aside{
-    padding-top: 2rem;
+    padding: 2rem 3rem 3rem 0;
 }
-.aside_divPublicidad{
+.aside__h{
+    text-align: center;
+}
+.aside__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.aside__form__mb-3__input{
+    /*box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid rgb(200, 200, 200);*/
+    width : 18rem;
+    height: 1.8em; /* for IE */
+}
+.aside__form__mb-3__label{
+    width : 18rem;
+    height: 1rem; /* for IE */
+    /*padding: 10px 0 0 0;*/
+}
+.aside__form__mb-3__textarea{
+    width : 18rem;
+    height: 7rem; /* for IE */
+}
+.aside__form__button{
+    width : 8rem;
+    height: 2.5em; /* for IE */
+}
+.aside__divPublicidad{
     width: 100%;
     padding: 2rem 0;
+    display: flex;
+    justify-content: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.aside__divPublicidad__divCard{
+    text-align: center;
+}
+.aside__divPublicidad__divCard__divBodyCard__h{
+    color: #FB6900;
+}
 .footer{
     position: relative;
     background: #27272b;
     /*height: 5.0em; /*(120px aprox)*/
 }
-
 .footer__fila1{
     display: flex;
     flex-wrap: wrap;
@@ -131,7 +208,6 @@ body{
 .footer__divMenu__ul__li{
     display: flex;
 }
-
 .footer__divMenu__ul__a {
     color: white;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -179,6 +255,110 @@ body{
     font-weight: 500;
     text-align: center;
 }
+.prod__aside_div1{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+.prod__section2__divPag{
+    padding: 3rem;
+}
+/*///////////////////////////////////////////
+///////       productos.html           //////                              
+///////////////////////////////////////////*/
+
+/*menú categorías*/
+.prod__aside__div1--divMenu__h{
+    border-bottom: 1px solid #FB6900 ;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgb(150, 150, 150);
+    padding: 10px;
+    transition: all 0.3s;
+    background-color: transparent;
+
+    /*transition: Propiedad afectada + 
+    tiempo de desplazamiento + 
+    forma de desplazarse +
+    tiempo para iniciar*/
+
+    transition: all 0.3s;
+    background-color: transparent;
+}
+.prod__aside__div1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+.prod__aside__div1__h{ /* Este es el Título de las categorías, pero es mejor borrarlo (por eso las letras color blanco)*/
+    font-size: 14px;
+    font-weight: normal;
+    color: #ffffff;
+
+}
+.prod__aside__div1--divMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+.prod__aside__div1--divMenu__h__a{
+    display: block;
+    text-align: center;
+}
+.prod__aside__div1--divMenu__h__a:hover {
+    animation: menuAside 1s ease 0s 1 normal forwards;
+}
+@keyframes menuAside {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+      color: #FB6900;
+    }
+  }
+.prod__section1__divContent{
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem 0;
+}
+.prod__section1__divContent__divCard{
+    max-width: 12.5rem;
+}
+.prod__section1__divContent__divCard__img:hover {
+    animation: productoNormal 1s ease 0s 1 normal forwards;
+}
+@keyframes productoNormal {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+.prod__section1__divContent__divCard__divDescr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.prod__section1__divContent__divCard__divDescr__h{
+    text-align: center;
+}
+.prod__section1__divContent__divCard__divDescr__p{
+    color: red;
+    font-size: 1.2rem;
+}
+
 
 /********************************************/
 /*       R  E  S  P  O  N  S  I  V  E       */
@@ -197,7 +377,13 @@ body{
     .body--carousel-inner{
         height: 150px;
     }
-    
+    .aside__form__mb-3__input,
+    .aside__form__mb-3__label,
+    .aside__form__mb-3__textarea{
+        width : 14rem;
+        padding-left: 2rem;
+        padding-right: 0rem;
+    }
     .footer__fila1{
         flex-direction: column;
         justify-content: center;
@@ -212,6 +398,14 @@ body{
     .footer__divMenu__ul__a, .footer__divSocial__divSiguenos__p{
         font-size: 0.9rem;
     }
+
+
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 }
 
 /*******    (2)  DISPOSITIVO SM SMALL*********/
@@ -240,8 +434,13 @@ body{
     .footer__divMenu__ul{
         padding: 0;
     }
-}
 
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
 
 /********     (3)   DISPOSITIVO MD MEDIANO      *********/
 @media only screen and (min-width: 768px) and (max-width: 991px){ 
@@ -258,12 +457,25 @@ body{
     .body--carousel-inner{
         height: 300px;
     }
+
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
 /*******     (4)   DISPOSITIVO LG LARGE      ********/
 @media only screen and (min-width: 992px) and (max-width: 1199px){ 
     body {
-        background: rgb(200, 200, 200);
+        background: blue;
+    }
+    .aside__form__mb-3__input,
+    .aside__form__mb-3__label,
+    .aside__form__mb-3__textarea{
+        width : 14rem;
+        padding-left: 2rem;
+        padding-right: 0rem;
     }
 }
 

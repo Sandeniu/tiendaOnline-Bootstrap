@@ -56,10 +56,9 @@
                de la barra de navegación expandida .
             -  Utilidades de flexibilidad y espaciado para cualquier control y acción de formulario.
         -->
-        <nav class="navbar navbar-expand-lg navbar-light border-1 border-bottom border-info"
-            style="background-color: #FEEFDD;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">DC</a>
+        <nav class="navbar navbar-expand-lg navbar-light border-1 border-bottom border-info nav">
+            <div class="container-fluid nav__divBarra">
+                <a class="navbar-brand nav__divBarra__a" href="#">DC</a>
 
                 <!-- 
                 MENÚ HAMBURGUESA EN UN BUTTON:
@@ -82,34 +81,49 @@
                 en atributo anterior. En este caso el elemento target es #miMenu y la acción a 
                 realizar es togle collapse (despliegue alternado). -->
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miMenu">
+                <button class="navbar-toggler nav__divBarra__button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#miMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
 
                 <!--
-                 la clase collapse es un elementode tipo oculto que se puede mostrar y desplegar
+                 la clase collapse es un elemento de tipo oculto que se puede desplegar y ocultar
                  #navbarNavAltMarkup  es el identificador sobre quien se ejecutará la acción toogle collapse
                  interpuesto por el elemento button -->
-                <div class="collapse navbar-collapse" id="miMenu">
+                <div class="collapse navbar-collapse nav__divBarra__divMenu" id="miMenu">
 
                     <!-- la clase navbar-var transforma el contenedor en un flexbox 
                         La clase nav-link de bs, estiliza los elementos <a> quitando el color azul y subrayado
                         los convierte en elementos block, les asigna espaciado y un color gris.    -->
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./paginas/productos.html">Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./paginas/servicios.html">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./paginas/despachos.html">Despachos</a></li>
+                    <ul class="navbar-nav nav__divBarra__divMenu__ul">
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a
+                                class="nav-link nav__divBarra__divMenu__ul__li__a" href="index.html">Home</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a
+                                class="nav-link nav__divBarra__divMenu__ul__li__a"
+                                href="./paginas/productos.html">Productos</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a
+                                class="nav-link nav__divBarra__divMenu__ul__li__a"
+                                href="./paginas/servicios.html">Servicios</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a
+                                class="nav-link nav__divBarra__divMenu__ul__li__a"
+                                href="./paginas/despachos.html">Despachos</a></li>
 
                         <!-- SUBMENÚ: la sig. clase dropdown corresponde a las de tipo "listas desplegables 
                             ver "Enlace desplegable": https://getbootstrap.com/docs/5.1/components/dropdowns/  -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toogle" href="#" data-bs-toggle="dropdown">Nosotros</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./paginas/nosotros.html">Nuestra Empresa</a></li>
-                                <li><a class="dropdown-item" href="#">Galería de Fotos</a></li>
-                                <li><a class="dropdown-item" href="#">Contacto</a></li>
+                        <li class="nav-item dropdown nav__divBarra__divMenu__ul__li">
+                            <a class="nav-link dropdown-toogle nav__divBarra__divMenu__ul__li__a" href="#"
+                                data-bs-toggle="dropdown">Nosotros</a>
+                            <ul class="dropdown-menu nav__divBarra__divMenu__ul__li__ul">
+                                <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
+                                        href="./paginas/nosotros.html">Nuestra Empresa</a></li>
+                                <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a" href="#">Galería
+                                        de Fotos</a></li>
+                                <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
+                                        href="#">Contacto</a></li>
                             </ul>
                         </li><!-- Fin enlace desplegable -->
                     </ul> <!-- Fin lista principal -->
@@ -243,9 +257,6 @@
                                     </div>
                                 </div>
 
-
-
-
                             </div>
                     </div>
                     </section>
@@ -268,58 +279,55 @@
                     <aside class="aside">
 
                         <div>
-                            <h6>SOLICITA INFORMACIÓN</h6><br>
+                            <h6 class="aside__h">SOLICITA INFORMACIÓN</h6><br>
                         </div>
-                        <form>
+                        <form class="aside__form">
                             <div class="mb-3">
-                                <label for="nom" class="form-label">Nombre Completo</label>
-                                <input type="text" class="form-control" id="nom" aria-describedby="nomHelp">
+                                <label for="nom" class="form-label aside__form__mb-3__label">Nombre Completo</label>
+                                <input type="text" class="form-control aside__form__mb-3__input" id="nom"
+                                    aria-describedby="nomHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="mail" class="form-label">Correo</label>
-                                <input type="mail" class="form-control" id="mail">
+                                <label for="mail" class="form-label aside__form__mb-3__label">Correo</label>
+                                <input type="mail" class="form-control aside__form__mb-3__input" id="mail">
                             </div>
                             <div class="mb-3">
-                                <label for="tel" class="form-label">Celular</label>
-                                <input type="tel" class="form-control" id="mail">
+                                <label for="tel" class="form-label aside__form__mb-3__label">Celular</label>
+                                <input type="tel" class="form-control aside__form__mb-3__input" id="mail">
                             </div>
                             <div class="mb-3">
-                                <label for="mail" class="form-label">Correo</label>
-                                <input type="mail" class="form-control" id="mail">
+                                <label for="msj" class="form-label aside__form__mb-3__label">Déjanos tu mensaje</label>
+                                <textarea class="form-control aside__form__mb-3__textarea" id="msj"></textarea>
                             </div>
-                            <div class="mb-3">
-                                <label for="msj" class="form-label">Déjanos tu mensaje</label>
-                                <textarea class="form-control" id="msj"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary aside__form__button">Enviar</button>
                         </form>
-              
 
-                <!-- Aquí Publicidad ASIDE -->
-                <div class="col-lg-3 aside_divPublicidad">
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Dark card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+
+                        <!-- Aquí Publicidad ASIDE -->
+                        <div class="col-lg-3 aside__divPublicidad">
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header aside__divPublicidad__divCard">Publicidad #1</div>
+                                <div class="card-body">
+                                    <h5 class="card-title aside__divPublicidad__divCard__divBodyCard__h">Título</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Aspernatur consequuntur aperiam aut impedit eaque dignissimos.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div> 
 
-                <div class="col-lg-3 aside_divPublicidad">
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Dark card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                        <div class="col-lg-3 aside__divPublicidad">
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header aside__divPublicidad__divCard">Publicidad #2</div>
+                                <div class="card-body">
+                                    <h5 class="card-title aside__divPublicidad__divCard__divBodyCard__h">Título</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Incidunt corporis quis, cumque quia pariatur debitis?</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-            </div>  <!-- fin col#2 (aside)--------- -->
-            </aside>
+                </div> <!-- fin col#2 (aside)--------- -->
+                </aside>
 
             </div> <!-- fin row que envuelve a Sectión + aside-------- -->
     </div> <!-- fin del content que envuelve a Sectión + aside-------- -->
