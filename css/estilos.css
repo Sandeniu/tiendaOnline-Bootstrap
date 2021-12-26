@@ -5,9 +5,10 @@
 
 a{
     text-decoration: none;
+    color: #27272b;
 }
 h1, h2, h3, h4, h5, h6{
-    color: #25282c;
+    color: #27272b;
     font-weight:normal;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -18,7 +19,6 @@ h1, h2, h3, h4, h5, h6{
 }
 body{
     font-family: 'Montserrat', sans-serif;
-
 }
 
 .header{
@@ -28,7 +28,31 @@ body{
     border-top: 0.5rem #50B2C0 solid;
     border-bottom: 0.5rem #50B2C0 solid;
     /*height: 5.0em; /*(120px aprox)*/
+
+    /*ANIMACIÓN PARA EL HEADER
+    Parámetros de la animación:
+    1) animation-name (para usar varias animaciones se deben separar con coma)
+    2) animation-duration (duración total de animación en segundos)
+    3) animation-timing-function (forma en que se reproduce la animación)
+        •	ease-in: comenzará la animación lentamente y finalizará a toda velocidad.
+        •	ease-out: iniciará la animación a toda velocidad, luego terminará lentamente.
+        •	ease-in-out. comenzará lentamente, será más rápido en el medio de la animación y luego terminará lentamente.
+        •	ease: es como easy-in-out, excepto que comienza ligeramente más rápido de lo que termina.
+        •	Linear: no usa relajación
+    4) animation-delay (tiempo que debe esperar el navegador para iniciar animación)
+    5) animation-iteration-count (cantidad de iteraciones. Acepta un número entero o el valor infinite)
+    6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
+    7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
+   */
+   animation: mianimation 4s ease-in-out 0s infinite normal none; 
 }
+@keyframes mianimation {
+    0%{background: #feefdd;}
+    35%{background: #FAAA8D;}
+    70%{background: #50b2c0;}
+    100%{background: #FAAA8D;}
+}
+
 .header__divTitulo__h1{
     font-size: 2rem;
     letter-spacing: 0.8rem;
@@ -44,6 +68,24 @@ body{
     border-color: rgb(150, 150, 150);
     box-shadow: #feefdd 1px 1px 5px 1px;
     border-radius: 5px;
+}
+.nav{
+    background-color: #FEEFDD;
+}
+.nav__divBarra__divMenu__ul__li:hover {
+    background:  #50B2C0;
+}
+.nav__divBarra__divMenu__ul__li__a:hover {
+    animation: navMenu 1s ease 0s 1 normal forwards;
+}
+@keyframes navMenu{
+    0% {
+      transform: scale(0.5);
+    }  
+    100% {
+      transform: scale(1);
+      color: #ffffff;
+    }
 }
 .body--carousel-inner{
     height: 500px;
@@ -82,6 +124,19 @@ body{
     width: 100%;
     /*padding-top: 1rem;*/
 }
+
+.section1__divContent__row__col__card__img:hover {
+    animation: prodDestacado 1s ease 0s 1 normal forwards;
+}
+@keyframes prodDestacado {
+    0% {
+      transform: scale(0.5);
+    }  
+    100% {
+      transform: scale(1);
+    }
+  }
+
 .section1__divContent__row__col__card__p{
     color:red;
 }
@@ -216,18 +271,25 @@ body{
 
 /*menú categorías*/
 .prod__aside__div1--divMenu__h{
-    color: #ffffff;
     border-bottom: 1px solid #FB6900 ;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 0.8rem;
     font-weight: normal;
     letter-spacing: 3px;
     text-transform: uppercase;
+    color: rgb(150, 150, 150);
     padding: 10px;
     transition: all 0.3s;
     background-color: transparent;
-}
 
+    /*transition: Propiedad afectada + 
+    tiempo de desplazamiento + 
+    forma de desplazarse +
+    tiempo para iniciar*/
+
+    transition: all 0.3s;
+    background-color: transparent;
+}
 .prod__aside__div1 {
     display: flex;
     flex-direction: column;
@@ -253,6 +315,18 @@ body{
     display: block;
     text-align: center;
 }
+.prod__aside__div1--divMenu__h__a:hover {
+    animation: menuAside 1s ease 0s 1 normal forwards;
+}
+@keyframes menuAside {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+      color: #FB6900;
+    }
+  }
 .prod__section1__divContent{
     display: flex;
     gap: 3rem;
@@ -263,6 +337,17 @@ body{
 .prod__section1__divContent__divCard{
     max-width: 12.5rem;
 }
+.prod__section1__divContent__divCard__img:hover {
+    animation: productoNormal 1s ease 0s 1 normal forwards;
+}
+@keyframes productoNormal {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 .prod__section1__divContent__divCard__divDescr{
     display: flex;
     flex-direction: column;
