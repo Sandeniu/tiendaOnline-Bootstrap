@@ -1,0 +1,101 @@
+7+1
+https://latteandcode.medium.com/c%C3%B3mo-organizar-los-archivos-sass-de-tu-proyecto-c8b02242d95
+
+scss/
+|
+|– utilidades/
+|   |– _variables.scss    // Variables
+|   |– _funciones.scss    // Funciones
+|   |– _mixins.scss       // Mixins
+|
+|– base/
+|   |– _reset.scss        // Reset/normalize
+|   |– _tipografias.scss   // Tipografías
+|
+|– componentes
+|   |– _buttons.acss      // Bot
+|   |– _jumbo.scss     // Jumbo
+|
+|– layout/
+|   |– _nav.scss   // Navegación
+|   |– _grid.scss         // Grid
+|   |– _header.scss       // Header
+|   |– _footer.scss       // Footer
+|   |– _forms.scss        // Formularios
+|
+|– vistas/
+|   |– _home.scss         // Estilos de la página de inicio
+|   |– _contact.scss      // Estilos de la página de contacto
+|
+|– temas/
+|   |– _theme.scss        // Default theme
+|   |– _admin.scss        // Admin theme
+|
+|– vendors/
+|   |– _bootstrap.scss    // Bootstrap
+|   |– _jquery-ui.scss    // jQuery UI
+|
+|– main.scss              // Archivo principal
+
+
+utilidades:
+En esta carpeta se encuentran las funciones, variables y mixins que emplearemos en el resto de ficheros. 
+Estos archivos no generan ninguna regla CSS al ser compilados sino que añaden funcionalidad extra para ser empleada por los otros partials.
+
+base:
+Contiene el código base de nuestro proyecto como es las reglas de tipografía (y fuentes adicionales) 
+así como los resets necesarios para sobrescribir las reglas por defecto de los navegadores.
+
+componentes:
+Contiene los estilos de los distintos componentes que emplearemos dentro de nuestra aplicación como pueden ser botones, jumbos, 
+sliders, carruseles… Separar cada componente en su propio archivo nos permitirá reutilizarlos en otros proyectos.
+
+layout:
+En esta carpeta aparecen los estilos relacionados con la estructura de nuestra página web, como por ejemplo el sistema de grid que
+estemos empleando así como los estilos de la cabecera, el footer etc.
+
+vistas:
+Contiene los estilos específicos para determinadas vistas (páginas) de nuestro proyecto como puede ser la página de inicio o la de contacto.
+
+temas:
+Almacena los estilos referidos a diferentes themes que pueda adoptar nuestro proyecto en función, por ejemplo, del tipo de usuario o 
+la sección que esté visualizándose.
+
+vendors:
+Esta carpeta tiene dos opciones en función de si estáis empleando webpack o no.
+En el caso de que estéis compilando mediante webpack, es probable que vuestros vendors residan en la carpeta /node_modules, 
+de modo que en nuestra carpeta /assets/vendors lo que haremos será alojar partials encargados de importar los archivos de 
+/node_modules (si no necesitamos realizar ninguna modificación sobre los archivos) y de sobrescribir aquellas partes que necesitemos 
+(no es buena idea modificar directamente las librerías de terceros ya que perderemos los cambios cuando las actualicemos).
+Por el contrario, si no disponéis de la carpeta node_modules podéis instalar las librerías de terceros directamente en la carpeta 
+assets/vendors y añadir dentro de ella otra carpeta donde se encuentren los archivos partials que las sobrescriban.
+
+
+main:
+Finalmente, el archivo main.sass , situado en la raíz del proyecto, importará todos los archivos situados dentro de cada carpeta sin contener 
+código sass adicional. Por ejemplo:
+
+@import 'utilities/variables';
+@import 'utilities/functions';
+@import 'utilities/mixins';
+
+@import 'utilities/bootstrap';
+@import 'vendors/jquery-ui';
+
+@import 'base/reset';
+@import 'base/typo';
+
+@import 'layout/navigation';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/forms';
+
+@import 'components/buttons';
+@import 'components/jumbo';
+
+@import 'pages/home';
+@import 'pages/contact';
+
+@import 'themes/theme';
+@import 'themes/admin';

@@ -1,0 +1,729 @@
+@charset "UTF-8";
+/*ROBOTO >>> font-family:'Roboto', sans-serif;*/
+@import url("https://fonts.googleapis.com/css2? family = Roboto: ital, wght @ 0,100; 0,300; 0,400; 0,500; 0,700; 0,900; 1,100; 1,300; 1,400; 1,500; 1,700; 1,900 & display = swap");
+/*Montserrat >>> font-family: 'Montserrat', sans-serif;*/
+@import url("https://fonts.googleapis.com/css2? familia = Montserrat: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 0,800; 0,900; 1,100; 1,200; 1,300; 1,400; 1,500; 1,600; 1,700; 1,800; 1,900 & display = swap");
+/*Reseteo de css*/
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  /* Quitar viñetas de las listas*/
+  text-decoration: none;
+  /* Quitar subrayado de los enlaces*/
+  /* border: none;*/
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*permite incluir el relleno y el borde en el ancho 
+                             y alto total de un elemento*/
+}
+
+.header, .nav, .main, .section .aside, .footer, .body {
+  /* border: 1px solid rgb(150, 150, 150);*/
+  background: #ffffff;
+}
+
+/*colores*/
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #27272B;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #27272B;
+  font-weight: normal;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.header {
+  background-color: #FAAA8D;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 0.5rem #50B2C0 solid;
+  border-bottom: 0.5rem #50B2C0 solid;
+  /*height: 5.0em; /*(120px aprox)*/
+  /*ANIMACIÓN PARA EL HEADER
+    Parámetros de la animación:
+    1) animation-name (para usar varias animaciones se deben separar con coma)
+    2) animation-duration (duración total de animación en segundos)
+    3) animation-timing-function (forma en que se reproduce la animación)
+        •	ease-in: comenzará la animación lentamente y finalizará a toda velocidad.
+        •	ease-out: iniciará la animación a toda velocidad, luego terminará lentamente.
+        •	ease-in-out. comenzará lentamente, será más rápido en el medio de la animación y luego terminará lentamente.
+        •	ease: es como easy-in-out, excepto que comienza ligeramente más rápido de lo que termina.
+        •	Linear: no usa relajación
+    4) animation-delay (tiempo que debe esperar el navegador para iniciar animación)
+    5) animation-iteration-count (cantidad de iteraciones. Acepta un número entero o el valor infinite)
+    6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
+    7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
+   */
+  -webkit-animation: mianimation 4s ease-in-out 0s infinite normal none;
+          animation: mianimation 4s ease-in-out 0s infinite normal none;
+}
+
+.header__divTitulo__h1 {
+  font-size: 2rem;
+  letter-spacing: 0.8rem;
+  text-shadow: #feefdd 3px 3px 7px;
+}
+
+.header__divInteractivo__buscador {
+  width: 13rem;
+  height: 24px;
+  border: 1px solid;
+  border-color: #969696;
+  -webkit-box-shadow: #feefdd 1px 1px 5px 1px;
+          box-shadow: #feefdd 1px 1px 5px 1px;
+  border-radius: 5px;
+  display: block;
+}
+
+.header__divInteractivo__a__img {
+  display: block;
+}
+
+@-webkit-keyframes mianimation {
+  0% {
+    background: #feefdd;
+  }
+  35% {
+    background: #FAAA8D;
+  }
+  70% {
+    background: #50b2c0;
+  }
+  100% {
+    background: #FAAA8D;
+  }
+}
+
+@keyframes mianimation {
+  0% {
+    background: #feefdd;
+  }
+  35% {
+    background: #FAAA8D;
+  }
+  70% {
+    background: #50b2c0;
+  }
+  100% {
+    background: #FAAA8D;
+  }
+}
+
+.nav {
+  background-color: #FEEFDD;
+}
+
+.nav__divBarra__divMenu__ul__li:hover {
+  background: #50B2C0;
+}
+
+.nav__divBarra__divMenu__ul__li__a:hover {
+  -webkit-animation: navMenu 1s ease 0s 1 normal forwards;
+          animation: navMenu 1s ease 0s 1 normal forwards;
+}
+
+@-webkit-keyframes navMenu {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #ffffff;
+  }
+}
+
+@keyframes navMenu {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #ffffff;
+  }
+}
+
+.body--carousel-inner {
+  height: 500px;
+}
+
+.main {
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section1__divTitulo__h {
+  text-align: center;
+}
+
+.section1__divContent {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.divCardProductoDestacado {
+  max-width: 20.5rem;
+}
+
+.divCardProductoNormal {
+  max-width: 12.5rem;
+}
+
+.divCard {
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divCard__a__img {
+  /*border: 1px solid rgb(200, 200, 200);*/
+  width: 100%;
+  /*padding-top: 1rem;*/
+}
+
+.divCard__a__img:hover {
+  -webkit-animation: prodDestacado 1s ease 0s 1 normal forwards;
+          animation: prodDestacado 1s ease 0s 1 normal forwards;
+}
+
+.divCard__divDescrip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divCard__divDescrip__h {
+  text-align: center;
+}
+
+.divCard__divDescrip__p {
+  color: red;
+}
+
+.divCard__divDescrip__a {
+  text-align: center;
+}
+
+@-webkit-keyframes prodDestacado {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes prodDestacado {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.aside {
+  padding: 2rem 3rem 3rem 0;
+}
+
+.aside__h {
+  text-align: center;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3rem;
+}
+
+.form__divInput__input {
+  /*box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid rgb(200, 200, 200);*/
+  width: 18rem;
+  height: 1.8em;
+  /* for IE */
+}
+
+.form__divInput__label {
+  width: 18rem;
+  height: 1rem;
+  /* for IE */
+  /*padding: 10px 0 0 0;*/
+}
+
+.form__divInput__textarea {
+  width: 18rem;
+  height: 7rem;
+  /* for IE */
+}
+
+.form__button {
+  width: 8rem;
+  height: 2.5em;
+  /* for IE */
+}
+
+/*formulario en aside de index*/
+/*colores*/
+.divPublicidad {
+  width: 100%;
+  padding: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.divPublicidad__divCard {
+  max-width: 18rem;
+  text-align: center;
+}
+
+.divPublicidad__divCard__cuerpo__h {
+  color: #FB6900;
+}
+
+/*tarjeta de publicidad en aside de index*/
+/*colores*/
+.footer {
+  position: relative;
+  background: #27272B;
+  /*height: 5.0em; /*(120px aprox)*/
+}
+
+.footer__fila1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem;
+}
+
+.footer__fila1__divMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__fila1__divMenu__ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+}
+
+.footer__fila1__divMenu__ul__li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__fila1__divMenu__ul__li__a {
+  color: #FEEFDD;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.footer__fila1__divSocial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__fila1__divSocial__divSiguenos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  color: #FB6900;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.footer__fila1__divSocial__divSiguenos__p {
+  margin: 0.1rem;
+}
+
+.footer__fila1__divSocial__divIconos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__fila2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3rem 1rem 0 1rem;
+  /*se omite margin bootom ya que el elemento <p> trae por default 1rem abajo */
+}
+
+.footer__fila2__divCopyrigt__p {
+  color: #FEEFDD;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.prod__aside__div1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 0;
+}
+
+.prod__aside__div1__h {
+  /* Este es el Título de las categorías, pero es mejor borrarlo (por eso las letras color blanco)*/
+  font-size: 14px;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.prod__aside__div1--divMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prod__aside__div1--divMenu__h {
+  border-bottom: 1px solid #FB6900;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: normal;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #969696;
+  padding: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: transparent;
+  /*transition: Propiedad afectada + 
+            tiempo de desplazamiento + 
+            forma de desplazarse +
+            tiempo para iniciar*/
+  transition: all 0.3s;
+  background-color: transparent;
+}
+
+.prod__aside__div1--divMenu__h__a {
+  display: block;
+  text-align: center;
+}
+
+.prod__aside__div1--divMenu__h__a:hover {
+  -webkit-animation: menuAside 1s ease 0s 1 normal forwards;
+          animation: menuAside 1s ease 0s 1 normal forwards;
+}
+
+@-webkit-keyframes menuAside {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    color: #FB6900;
+  }
+}
+
+@keyframes menuAside {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    color: #FB6900;
+  }
+}
+
+.prod__section1__divContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3rem 0;
+}
+
+.prod__section2__divPag {
+  padding: 3rem;
+}
+
+/*******    (2)  DISPOSITIVO XS - EXTRA SMALL*********/
+@media only screen and (min-width: 200px) and (max-width: 575px) {
+  body {
+    background: blueviolet;
+  }
+  .header__divTitulo__h1 {
+    font-size: 1rem;
+  }
+  .header__divInteractivo__buscador {
+    width: 60%;
+  }
+  .body--carousel-inner {
+    height: 150px;
+  }
+  .form__divInput__input,
+  .form__divInput__label,
+  .form__divInput__textarea {
+    width: 14rem;
+    padding-left: 2rem;
+    padding-right: 0rem;
+  }
+  .footer__fila1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer__fila1__divMenu__ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+  .footer__fila1__divMenu__ul__li__a {
+    font-size: 0.9rem;
+  }
+  .footer__fila1__divSocial__divSiguenos__p {
+    font-size: 0.9rem;
+  }
+  /*productos.html*/
+  .prod__aside__div1--divMenu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/*******    (2)  DISPOSITIVO SM - SMALL*********/
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  body {
+    background: tomato;
+  }
+  .header__divTitulo__h1 {
+    font-size: 1.5rem;
+  }
+  .body--carousel-inner {
+    height: 220px;
+  }
+  .footer__fila1__divSocial {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+  }
+  .footer__fila1__divMenu__ul {
+    padding: 0;
+  }
+  .footer__fila1__divMenu__ul__li__a {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+  .footer__fila2__divCopyrigt__p {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+  /*productos.html*/
+  .prod__aside__div1--divMenu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/********     (3)   DISPOSITIVO MD - MEDIANO      *********/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  body {
+    background: green;
+  }
+  .body--carousel-inner {
+    height: 300px;
+  }
+  .footer__fila1__divMenu__ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer__fila1__divMenu__ul__li__a {
+    font-size: 0.9rem;
+  }
+  .footer__fila2__divCopyrigt__p {
+    font-size: 0.8rem;
+  }
+  /*productos.html*/
+  .prod__aside__div1--divMenu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/*******     (4)   DISPOSITIVO LG LARGE      ********/
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  body {
+    background: blue;
+  }
+  .form__divInput__input,
+  .form__divInput__label,
+  .form__divInput__textarea {
+    width: 14rem;
+    padding-left: 2rem;
+    padding-right: 0rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

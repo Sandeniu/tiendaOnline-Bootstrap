@@ -1,0 +1,45 @@
+/*******    (2)  DISPOSITIVO XS - EXTRA SMALL*********/
+@media only screen and (min-width: 200px) and (max-width: 575px){
+    body{background: blueviolet;}
+    .header__divTitulo__h1{
+        font-size: 1rem;
+    }
+    .header__divInteractivo__buscador {
+        width: 60%;
+    }
+    .body--carousel-inner{
+        height: 150px;
+    }
+    .form__divInput__input,
+    .form__divInput__label,
+    .form__divInput__textarea{
+        width : 14rem;
+        padding-left: 2rem;
+        padding-right: 0rem;
+    }
+    .footer__fila1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        &__divMenu__ul{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+
+            &__li__a{
+                font-size: 0.9rem;
+            }
+        }
+        &__divSocial__divSiguenos__p{
+            font-size: 0.9rem;
+        }
+    }
+    
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

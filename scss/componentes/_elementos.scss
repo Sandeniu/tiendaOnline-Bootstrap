@@ -1,0 +1,16 @@
+@import "../utilidades/variables";
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    color: $marronFooter;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6{
+    color: $marronFooter;
+    font-weight:normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,26 @@
+
+/********     (3)   DISPOSITIVO MD - MEDIANO      *********/
+@media only screen and (min-width: 768px) and (max-width: 991px){ 
+    body {
+        background: green;
+    }
+    .body--carousel-inner{
+        height: 300px;
+    }
+    .footer__fila1__divMenu__ul{
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__li__a{
+            font-size: 0.9rem;
+        }
+    }
+    .footer__fila2__divCopyrigt__p {
+        font-size: 0.8rem;
+    }
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

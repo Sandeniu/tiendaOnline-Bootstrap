@@ -1,0 +1,48 @@
+.divCardProductoDestacado{
+  max-width: 20.5rem; 
+}
+
+.divCardProductoNormal{
+  max-width: 12.5rem; 
+}
+
+.divCard{ 
+    text-align: center;
+    align-content: center;
+    align-items: center;
+
+    &__a__img{
+        /*border: 1px solid rgb(200, 200, 200);*/
+        width: 100%;
+        /*padding-top: 1rem;*/
+    }
+
+    &__a__img:hover {
+        animation: prodDestacado 1s ease 0s 1 normal forwards;
+    }
+
+    &__divDescrip{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      &__h{
+        text-align: center;
+      }
+      &__p{
+        color:red;
+      }
+      &__a{
+        text-align: center;
+      }
+    }
+}
+
+@keyframes prodDestacado {
+  0% {
+    transform: scale(0.5);
+  }  
+  100% {
+    transform: scale(1);
+  }
+}

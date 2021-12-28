@@ -1,0 +1,60 @@
+
+.prod__aside__div1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+
+    &__h{ /* Este es el Título de las categorías, pero es mejor borrarlo (por eso las letras color blanco)*/
+        font-size: 14px;
+        font-weight: normal;
+        color: #ffffff;
+    }
+    &--divMenu{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        justify-content: center;
+        align-items: center;
+
+        &__h{
+            border-bottom: 1px solid #FB6900 ;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            font-size: 0.8rem;
+            font-weight: normal;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgb(150, 150, 150);
+            padding: 10px;
+            transition: all 0.3s;
+            background-color: transparent;
+
+            /*transition: Propiedad afectada + 
+            tiempo de desplazamiento + 
+            forma de desplazarse +
+            tiempo para iniciar*/
+
+            transition: all 0.3s;
+            background-color: transparent;
+        
+            &__a{
+                display: block;
+                text-align: center;
+            }
+            &__a:hover {
+                animation: menuAside 1s ease 0s 1 normal forwards;
+            }
+        }
+    }
+}
+@keyframes menuAside {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+      color: #FB6900;
+    }
+  }

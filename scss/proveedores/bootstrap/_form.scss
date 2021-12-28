@@ -1,0 +1,27 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    &__divInput__input{
+        /*box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid rgb(200, 200, 200);*/
+        width : 18rem;
+        height: 1.8em; /* for IE */
+    }
+    &__divInput__label{
+            width : 18rem;
+            height: 1rem; /* for IE */
+            /*padding: 10px 0 0 0;*/
+    }
+    &__divInput__textarea{
+        width : 18rem;
+        height: 7rem; /* for IE */
+    }
+    &__button{
+        width : 8rem;
+        height: 2.5em; /* for IE */
+    }
+}

@@ -1,0 +1,36 @@
+/*******    (2)  DISPOSITIVO SM - SMALL*********/
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    body{background: tomato;}
+    .header__divTitulo__h1{
+        font-size: 1.5rem;
+    }
+    .body--carousel-inner{
+        height: 220px;
+    }
+
+    .footer__fila1__divSocial {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+        justify-items: center;
+    }
+    .footer__fila1__divMenu__ul{
+        padding: 0;
+        &__li__a{
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: normal;
+        }
+    }
+    .footer__fila2__divCopyrigt__p {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        font-weight: normal;
+    }
+    /*productos.html*/
+    .prod__aside__div1--divMenu{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

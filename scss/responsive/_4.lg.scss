@@ -1,0 +1,13 @@
+/*******     (4)   DISPOSITIVO LG LARGE      ********/
+@media only screen and (min-width: 992px) and (max-width: 1199px){ 
+    body {
+        background: blue;
+    }
+    .form__divInput__input,
+    .form__divInput__label,
+    .form__divInput__textarea{
+        width : 14rem;
+        padding-left: 2rem;
+        padding-right: 0rem;
+    }
+}
