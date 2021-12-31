@@ -1,16 +1,16 @@
-@import "../utilidades/variables";
+/*@import "../utilidades/variables"; */
+@import "../utilidades/mixins/font-h";
+@import "../utilidades/maps/fontNormal";
+
 
 body{
-    font-family: 'Montserrat', sans-serif;
-}
+    font-family: map-get($fontNormal, tipografia);
 
+}
 a{
-    color: $marronFooter;
-    text-decoration: none;
+    color: map-get($fontNormal, color);
+    text-decoration: map-get($fontNormal, subrayado);
 }
 h1, h2, h3, h4, h5, h6{
-    color: $marronFooter;
-    font-weight:normal;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    @include font-h;
 }

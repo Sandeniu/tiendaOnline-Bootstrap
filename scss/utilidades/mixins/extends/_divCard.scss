@@ -1,0 +1,11 @@
+@mixin extends-divCard {  
+    .divCardProductoDestacado{
+        @extend .divCard;
+        max-width: 20.5rem; 
+    }
+    
+    .divCardProductoNormal{
+        @extend .divCard;
+        max-width: 12.5rem; 
+    }
+}

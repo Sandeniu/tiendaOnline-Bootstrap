@@ -1,7 +1,7 @@
+@import "../../utilidades/mixins/flexRow";
+
 .prod__section1__divContent{
-    display: flex;
+    @include flexRowCenter;
     gap: 3rem;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 3rem 0;
 }

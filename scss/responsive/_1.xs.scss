@@ -1,4 +1,7 @@
-/*******    (2)  DISPOSITIVO XS - EXTRA SMALL*********/
+/*******    (1)  DISPOSITIVO XS - EXTRA SMALL*********/
+@import "../utilidades/mixins/flexColumn";
+@import "../utilidades/mixins/flexRow";
+
 @media only screen and (min-width: 200px) and (max-width: 575px){
     body{background: blueviolet;}
     .header__divTitulo__h1{
@@ -18,14 +21,10 @@
         padding-right: 0rem;
     }
     .footer__fila1{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+       @include flexColumnCenter;
     
         &__divMenu__ul{
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include flexColumnCenter;
             padding: 0;
 
             &__li__a{
@@ -39,7 +38,6 @@
     
     /*productos.html*/
     .prod__aside__div1--divMenu{
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include flexRowCenter;
     }
 }

@@ -1,5 +1,8 @@
 
 /********     (3)   DISPOSITIVO MD - MEDIANO      *********/
+@import "../utilidades/mixins/flexColumn";
+@import "../utilidades/mixins/flexRow";
+
 @media only screen and (min-width: 768px) and (max-width: 991px){ 
     body {
         background: green;
@@ -8,8 +11,7 @@
         height: 300px;
     }
     .footer__fila1__divMenu__ul{
-        flex-wrap: wrap;
-        justify-content: center;
+        @include flexRowCenter;
 
         &__li__a{
             font-size: 0.9rem;
@@ -20,7 +22,6 @@
     }
     /*productos.html*/
     .prod__aside__div1--divMenu{
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include flexRowCenter;
     }
 }

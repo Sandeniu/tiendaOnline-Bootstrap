@@ -1,10 +1,11 @@
 @import "../../utilidades/variables";
+@import "../../utilidades/mixins/flexRow";
+
 
 .divPublicidad{
     width: 100%;
     padding: 2rem 0;
-    display: flex;
-    justify-content: center;
+    @include flexRowCenter;
 
     &__divCard{
         max-width: 18rem;

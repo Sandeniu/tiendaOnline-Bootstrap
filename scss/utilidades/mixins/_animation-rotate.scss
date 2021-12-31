@@ -1,0 +1,12 @@
+
+@mixin animation-rotate {
+    @keyframes menuAside {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+          color: #FB6900;
+        }
+      }
+}

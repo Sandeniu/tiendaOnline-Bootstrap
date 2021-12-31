@@ -1,4 +1,7 @@
 /*******    (2)  DISPOSITIVO SM - SMALL*********/
+@import "../utilidades/mixins/flexColumn";
+@import "../utilidades/mixins/flexRow";
+
 @media only screen and (min-width: 576px) and (max-width: 767px){
     body{background: tomato;}
     .header__divTitulo__h1{
@@ -9,11 +12,8 @@
     }
 
     .footer__fila1__divSocial {
-        display: flex;
-        flex-direction: column;
+        @include flexColumnCenter;
         gap: 1em;
-        align-items: center;
-        justify-items: center;
     }
     .footer__fila1__divMenu__ul{
         padding: 0;
@@ -30,7 +30,6 @@
     }
     /*productos.html*/
     .prod__aside__div1--divMenu{
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include flexRowCenter;
     }
 }

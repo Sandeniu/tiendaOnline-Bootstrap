@@ -1,3 +1,5 @@
+@import "../utilidades/mixins/animation-scale";
+
 .nav{
     background-color: #FEEFDD;
 
@@ -5,16 +7,7 @@
         background:  #50B2C0; 
     }
     &__divBarra__divMenu__ul__li__a:hover {
-        animation: navMenu 1s ease 0s 1 normal forwards;
-    }
-    
+        animation: escalar 1s ease 0s 1 normal forwards;
+    } 
 }
-@keyframes navMenu{
-    0% {
-      transform: scale(0.5);
-    }  
-    100% {
-      transform: scale(1);
-      color: #ffffff;
-    }
-}
+@include animation-scale;

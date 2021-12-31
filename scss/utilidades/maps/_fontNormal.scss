@@ -1,0 +1,11 @@
+@import "../variables";
+
+$fontNormal:(
+    tipografia: $tipografia-gral,           /* font-family*/
+    color: $marronFooter,                   /*color*/
+    mayus: uppercase,                       /*text-transform*/
+    tamano: 1rem,                           /*font-size*/
+    espaciado: 1px,                         /*letter-spacing*/
+    negrita: 500,                           /*font-weight*/
+    subrayado: none                         /*text-decoration*/
+);

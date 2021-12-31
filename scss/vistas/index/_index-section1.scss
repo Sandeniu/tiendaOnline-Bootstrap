@@ -1,12 +1,13 @@
+@import "../../utilidades/mixins/flexRow";
+
 .section1__divTitulo__h{
     text-align: center;
 }
 
 .section1__divContent{
     padding: 20px 0; 
-    display: flex;
-    flex-wrap: wrap;
+    @include flexRowCenter;
     gap: 5rem;
-    justify-content: center;
+
   }
 

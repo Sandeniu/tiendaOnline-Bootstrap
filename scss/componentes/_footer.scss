@@ -1,4 +1,7 @@
 @import "../utilidades/variables";
+@import "../utilidades/mixins/flexRow";
+@import "../utilidades/mixins/flexColumn";
+@import "../utilidades/maps/fontNormal";
 
 .footer{
     position: relative;
@@ -6,28 +9,27 @@
     /*height: 5.0em; /*(120px aprox)*/
 
     &__fila1{
-        display: flex;
-        flex-wrap: wrap;
+        @include flexRowCenter;
+        align-items: flex-start; /*propiedad diferenciadora de  @include flexRowCenter;*/
         gap: 3rem;
-        justify-content: center;
         margin: 1rem;
 
         &__divMenu{
-            display: flex;
+            @include flexRowCenter;
         
             &__ul{
                 list-style: none;
-                display: flex;
+                @include flexRowCenter;
                 gap: 3rem;
             
                 &__li{
-                    display: flex;
+                    @include flexRowCenter;
         
                     &__a {
                     color: $blancoRosa;
-                    font-size: 1rem;
+                    font-size: map-get($fontNormal, tamano);
                     letter-spacing: 2px;
-                    font-weight: 500;
+                    font-size: map-get($fontNormal, negrita);
                     text-align: center;
                     }
                 }
@@ -35,20 +37,15 @@
         }
 
         &__divSocial{
-            display: flex;
-            flex-direction: column;
+            @include flexColumnCenter;
             gap: 1rem;
-            justify-content: center;
         
             &__divSiguenos{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                align-items: center;
+                @include flexRowCenter;
                 color:  $naranjoLetter;
                 font-family: 'Roboto', Arial, Helvetica, sans-serif;
                 text-transform: uppercase;
-                font-size: 1rem;
+                font-size: map-get($fontNormal, tamano);
                 letter-spacing: 2px;
                 font-weight: 600;
             
@@ -57,7 +54,7 @@
                 }
             }
             &__divIconos{
-                display: flex;
+                @include flexRowCenter;
                 gap: 1.5rem;
                 justify-content: center;
             }
@@ -65,16 +62,15 @@
     }
 
     &__fila2{
-        display: flex;
-        justify-content: center;
+        @include flexRowCenter;
         margin: 3rem 1rem 0 1rem; /*se omite margin bootom ya que el elemento <p> trae por default 1rem abajo */
     
         &__divCopyrigt__p {
             color: $blancoRosa;
             font-size: 14px;
             font-family: Arial, Helvetica, sans-serif;
-            letter-spacing: 1px;
-            font-weight: 500;
+            letter-spacing: map-get($fontNormal, espaciado);
+            font-weight: map-get($fontNormal, negrita);
             text-align: center;
         }
 
