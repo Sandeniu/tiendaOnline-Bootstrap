@@ -5,6 +5,15 @@ notas:
 nav de bootstrap, con borde inferio y color personalizado
 <nav class="navbar navbar-expand-lg navbar-light border-1 border-bottom border-info"
             style="background-color: #FEEFDD;">
+=====================================================================================================================
+git commit -m "Mejoras para SEO" 
+- Se modifica las etiquetas <title> dentro de las páginas, para poner un título descriptivo y personalizado segun la página
+
+- Se incorpora en cada página, la etiqueta <meta name="description"> en ella se incorpora un párrafo descriptivo con respecto a la misión de la página. 
+
+- Se incorpora en cada página, la etiqueta <meta name="keywords">. En el content de esta etiqueta se incorporan las palabras claves que puedan llegar aser utilizadas por los usuarios en los buscadores y meta-buscadores.
+
+===================================================================================================================
 
 git commit -m "Aplicación de Sass II"
 ==========map-get()==========
@@ -46,4 +55,6 @@ scss/proveedores/bootstrap/card-productos;
 *Se crea e incorpora la función @mixin _animation-rotate en los siguientes parciales:
 scss/vistas/productos/productos-aside
 
-// Fin aplicación de Sass II
+===================================================================================================================
+
+
