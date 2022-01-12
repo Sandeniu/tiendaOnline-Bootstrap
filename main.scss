@@ -1,6 +1,6 @@
 @import "./scss/base/tipografias";
 @import "./scss/base/reset";
-@import "./scss/componentes/elementos";
+@import "./scss/componentes/elementos-generales";
 @import "./scss/componentes/header";
 @import "./scss/componentes/nav";
 @import "./scss/proveedores/bootstrap/carrusel";
@@ -9,11 +9,17 @@
 @import "./scss/proveedores/bootstrap/card-productos";
 @import "./scss/componentes/aside";
 @import "./scss/proveedores/bootstrap/bs-form"; /*formulario en aside de index*/
-@import "./scss/proveedores/bootstrap/card-text-white"; /*tarjeta de publicidad en aside de index*/
+@import "./scss/vistas/index/index-aside-publicidad"; /*tarjeta de publicidad propia en aside de index*/
 @import "./scss/componentes/footer";
 @import "./scss/vistas/productos/productos-aside";
 @import "./scss/vistas/productos/productos-section1";
 @import "./scss/vistas/productos/productos-section2";
+@import "./scss/vistas/despachos/despachos-main";
+@import "./scss/vistas/despachos/despachos-section1";
+@import "./scss/vistas/servicios/servicios-main";
+@import "./scss/vistas/servicios/servicios-section1";
+@import "./scss/vistas/nosotros/nosotros_main";
+@import "./scss/vistas/nosotros/nosotros_section1";
 @import "./scss/responsive/1.xs";
 @import "./scss/responsive/2.sm";
 @import "./scss/responsive/3.md";

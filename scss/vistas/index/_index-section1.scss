@@ -1,7 +1,11 @@
 @import "../../utilidades/mixins/flexRow";
+@import "../../utilidades/mixins/font/personalized-font";
+@import "../../utilidades/variables";
 
 .section1__divTitulo__h{
-    text-align: center;
+    /* alineación, tamano, color, espacio, decoracion, familia, mayuscula, negrita*/
+   /*@include letra-personalizada (center, 1.8rem, $divEncabezado1, 4.09px, none, $tipografia-h, uppercase, 500)*/
+    @include letra-personalizada (center, 1.8rem, $divEncabezado1, 4.09px, none, $tipografia-h, uppercase, 500);
 }
 
 .section1__divContent{

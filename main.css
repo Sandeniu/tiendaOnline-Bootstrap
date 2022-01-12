@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2? family = Roboto: ital, wght @ 0,100; 0,300; 0,400; 0,500; 0,700; 0,900; 1,100; 1,300; 1,400; 1,500; 1,700; 1,900 & display = swap");
 /*Montserrat >>> font-family: 'Montserrat', sans-serif;*/
 @import url("https://fonts.googleapis.com/css2? familia = Montserrat: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 0,800; 0,900; 1,100; 1,200; 1,300; 1,400; 1,500; 1,600; 1,700; 1,800; 1,900 & display = swap");
+/*font-family: "Calistoga", arial, sans-serif;*/
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
 /*Reseteo de css*/
 * {
   margin: 0px;
@@ -33,16 +35,6 @@ body {
 
 a {
   color: #27272B;
-  text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #27272B;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 3px;
-  font-weight: 500;
   text-decoration: none;
 }
 
@@ -161,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .body--carousel-inner {
-  height: 500px;
+  height: 600px;
 }
 
 .main {
@@ -181,8 +173,19 @@ h1, h2, h3, h4, h5, h6 {
           align-items: center;
 }
 
+/*colores*/
+/*colores*/
 .section1__divTitulo__h {
+  /* alineación, tamano, color, espacio, decoracion, familia, mayuscula, negrita*/
+  /*@include letra-personalizada (center, 1.8rem, $divEncabezado1, 4.09px, none, $tipografia-h, uppercase, 500)*/
   text-align: center;
+  color: #457B9D;
+  letter-spacing: 4.09px;
+  text-decoration: none;
+  font-family: "Calistoga", cursive;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .section1__divContent {
@@ -190,6 +193,10 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -202,22 +209,23 @@ h1, h2, h3, h4, h5, h6 {
   gap: 5rem;
 }
 
-.divCard, .divCardProductoDestacado, .divCardProductoNormal {
+.divCardProductos, .divCardProductoDestacado, .divCardProductoNormal {
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px solid #b4b4b4;
 }
 
-.divCard__a__img {
+.divCardProductos__a__img {
   /*border: 1px solid rgb(200, 200, 200);*/
   width: 100%;
   /*padding-top: 1rem;*/
 }
 
-.divCard__a__img:hover {
+.divCardProductos__a__img:hover {
   -webkit-animation: escalar 1s ease 0s 1 normal forwards;
           animation: escalar 1s ease 0s 1 normal forwards;
 }
@@ -234,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.divCard__divDescrip {
+.divCardProductos__divDescrip {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,15 +258,15 @@ h1, h2, h3, h4, h5, h6 {
           align-items: center;
 }
 
-.divCard__divDescrip__h {
+.divCardProductos__divDescrip__h {
   text-align: center;
 }
 
-.divCard__divDescrip__p {
+.divCardProductos__divDescrip__p {
   color: red;
 }
 
-.divCard__divDescrip__a {
+.divCardProductos__divDescrip__a {
   text-align: center;
 }
 
@@ -325,33 +333,94 @@ h1, h2, h3, h4, h5, h6 {
 
 /*formulario en aside de index*/
 /*colores*/
-.divPublicidad {
+/*colores*/
+.aside__h {
+  text-align: center;
+  color: #FB6900;
+  letter-spacing: 3.09px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.aside__divPublicidad {
   width: 100%;
-  padding: 2rem 0;
+  margin-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
+  gap: 3rem;
 }
 
-.divPublicidad__divCard {
+.aside__divPublicidad__divCard {
   max-width: 18rem;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.03);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
 }
 
-.divPublicidad__divCard__cuerpo__h {
+.aside__divPublicidad__divCard__encabezado {
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.aside__divPublicidad__divCard__cuerpo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.aside__divPublicidad__divCard__cuerpo__h {
   color: #FB6900;
 }
 
-/*tarjeta de publicidad en aside de index*/
+.aside__divPublicidad__divCard__cuerpo__span {
+  width: 80%;
+  text-align: left;
+}
+
+/*tarjeta de publicidad propia en aside de index*/
 /*colores*/
 /*colores*/
 .footer {
@@ -364,6 +433,10 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -385,6 +458,10 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -401,6 +478,10 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -417,6 +498,10 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -457,6 +542,10 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -482,6 +571,10 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -499,6 +592,10 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -521,6 +618,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/*colores*/
 .prod__aside__div1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -564,13 +662,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .prod__aside__div1--divMenu__h {
-  border-bottom: 1px solid #FB6900;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  font-weight: normal;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  text-align: center;
   color: #969696;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1rem;
+  border-bottom: 1px solid #FB6900;
   padding: 10px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -617,10 +717,26 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/*colores*/
+.prod__section1__divTitulo__h {
+  text-align: center;
+  color: #645986;
+  letter-spacing: 4.09px;
+  text-decoration: none;
+  font-family: "Calistoga", cursive;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
 .prod__section1__divContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -636,6 +752,305 @@ h1, h2, h3, h4, h5, h6 {
 
 .prod__section2__divPag {
   padding: 3rem;
+}
+
+.desp__main {
+  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.desp__main__divLayout {
+  width: 100%;
+}
+
+.desp__main__divLayout__row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*colores*/
+/*colores*/
+.titulo__h-left {
+  text-align: left;
+  color: #457B9D;
+  letter-spacing: 3.09px;
+  text-decoration: none;
+  font-family: "Calistoga", cursive;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.desp__section1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.desp__section1__divTitulo {
+  width: 100%;
+}
+
+.desp__section1__divTitulo__h3 {
+  text-align: left;
+  color: #457B9D;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.desp__section1__divContent {
+  width: 100%;
+}
+
+.desp__section1__divContent__span__p {
+  color: #666;
+}
+
+.serv__main {
+  background: radial-gradient(#50B2C0 2px, transparent 3px), radial-gradient(#50B2C0 2px, transparent 3px), linear-gradient(#fff 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #FAAA8D 75px, #FAAA8D 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #FAAA8D 76px, #FAAA8D 77px, transparent 78px, transparent 109px), #fff;
+  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.serv__main__divLayout__row__col {
+  width: 100%;
+}
+
+/*colores*/
+.serv__section1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5rem;
+  margin: 2rem 0;
+}
+
+.serv__section1__divCard {
+  max-width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  border: 1px solid #b4b4b4;
+  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.serv__section1__divCard__divTitulo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.serv__section1__divCard__divTitulo_h {
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.serv__section1__divCard__divCuerpo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.serv__section1__divCard__divCuerpo__img {
+  width: 30%;
+}
+
+.serv__section1__divCard__divCuerpo__span {
+  width: 65%;
+  padding-top: 1rem;
+}
+
+.serv__section1__divCard__divCuerpo__span--p1 {
+  text-align: left;
+}
+
+.serv__section1__divCard__divCuerpo__span--p2__small {
+  color: #6c757d;
+  font-size: .875em;
+  font-weight: 400;
+}
+
+.encabezado1 {
+  background-color: #6E2594;
+}
+
+.encabezado2 {
+  background-color: #F35B04;
+}
+
+.encabezado3 {
+  background-color: #AF3B6E;
+}
+
+.encabezado4 {
+  background-color: #ED6A5A;
+}
+
+.noso__main {
+  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.noso__main__divLayout {
+  width: 70%;
+}
+
+.noso__main__divLayout__row__col {
+  width: 100%;
+}
+
+/*colores*/
+.noso__section1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.noso__section1__divTitulo {
+  width: 100%;
+}
+
+.noso__section1__divTitulo__h {
+  text-align: left;
+  color: #645986;
+  letter-spacing: 4.09px;
+  text-decoration: none;
+  font-family: "Calistoga", cursive;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.noso__section2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 4rem;
+}
+
+.noso__section2__divTitulo {
+  width: 100%;
+}
+
+.noso__section2__divTitulo__h3 {
+  text-align: left;
+  color: #AF3B6E;
+  letter-spacing: 3.09px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.noso__section2__span {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 100%;
+}
+
+.noso__section2__divCuerpo__iframe {
+  width: 600px;
+  height: 350px;
 }
 
 /*******    (1)  DISPOSITIVO XS - EXTRA SMALL*********/
@@ -701,6 +1116,10 @@ h1, h2, h3, h4, h5, h6 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: center;
@@ -710,6 +1129,10 @@ h1, h2, h3, h4, h5, h6 {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+  }
+  .noso__section2__divCuerpo__iframe {
+    width: 320px;
+    height: 240px;
   }
 }
 
@@ -758,6 +1181,10 @@ h1, h2, h3, h4, h5, h6 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: center;
@@ -767,6 +1194,10 @@ h1, h2, h3, h4, h5, h6 {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+  }
+  .noso__section2__divCuerpo__iframe {
+    width: 480px;
+    height: 300px;
   }
 }
 
@@ -782,6 +1213,10 @@ h1, h2, h3, h4, h5, h6 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: center;
@@ -803,6 +1238,10 @@ h1, h2, h3, h4, h5, h6 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: center;

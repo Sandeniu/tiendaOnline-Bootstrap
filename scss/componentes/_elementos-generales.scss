@@ -1,5 +1,5 @@
 /*@import "../utilidades/variables"; */
-@import "../utilidades/mixins/font-h";
+@import "../utilidades/mixins/font/font-h";
 @import "../utilidades/maps/fontNormal";
 
 
@@ -10,7 +10,4 @@ body{
 a{
     color: map-get($fontNormal, color);
     text-decoration: map-get($fontNormal, subrayado);
-}
-h1, h2, h3, h4, h5, h6{
-    @include font-h;
 }

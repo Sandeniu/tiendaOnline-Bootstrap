@@ -1,4 +1,5 @@
 @import "../../utilidades/mixins/flexColumn";
+@import "../../utilidades/mixins/font/personalized-font";
 @import "../../utilidades/mixins/animation-rotate";
 
 .prod__aside__div1 {
@@ -15,14 +16,9 @@
         @include flexColumnCenter;
         gap: 1.5em;
 
-        &__h{
+        &__h{  
+            @include letra-personalizada(center, 1rem, rgb(150, 150, 150), 3px, none , $tipografia-roboto, uppercase, normal);
             border-bottom: 1px solid #FB6900 ;
-            font-family: 'Roboto', Arial, Helvetica, sans-serif;
-            font-size: 0.8rem;
-            font-weight: normal;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: rgb(150, 150, 150);
             padding: 10px;
             transition: all 0.3s;
             background-color: transparent;

@@ -1,4 +1,10 @@
+@import "../../utilidades/mixins/font/personalized-font";
 @import "../../utilidades/mixins/flexRow";
+
+.prod__section1__divTitulo__h{
+    @include letra-personalizada(center, 1.8rem, $divEncabezado3, 4.09px, none , $tipografia-h, capitalize, 500);
+
+}
 
 .prod__section1__divContent{
     @include flexRowCenter;

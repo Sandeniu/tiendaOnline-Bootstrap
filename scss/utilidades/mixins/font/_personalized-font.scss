@@ -1,0 +1,56 @@
+@import "../../variables";
+
+@mixin letra-personalizada (
+
+    /* ESTABLECEIENDO PARÁMETROS OPCIONALES:
+    se crea función con parámetros obligatorios + parámetros opcionales. 
+    El parámetro opcional es declarado con un valor inicial el cual es usado si no se le pasa un argumento.
+    Si se omite su argumento se conserva su valor predeterminado, y si se le pasa un argumento se 
+    sobre-escribe su valor predeterminado, lo importante es que la cantidad de parámetros opcionales 
+    deben coincidir con la cantidad de argumentos recibidos, o en su defecto no recibir ningún argumento 
+    y conservar sus valores predefinidos.
+
+    CONSTRUYENDO LA FUNCION MIXIN: 
+        - En la construcción de la función Primero se deben declarar los parámetros obligatorios, 
+        - luego se declaran los parámetros opcionales con sus respectivos valores predeterminados. 
+        - La declaración de parámetros opcionales usan la misma sintaxis que las declaraciones de variables: 
+          el nombre de la variable, seguido de dos puntos y una expresión de SassScript .
+
+    LLAMANDO A LA FUNCIÓN MIXIN:
+        - Los parámetros obligatorios requiere argumentos obligatorios, de lo contrario la depuración lanza error
+        - En cuanto a los parámetros opcionales, si sus argumentos son omitidos, se conservan los valores 
+          predeterminados del parámetro, pero si los argumentos son declarados estos deben coincidir en 
+          cantidad con los parámetros, solo así se produce una correspondencia entre el tipo de dato esperado 
+          con el tipo de dato recibido.
+          Para mantener valores predeterminados solo se debe omitir la introducción de argumentos (conjunto).
+
+        - Los argumentos introducidos pueden ser "null", en ese caso se anula el parámetro y argumento, 
+          como si el parámetro nunca hubiera existido. 
+    
+    llamado a esta función:
+    Forma 1) pasarle a la función solo los argumentos obligatorios 
+    @include letra-personalizada(center, 1.8rem);
+
+    Forma 2) pasarle a la función solo los argumentos obligatorios + opcionales
+    @include letra-personalizada(center, 1.8rem, $divEncabezado1, 4.09px, none, $tipografia-h, uppercase, 500);
+          */
+    $alineacion, 
+    $tamano,
+    $color: $marronFooter, 
+    $espacio: 2px, 
+    $decoracion: none, 
+    $familia: $tipografia-gral, 
+    $mayuscula: uppercase, 
+    $negrita: 500
+)
+
+{
+    text-align: $alineacion;
+    color: $color;
+    letter-spacing: $espacio;
+    text-decoration: $decoracion;
+    font-family: $familia;
+    text-transform: $mayuscula;
+    font-weight: $negrita;
+    font-size: $tamano;
+}

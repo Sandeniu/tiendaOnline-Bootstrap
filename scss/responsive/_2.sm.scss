@@ -32,4 +32,9 @@
     .prod__aside__div1--divMenu{
         @include flexRowCenter;
     }
+
+    .noso__section2__divCuerpo__iframe {
+        width: 480px;
+        height: 300px;
+    }
 }
