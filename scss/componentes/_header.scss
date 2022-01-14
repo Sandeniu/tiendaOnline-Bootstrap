@@ -1,3 +1,5 @@
+@import "../utilidades/functions/animaciones/animation-colorsHeader";
+
 .header{
     background-color:  $salmon;
     padding-top: 25px;
@@ -5,23 +7,8 @@
     border-top: 0.5rem $turqueza solid;
     border-bottom: 0.5rem $turqueza solid;
     /*height: 5.0em; /*(120px aprox)*/
+    animation: colorear 6s ease-in-out 0s infinite reverse none; 
 
-    /*ANIMACIÓN PARA EL HEADER
-    Parámetros de la animación:
-    1) animation-name (para usar varias animaciones se deben separar con coma)
-    2) animation-duration (duración total de animación en segundos)
-    3) animation-timing-function (forma en que se reproduce la animación)
-        •	ease-in: comenzará la animación lentamente y finalizará a toda velocidad.
-        •	ease-out: iniciará la animación a toda velocidad, luego terminará lentamente.
-        •	ease-in-out. comenzará lentamente, será más rápido en el medio de la animación y luego terminará lentamente.
-        •	ease: es como easy-in-out, excepto que comienza ligeramente más rápido de lo que termina.
-        •	Linear: no usa relajación
-    4) animation-delay (tiempo que debe esperar el navegador para iniciar animación)
-    5) animation-iteration-count (cantidad de iteraciones. Acepta un número entero o el valor infinite)
-    6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
-    7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
-   */
-   animation: mianimation 4s ease-in-out 0s infinite normal none; 
     &__divTitulo__h1{
     font-size: 2rem;
     letter-spacing: 0.8rem;
@@ -37,10 +24,4 @@
         display: block;
     }
     &__divInteractivo__a__img {display: block;}
-}
-@keyframes mianimation {
-    0%{background: #feefdd;}
-    35%{background: #FAAA8D;}
-    70%{background: #50b2c0;}
-    100%{background: #FAAA8D;}
 }

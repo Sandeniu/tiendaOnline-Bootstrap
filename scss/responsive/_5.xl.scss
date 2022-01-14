@@ -3,8 +3,16 @@
     body {
         background: #ffffff;
     }
-}
 
+    .body__carousel-inner{
+        height: 550px;
+    
+        &__divImagen--img{
+            height: 550px;
+        }
+    }
+
+}
 
 /********  (6)   DISPOSITIVO XXL EXTRA/EXTRA-LARGE     *******/
 @media only screen and (min-width: 1200px) and (max-width: 1400px){ 

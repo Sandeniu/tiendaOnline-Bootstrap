@@ -1,6 +1,6 @@
 @import "../../utilidades/mixins/flexColumn";
 @import "../../utilidades/mixins/font/personalized-font";
-@import "../../utilidades/mixins/animation-rotate";
+@import "../../utilidades/functions/animaciones/animation-rotate";
 
 .prod__aside__div1 {
     @include flexColumnCenter;
@@ -36,9 +36,10 @@
                 text-align: center;
             }
             &__a:hover {
-                animation: menuAside 1s ease 0s 1 normal forwards;
+                /* animation: nombreAnimación duración modoBézier 
+                tiempoDEnicio iteraciones direcciónDEmovimiento modoDErelleno; */
+                animation: rotar 1s ease 0s 1 normal forwards;
             }
         }
     }
 }
-@include animation-rotate;

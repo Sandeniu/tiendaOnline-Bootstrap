@@ -1,0 +1,13 @@
+@import "../../variables";
+
+@keyframes escalar{
+  0% {
+    transform: scale(0.5);
+    color: $blancoRosa;
+  }
+  
+  100% {
+    transform: scale(1);
+    color: $blancoRosa;
+  }
+}

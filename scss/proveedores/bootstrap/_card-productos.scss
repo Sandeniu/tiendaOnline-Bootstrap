@@ -1,5 +1,5 @@
 @import "../../utilidades/mixins/flexColumn";
-@import "../../utilidades/mixins/animation-scale";
+@import "../../utilidades/functions/animaciones/animation-scale";
 @import "../../utilidades/extends/divCardProductos";
 
 
@@ -16,11 +16,9 @@
     }
 
     &__a__img:hover {
-        animation: escalar 1s ease 0s 1 normal forwards;
+        animation: escalar 1s ease 0.3s 1 normal forwards;
     }
     
-    @include animation-scale;
-
     &__divDescrip{
       @include flexColumnCenter;
   
@@ -35,4 +33,3 @@
       }
     }
 }
-@include extends-divCardProductos;

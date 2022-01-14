@@ -7,9 +7,38 @@
     body {
         background: green;
     }
-    .body--carousel-inner{
-        height: 300px;
+
+    .nav{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+
+        &__divBarra{ /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
+        /*
+        Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+        display: flex;
+        flex-wrap: inherit;
+        justify-content: flex-end;
+        */
+        flex-direction: row-reverse;
+        gap: 1rem;
+        }
     }
+
+    #nav__divBarra__divMenu__ul__li__a {
+        transition: none;
+    }
+    #nav__divBarra__divMenu__ul__li__a:hover {
+        transform: none;   
+    }
+
+    .body__carousel-inner{
+        height: 400px;
+    
+        &__divImagen--img{
+            height: 400px;
+        }
+    }
+
     .footer__fila1__divMenu__ul{
         @include flexRowCenter;
 

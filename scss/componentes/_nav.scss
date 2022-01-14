@@ -1,13 +1,58 @@
-@import "../utilidades/mixins/animation-scale";
+@import "../utilidades/variables";
+@import "../utilidades/functions/animaciones/animation-scale";
 
 .nav{
     background-color: #FEEFDD;
+    border-width: 1px;
+    border-bottom: 2px solid $turqueza;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    
+    &__divBarra__divMenu__ul__li{ /*menú padre*/
+        position: relative; /*posición relativa para el menú padre*/
+
+        &__ul{ /*sub-menú hijo*/
+            display: none;
+            position: absolute; /*posición posición relativa para el submenú hijo*/
+            top: 41px;
+            left: 0px;
+            background-color: #9FC8D9;
+            box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
+            border-radius: 0px 0px 5px 5px;
+            list-style: none;
+            z-index: 1000;
+        }
+    }    
+
 
     &__divBarra__divMenu__ul__li:hover {
-        background:  #50B2C0; 
+        background: $turqueza;
+        /*#6D5959;*/
     }
-    &__divBarra__divMenu__ul__li__a:hover {
-        animation: escalar 1s ease 0s 1 normal forwards;
-    } 
+
+    &__divBarra__divMenu__ul__li__ul__li__a:hover {
+        border-bottom: 1px solid rgb(150,150,150);
+    }
+
+    .nav__divBarra__divMenu__ul__li:hover .nav__divBarra__divMenu__ul__li__ul {
+        display: block;
+    }
 }
-@include animation-scale;
+
+/*los siguientes id se crean para establecer prioridad sobre clases propias de bootstrap, 
+  ya que boostrap configuró el componente nav usando clases que no permiten la sobre-escritura de 
+  sus propiedades. La sobre-escritura de propiedades solo es posible con id */
+#nav__divBarra__divMenu__ul__li__a {
+    /*Propiedad afectada + tiempo de desplazamiento + forma de desplazarse +tiempo para iniciar*/
+    transition: transform 0.5s ease-in-out 0s;
+    transform:scale(1);
+}
+
+#nav__divBarra__divMenu__ul__li__a:hover {
+    transform:scale(0.8);  
+    color: $blancoRosa;  
+ } 
+
+#nav__divBarra {
+    justify-content: flex-end;
+}

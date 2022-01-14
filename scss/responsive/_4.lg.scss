@@ -3,6 +3,15 @@
     body {
         background: blue;
     }
+
+    .body__carousel-inner{
+        height: 500px;
+    
+        &__divImagen--img{
+            height: 500px;
+        }
+    }
+
     .form__divInput__input,
     .form__divInput__label,
     .form__divInput__textarea{

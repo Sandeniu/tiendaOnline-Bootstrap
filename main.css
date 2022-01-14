@@ -38,13 +38,7 @@ a {
   text-decoration: none;
 }
 
-.header {
-  background-color: #FAAA8D;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-top: 0.5rem #50B2C0 solid;
-  border-bottom: 0.5rem #50B2C0 solid;
-  /*height: 5.0em; /*(120px aprox)*/
+@-webkit-keyframes colorear {
   /*ANIMACIÓN PARA EL HEADER
     Parámetros de la animación:
     1) animation-name (para usar varias animaciones se deben separar con coma)
@@ -59,9 +53,77 @@ a {
     5) animation-iteration-count (cantidad de iteraciones. Acepta un número entero o el valor infinite)
     6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
     7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
-   */
-  -webkit-animation: mianimation 4s ease-in-out 0s infinite normal none;
-          animation: mianimation 4s ease-in-out 0s infinite normal none;
+    */
+  /*
+    0%{background: #feefdd;}
+    35%{background: #FAAA8D;}
+    70%{background: #50b2c0;}
+    100%{background: #FAAA8D;}
+    */
+  0% {
+    background: #E2E1B9;
+  }
+  25% {
+    background: #50b2c0;
+  }
+  50% {
+    background: #FAAA8D;
+  }
+  75% {
+    background: #E49273;
+  }
+  100% {
+    background: #FBF2C0;
+  }
+}
+
+@keyframes colorear {
+  /*ANIMACIÓN PARA EL HEADER
+    Parámetros de la animación:
+    1) animation-name (para usar varias animaciones se deben separar con coma)
+    2) animation-duration (duración total de animación en segundos)
+    3) animation-timing-function (forma en que se reproduce la animación)
+        •	ease-in: comenzará la animación lentamente y finalizará a toda velocidad.
+        •	ease-out: iniciará la animación a toda velocidad, luego terminará lentamente.
+        •	ease-in-out. comenzará lentamente, será más rápido en el medio de la animación y luego terminará lentamente.
+        •	ease: es como easy-in-out, excepto que comienza ligeramente más rápido de lo que termina.
+        •	Linear: no usa relajación
+    4) animation-delay (tiempo que debe esperar el navegador para iniciar animación)
+    5) animation-iteration-count (cantidad de iteraciones. Acepta un número entero o el valor infinite)
+    6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
+    7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
+    */
+  /*
+    0%{background: #feefdd;}
+    35%{background: #FAAA8D;}
+    70%{background: #50b2c0;}
+    100%{background: #FAAA8D;}
+    */
+  0% {
+    background: #E2E1B9;
+  }
+  25% {
+    background: #50b2c0;
+  }
+  50% {
+    background: #FAAA8D;
+  }
+  75% {
+    background: #E49273;
+  }
+  100% {
+    background: #FBF2C0;
+  }
+}
+
+.header {
+  background-color: #FAAA8D;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 0.5rem #50B2C0 solid;
+  border-bottom: 0.5rem #50B2C0 solid;
+  /*height: 5.0em; /*(120px aprox)*/
+  animation: colorear 6s ease-in-out 0s infinite reverse none;
 }
 
 .header__divTitulo__h1 {
@@ -85,75 +147,106 @@ a {
   display: block;
 }
 
-@-webkit-keyframes mianimation {
+/*colores*/
+/*colores*/
+@-webkit-keyframes escalar {
   0% {
-    background: #feefdd;
-  }
-  35% {
-    background: #FAAA8D;
-  }
-  70% {
-    background: #50b2c0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    color: #FEEFDD;
   }
   100% {
-    background: #FAAA8D;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #FEEFDD;
   }
 }
-
-@keyframes mianimation {
+@keyframes escalar {
   0% {
-    background: #feefdd;
-  }
-  35% {
-    background: #FAAA8D;
-  }
-  70% {
-    background: #50b2c0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    color: #FEEFDD;
   }
   100% {
-    background: #FAAA8D;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #FEEFDD;
   }
 }
 
 .nav {
   background-color: #FEEFDD;
+  border-width: 1px;
+  border-bottom: 2px solid #50B2C0;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.nav__divBarra__divMenu__ul__li {
+  /*menú padre*/
+  position: relative;
+  /*posición relativa para el menú padre*/
+}
+
+.nav__divBarra__divMenu__ul__li__ul {
+  /*sub-menú hijo*/
+  display: none;
+  position: absolute;
+  /*posición posición relativa para el submenú hijo*/
+  top: 41px;
+  left: 0px;
+  background-color: #9FC8D9;
+  -webkit-box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
+          box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
+  border-radius: 0px 0px 5px 5px;
+  list-style: none;
+  z-index: 1000;
 }
 
 .nav__divBarra__divMenu__ul__li:hover {
   background: #50B2C0;
+  /*#6D5959;*/
 }
 
-.nav__divBarra__divMenu__ul__li__a:hover {
-  -webkit-animation: escalar 1s ease 0s 1 normal forwards;
-          animation: escalar 1s ease 0s 1 normal forwards;
+.nav__divBarra__divMenu__ul__li__ul__li__a:hover {
+  border-bottom: 1px solid #969696;
 }
 
-@-webkit-keyframes escalar {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    color: #ffffff;
-  }
+.nav .nav__divBarra__divMenu__ul__li:hover .nav__divBarra__divMenu__ul__li__ul {
+  display: block;
 }
 
-@keyframes escalar {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    color: #ffffff;
-  }
+/*los siguientes id se crean para establecer prioridad sobre clases propias de bootstrap, 
+  ya que boostrap configuró el componente nav usando clases que no permiten la sobre-escritura de 
+  sus propiedades. La sobre-escritura de propiedades solo es posible con id */
+#nav__divBarra__divMenu__ul__li__a {
+  /*Propiedad afectada + tiempo de desplazamiento + forma de desplazarse +tiempo para iniciar*/
+  -webkit-transition: -webkit-transform 0.5s ease-in-out 0s;
+  transition: -webkit-transform 0.5s ease-in-out 0s;
+  transition: transform 0.5s ease-in-out 0s;
+  transition: transform 0.5s ease-in-out 0s, -webkit-transform 0.5s ease-in-out 0s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
-.body--carousel-inner {
-  height: 600px;
+#nav__divBarra__divMenu__ul__li__a:hover {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  color: #FEEFDD;
+}
+
+#nav__divBarra {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.body__carousel-inner {
+  height: 580px;
+}
+
+.body__carousel-inner__divImagen--img {
+  height: 580px;
 }
 
 .main {
@@ -209,7 +302,21 @@ a {
   gap: 5rem;
 }
 
-.divCardProductos, .divCardProductoDestacado, .divCardProductoNormal {
+/*colores*/
+@keyframes escalar {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    color: #FEEFDD;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #FEEFDD;
+  }
+}
+
+.divCardProductos {
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -226,20 +333,8 @@ a {
 }
 
 .divCardProductos__a__img:hover {
-  -webkit-animation: escalar 1s ease 0s 1 normal forwards;
-          animation: escalar 1s ease 0s 1 normal forwards;
-}
-
-@keyframes escalar {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    color: #ffffff;
-  }
+  -webkit-animation: escalar 1s ease 0.3s 1 normal forwards;
+          animation: escalar 1s ease 0.3s 1 normal forwards;
 }
 
 .divCardProductos__divDescrip {
@@ -268,14 +363,6 @@ a {
 
 .divCardProductos__divDescrip__a {
   text-align: center;
-}
-
-.divCardProductoDestacado {
-  max-width: 20.5rem;
-}
-
-.divCardProductoNormal {
-  max-width: 12.5rem;
 }
 
 .aside {
@@ -619,6 +706,29 @@ a {
 }
 
 /*colores*/
+@-webkit-keyframes rotar {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    color: #FB6900;
+  }
+}
+@keyframes rotar {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    color: #FB6900;
+  }
+}
+
 .prod__aside__div1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -689,32 +799,10 @@ a {
 }
 
 .prod__aside__div1--divMenu__h__a:hover {
-  -webkit-animation: menuAside 1s ease 0s 1 normal forwards;
-          animation: menuAside 1s ease 0s 1 normal forwards;
-}
-
-@-webkit-keyframes menuAside {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-    color: #FB6900;
-  }
-}
-
-@keyframes menuAside {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-    color: #FB6900;
-  }
+  /* animation: nombreAnimación duración modoBézier 
+                tiempoDEnicio iteraciones direcciónDEmovimiento modoDErelleno; */
+  -webkit-animation: rotar 1s ease 0s 1 normal forwards;
+          animation: rotar 1s ease 0s 1 normal forwards;
 }
 
 /*colores*/
@@ -1064,8 +1152,37 @@ a {
   .header__divInteractivo__buscador {
     width: 60%;
   }
-  .body--carousel-inner {
-    height: 150px;
+  .nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .nav__divBarra {
+    /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
+    /*
+        Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+        display: flex;
+        flex-wrap: inherit;
+        justify-content: flex-end;
+        */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 1rem;
+  }
+  #nav__divBarra__divMenu__ul__li__a {
+    -webkit-transition: none;
+    transition: none;
+  }
+  #nav__divBarra__divMenu__ul__li__a:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .body__carousel-inner {
+    height: 250px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 250px;
   }
   .form__divInput__input,
   .form__divInput__label,
@@ -1144,8 +1261,37 @@ a {
   .header__divTitulo__h1 {
     font-size: 1.5rem;
   }
-  .body--carousel-inner {
-    height: 220px;
+  .nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .nav__divBarra {
+    /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
+    /*
+        Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+        display: flex;
+        flex-wrap: inherit;
+        justify-content: flex-end;
+        */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 1rem;
+  }
+  #nav__divBarra__divMenu__ul__li__a {
+    -webkit-transition: none;
+    transition: none;
+  }
+  #nav__divBarra__divMenu__ul__li__a:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .body__carousel-inner {
+    height: 300px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 300px;
   }
   .footer__fila1__divSocial {
     display: -webkit-box;
@@ -1206,8 +1352,37 @@ a {
   body {
     background: green;
   }
-  .body--carousel-inner {
-    height: 300px;
+  .nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .nav__divBarra {
+    /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
+    /*
+        Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+        display: flex;
+        flex-wrap: inherit;
+        justify-content: flex-end;
+        */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 1rem;
+  }
+  #nav__divBarra__divMenu__ul__li__a {
+    -webkit-transition: none;
+    transition: none;
+  }
+  #nav__divBarra__divMenu__ul__li__a:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .body__carousel-inner {
+    height: 400px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 400px;
   }
   .footer__fila1__divMenu__ul {
     display: -webkit-box;
@@ -1258,6 +1433,12 @@ a {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   body {
     background: blue;
+  }
+  .body__carousel-inner {
+    height: 500px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 500px;
   }
   .form__divInput__input,
   .form__divInput__label,

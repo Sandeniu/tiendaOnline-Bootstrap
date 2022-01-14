@@ -1,3 +1,7 @@
-.body--carousel-inner{
-    height: 600px;
+.body__carousel-inner{
+    height: 580px;
+
+    &__divImagen--img{
+        height: 580px;
+    }
 }
