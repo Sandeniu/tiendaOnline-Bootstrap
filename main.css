@@ -729,6 +729,7 @@ a {
   }
 }
 
+/*colores*/
 .prod__aside__div1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -747,14 +748,35 @@ a {
   margin: 30px 0;
 }
 
-.prod__aside__div1__h {
-  /* Este es el Título de las categorías, pero es mejor borrarlo (por eso las letras color blanco)*/
-  font-size: 14px;
+.prod__aside__div1__divTitulo__h {
+  text-align: center;
+  color: #969696;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Calistoga", cursive;
+  text-transform: uppercase;
   font-weight: normal;
-  color: #ffffff;
+  font-size: 1rem;
 }
 
-.prod__aside__div1--divMenu {
+.prod__aside__div1__divMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.prod__aside__div1__divMenu__ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -769,36 +791,39 @@ a {
       -ms-flex-align: center;
           align-items: center;
   gap: 1.5em;
+  padding-left: 0;
+  /*reseteo*/
 }
 
-.prod__aside__div1--divMenu__h {
+.prod__aside__div1__divMenu__ul__li {
+  width: 100%;
+  border-bottom: solid 0.1rem #BBBB0C;
+}
+
+.prod__aside__div1__divMenu__ul__li__a {
   text-align: center;
-  color: #969696;
+  color: #27272B;
   letter-spacing: 3px;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: normal;
   font-size: 1rem;
-  border-bottom: 1px solid #FB6900;
   padding: 10px;
+  display: block;
+  text-align: center;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   background-color: transparent;
   /*transition: Propiedad afectada + 
-            tiempo de desplazamiento + 
-            forma de desplazarse +
-            tiempo para iniciar*/
+                    tiempo de desplazamiento + 
+                    forma de desplazarse +
+                    tiempo para iniciar*/
   transition: all 0.3s;
   background-color: transparent;
 }
 
-.prod__aside__div1--divMenu__h__a {
-  display: block;
-  text-align: center;
-}
-
-.prod__aside__div1--divMenu__h__a:hover {
+.prod__aside__div1__divMenu__ul__li__a:hover {
   /* animation: nombreAnimación duración modoBézier 
                 tiempoDEnicio iteraciones direcciónDEmovimiento modoDErelleno; */
   -webkit-animation: rotar 1s ease 0s 1 normal forwards;
@@ -1011,17 +1036,16 @@ a {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  gap: 1rem;
-  padding: 1rem;
+  gap: .1rem;
 }
 
 .serv__section1__divCard__divCuerpo__img {
-  width: 30%;
+  width: 34%;
 }
 
 .serv__section1__divCard__divCuerpo__span {
   width: 65%;
-  padding-top: 1rem;
+  padding: 1rem;
 }
 
 .serv__section1__divCard__divCuerpo__span--p1 {
@@ -1035,19 +1059,19 @@ a {
 }
 
 .encabezado1 {
-  background-color: #6E2594;
+  background-color: #27272B;
 }
 
 .encabezado2 {
-  background-color: #F35B04;
+  background-color: #27272B;
 }
 
 .encabezado3 {
-  background-color: #AF3B6E;
+  background-color: #27272B;
 }
 
 .encabezado4 {
-  background-color: #ED6A5A;
+  background-color: #27272B;
 }
 
 .noso__main {
@@ -1229,7 +1253,7 @@ a {
     font-size: 0.9rem;
   }
   /*productos.html*/
-  .prod__aside__div1--divMenu {
+  .prod__aside__div1__divMenu__ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1246,6 +1270,9 @@ a {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+  }
+  .prod__aside__div1__divMenu__ul__li {
+    width: auto;
   }
   .noso__section2__divCuerpo__iframe {
     width: 320px;
@@ -1323,7 +1350,7 @@ a {
     font-weight: normal;
   }
   /*productos.html*/
-  .prod__aside__div1--divMenu {
+  .prod__aside__div1__divMenu__ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1340,6 +1367,9 @@ a {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+  }
+  .prod__aside__div1__divMenu__ul__li {
+    width: auto;
   }
   .noso__section2__divCuerpo__iframe {
     width: 480px;
@@ -1409,7 +1439,7 @@ a {
     font-size: 0.8rem;
   }
   /*productos.html*/
-  .prod__aside__div1--divMenu {
+  .prod__aside__div1__divMenu__ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1426,6 +1456,9 @@ a {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+  }
+  .prod__aside__div1__divMenu__ul__li {
+    width: auto;
   }
 }
 

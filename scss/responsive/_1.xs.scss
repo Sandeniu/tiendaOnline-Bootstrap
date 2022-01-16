@@ -66,8 +66,11 @@
     }
     
     /*productos.html*/
-    .prod__aside__div1--divMenu{
+    .prod__aside__div1__divMenu__ul{
         @include flexRowCenter;
+        &__li {
+            width: auto;
+        }
     }
 
     .noso__section2__divCuerpo__iframe {
