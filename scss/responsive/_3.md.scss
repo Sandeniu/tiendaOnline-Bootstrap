@@ -50,7 +50,10 @@
         font-size: 0.8rem;
     }
     /*productos.html*/
-    .prod__aside__div1--divMenu{
+    .prod__aside__div1__divMenu__ul{
         @include flexRowCenter;
+        &__li {
+            width: auto;
+        }
     }
 }
