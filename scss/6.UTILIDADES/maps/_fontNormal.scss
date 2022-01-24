@@ -1,0 +1,13 @@
+@import "../variables";
+
+/*este mapa quedará aquí solo para el registro, ya que su uso en los partial ha sido reemplazado con 
+el mixin "letra-personalizada" que es una función mucho más flexible y por lo tanto más eficiente */
+$fontNormal:(
+    tipografia: $tipografia-gral,           /* font-family*/
+    color: $marronFooter,                   /*color*/
+    mayus: uppercase,                       /*text-transform*/
+    tamano: 1rem,                           /*font-size*/
+    espaciado: 1px,                         /*letter-spacing*/
+    negrita: 500,                           /*font-weight*/
+    subrayado: none                         /*text-decoration*/
+);

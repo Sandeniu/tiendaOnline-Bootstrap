@@ -1,0 +1,22 @@
+
+@mixin divEncabezado (
+    /* @include (text-align, width, height, padding, margin, background, border); */
+    /* @include divEncabezado(center, 100%, "null", 0.5rem 1rem, 0, #27272B,  1px solid rgba(0,0,0,.125) ); */
+        $alineacion,
+        $ancho,
+        $alto,
+        $pd,
+        $mg,
+        $fondo,
+        $borde
+    )
+
+    {
+        text-align: $alineacion;
+        width: $ancho;
+        height: $alto;
+        padding: $pd;
+        margin: $mg;
+        background: $fondo;
+        border: $borde;
+    }

@@ -1,9 +1,0 @@
-@import "../../utilidades/mixins/background/background-gradient1";
-
-.serv__main{
-    @include fondo-gradienes1;
-    
-    &__divLayout__row__col{
-        width: 100%;
-    }
-}

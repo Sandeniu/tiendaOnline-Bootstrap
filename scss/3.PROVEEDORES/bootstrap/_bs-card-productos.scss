@@ -1,0 +1,44 @@
+@import "../../6.UTILIDADES/mixins/param.display-flex";
+@import "../../6.UTILIDADES/functions/animaciones/animation-scale";
+
+
+.divCardProductos{ 
+    width: 220px;
+    height: 400px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    border: 1px solid rgb(180,180,180);
+
+    &__a__img{
+      /*border: 1px solid rgb(200, 200, 200);*/
+      width: 100%;
+      /*padding-top: 1rem;*/
+    }
+    
+    &__a__img:hover {
+        animation: escalar 1s ease 0.3s 1 normal forwards;
+    }
+    
+    &__divDescrip{
+      /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+      @include display-flex (flex, column, null, center, center, null);
+      
+      &__h{
+        text-align: center;
+      }
+      &__p{
+        color:red;
+        margin: 0;
+      }
+      &__a{
+        text-align: center;
+        margin: 0.5rem 0;
+      }
+    }
+
+  }
+
+   
+
+

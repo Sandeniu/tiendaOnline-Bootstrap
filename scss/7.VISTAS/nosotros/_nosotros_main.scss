@@ -1,0 +1,28 @@
+@import "../../6.UTILIDADES/variables";
+
+.noso__main{
+ /*  background: rgb(250,170,141); */
+ /* background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(254,239,221,1) 42%, rgba(176,160,107,1) 89%, rgba(39,39,43,1) 100%);*/
+ /* background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(254,239,221,1) 42%, rgba(176,160,107,1) 85%, rgba(39,39,43,1) 93%); */
+ /* background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(252,207,184,1) 20%, rgba(254,239,221,1) 37%, 
+    rgba(216,201,166,1) 58%, rgba(176,160,107,1) 70%, rgba(94,87,69,1) 84%, rgba(39,39,43,1) 93%); */
+    background: rgb(250,170,141);
+   /* background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(252,207,184,1) 20%, 
+    rgba(254,239,221,1) 37%, rgba(216,201,166,1) 58%, rgba(176,160,107,1) 70%, rgba(94,87,69,1) 82%,
+    rgba(39,39,43,1) 89%, rgba(39,39,43,1) 89%, rgba(39,39,43,1) 95%, rgba(80,178,192,1) 100%); */
+    /*
+    background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(252,207,184,1) 20%, rgba(254,239,221,1) 37%, rgba(216,201,166,1) 58%, rgba(176,160,107,1) 70%, rgba(94,87,69,1) 82%, rgba(39,39,43,1) 87%, rgba(39,39,43,1) 88%, rgba(39,39,43,1) 94%, rgba(80,178,192,1) 100%);
+    background: linear-gradient(5rad, rgba(250,170,141,1) 0%, rgba(252,207,184,1) 20%, rgba(254,239,221,1) 37%, rgba(216,201,166,1) 53%, rgba(176,160,107,1) 66%, rgba(94,87,69,1) 75%, rgba(49,47,48,1) 84%, rgba(63,108,115,1) 93%, rgba(80,178,192,1) 100%);
+    */
+    background: linear-gradient(90deg, #312f30 10%, #494641 20%, #5e5745 30%, #b0a06b 51%, #d8c9a6 68%, #feefdd 85%);
+
+    &__divLayout{
+        width: 70%;
+        
+        &__row__col{
+        width: 100%;
+        }
+    }
+}
+
+

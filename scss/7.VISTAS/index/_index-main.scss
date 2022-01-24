@@ -1,0 +1,9 @@
+@import "../../6.UTILIDADES/mixins/param.display-flex";
+
+/*este partial no se ocupará para nada, pero esta configuración quedará aquí para 
+copiar y pegar  en los partial que gestionan responsive: 4.lg.scss y 5.xl.scss 
+Con esto el main que es en una gran fila conformado por section + aside, queda convertido en una columna,
+que consiste en section en la parte superior y aside en la zona inferior */
+.index__main__row{
+    @include display-flex (flex, column, null, center, center, null); 
+}

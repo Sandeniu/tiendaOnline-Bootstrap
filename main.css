@@ -26,9 +26,98 @@
   background: #ffffff;
 }
 
+/*colores*/
+/*colores*/
+.divModalContainer {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.divModalContainer__divModalDialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -o-linear-gradient(#fff, #999);
+  -webkit-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
+
+.divModalContainer__divModalDialog__a {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.divModalContainer__divModalDialog__img {
+  padding-bottom: 1rem;
+}
+
+.divModalContainer__divModalDialog__h {
+  padding: 1rem 0;
+  text-align: left;
+  font-size: 1.3rem;
+  color: #457B9D;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.divModalContainer__divModalDialog__p {
+  text-align: center;
+  font-size: 1rem;
+  color: #457B9D;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.divModalContainer:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.divModalContainer:target__divModalDialog__a:hover {
+  background: #00d9ff;
+}
+
 /*@import "../utilidades/variables"; */
 /*colores*/
 /*colores*/
+/*este mapa quedará aquí solo para el registro, ya que su uso en los partial ha sido reemplazado con 
+el mixin "letra-personalizada" que es una función mucho más flexible y por lo tanto más eficiente */
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -54,12 +143,8 @@ a {
     6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
     7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
     */
-  /*
-    0%{background: #feefdd;}
-    35%{background: #FAAA8D;}
-    70%{background: #50b2c0;}
-    100%{background: #FAAA8D;}
-    */
+  /*Así se se realiza el llamado a este @keyframe: 
+    .contenedor {animation: colorear 6s ease-in-out 0s infinite reverse none; }*/
   0% {
     background: #E2E1B9;
   }
@@ -93,12 +178,8 @@ a {
     6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
     7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
     */
-  /*
-    0%{background: #feefdd;}
-    35%{background: #FAAA8D;}
-    70%{background: #50b2c0;}
-    100%{background: #FAAA8D;}
-    */
+  /*Así se se realiza el llamado a este @keyframe: 
+    .contenedor {animation: colorear 6s ease-in-out 0s infinite reverse none; }*/
   0% {
     background: #E2E1B9;
   }
@@ -132,9 +213,32 @@ a {
   text-shadow: #feefdd 3px 3px 7px;
 }
 
+.header__divInteractivo {
+  /* @include display-flex (display, flex-direccion, flex-wrap, justify-content, align-item, gap)*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .header__divInteractivo__buscador {
-  width: 13rem;
-  height: 24px;
+  width: 250px;
+  max-width: 300px;
+  height: 28px;
+  padding: 0 1rem;
   border: 1px solid;
   border-color: #969696;
   -webkit-box-shadow: #feefdd 1px 1px 5px 1px;
@@ -150,6 +254,8 @@ a {
 /*colores*/
 /*colores*/
 @-webkit-keyframes escalar {
+  /*Así se llama a esta @keyframe:
+   img:hover { animation: escalar 1s ease 0.3s 1 normal forwards; } */
   0% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
@@ -162,6 +268,8 @@ a {
   }
 }
 @keyframes escalar {
+  /*Así se llama a esta @keyframe:
+   img:hover { animation: escalar 1s ease 0.3s 1 normal forwards; } */
   0% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
@@ -182,14 +290,19 @@ a {
   padding-bottom: 0.2rem;
 }
 
+.nav__divBarra__divMenu__ul {
+  /*padre (menú)*/
+  gap: 1rem;
+}
+
 .nav__divBarra__divMenu__ul__li {
-  /*menú padre*/
+  /*padre (hijo (item de menú)*/
   position: relative;
   /*posición relativa para el menú padre*/
 }
 
 .nav__divBarra__divMenu__ul__li__ul {
-  /*sub-menú hijo*/
+  /* nieto (submenú, hijo del item y nieto del menú) */
   display: none;
   position: absolute;
   /*posición posición relativa para el submenú hijo*/
@@ -220,19 +333,18 @@ a {
   ya que boostrap configuró el componente nav usando clases que no permiten la sobre-escritura de 
   sus propiedades. La sobre-escritura de propiedades solo es posible con id */
 #nav__divBarra__divMenu__ul__li__a {
-  /*Propiedad afectada + tiempo de desplazamiento + forma de desplazarse +tiempo para iniciar*/
-  -webkit-transition: -webkit-transform 0.5s ease-in-out 0s;
-  transition: -webkit-transform 0.5s ease-in-out 0s;
-  transition: transform 0.5s ease-in-out 0s;
-  transition: transform 0.5s ease-in-out 0s, -webkit-transform 0.5s ease-in-out 0s;
+  /*Propiedad afectada + tiempo de desplazamiento + forma de desplazarse +tiempo para iniciar; */
+  font-size: 1.1rem;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
 #nav__divBarra__divMenu__ul__li__a:hover {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
   color: #FEEFDD;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #nav__divBarra {
@@ -250,7 +362,8 @@ a {
 }
 
 .main {
-  padding: 3rem;
+  padding: 3rem 1rem;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -272,17 +385,17 @@ a {
   /* alineación, tamano, color, espacio, decoracion, familia, mayuscula, negrita*/
   /*@include letra-personalizada (center, 1.8rem, $divEncabezado1, 4.09px, none, $tipografia-h, uppercase, 500)*/
   text-align: center;
+  font-size: 1.8rem;
   color: #457B9D;
   letter-spacing: 4.09px;
   text-decoration: none;
   font-family: "Calistoga", cursive;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 1.8rem;
 }
 
 .section1__divContent {
-  padding: 20px 0;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -292,88 +405,105 @@ a {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 2rem;
+  padding: 20px 0;
   text-align: center;
-  gap: 5rem;
 }
 
 /*colores*/
-@keyframes escalar {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    color: #FEEFDD;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    color: #FEEFDD;
-  }
+.divCard {
+  /*Esta tarjeta se usa en el index> sección #1*/
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 30px;
 }
 
-.divCardProductos {
+.divCard__divImagenes {
+  display: inline-block;
+  position: relative;
+  -webkit-box-shadow: 5px 5px 15px rgba(100, 100, 100, 0.7);
+          box-shadow: 5px 5px 15px rgba(100, 100, 100, 0.7);
+  max-width: 250px;
+  max-height: 340px;
+  overflow: hidden;
+}
+
+.divCard__h__a {
   text-align: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 1px solid #b4b4b4;
+  font-size: 0.8rem;
+  color: #222222;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-bottom: 0.2rem;
+  /*animar enlace parte #1*/
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cf5053), to(#cf5053));
+  background-image: linear-gradient(#cf5053, #cf5053);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  -webkit-transition: background-size .4s;
+  transition: background-size .4s;
 }
 
-.divCardProductos__a__img {
-  /*border: 1px solid rgb(200, 200, 200);*/
-  width: 100%;
-  /*padding-top: 1rem;*/
+.divCard__h__a:hover, .divCard__h__a:active, .divCard__divCard__h__a:focus {
+  color: #cf5053;
+  /*animar enlace parte #2*/
+  background-size: 100% 1px;
 }
 
-.divCardProductos__a__img:hover {
-  -webkit-animation: escalar 1s ease 0.3s 1 normal forwards;
-          animation: escalar 1s ease 0.3s 1 normal forwards;
-}
-
-.divCardProductos__divDescrip {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.divCardProductos__divDescrip__h {
+.divCard__p__span {
   text-align: center;
+  font-size: 1rem;
+  color: #cf5053;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
-.divCardProductos__divDescrip__p {
-  color: red;
+.divOverlayImg {
+  /*overlay-img*/
+  /*secuencia 1*/
+  position: absolute;
+  top: 0;
+  left: -100%;
+  right: 100%;
+  visibility: hidden;
+  z-index: 10;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #FFF;
 }
 
-.divCardProductos__divDescrip__a {
-  text-align: center;
+.divCard:hover .divCard__divImagenes .divOverlayImg,
+.divCard:focus .divCard__divImagenes .divOverlayImg {
+  left: 0;
+  right: 0;
+  visibility: visible;
+}
+
+.img-responsive {
+  width: auto;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  overflow: hidden;
 }
 
 .aside {
-  padding: 2rem 1rem 3rem 0;
-}
-
-.aside__h {
-  text-align: center;
-}
-
-.form {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,54 +517,29 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 3rem;
+  padding: 1rem 0rem;
 }
 
-.form__divInput__input {
-  /*box-sizing: border-box;
-        border-radius: 5px;
-        border: 1px solid rgb(200, 200, 200);*/
-  width: 18rem;
-  height: 1.8em;
-  /* for IE */
+.aside__h {
+  text-align: center;
 }
 
-.form__divInput__label {
-  width: 18rem;
-  height: 1rem;
-  /* for IE */
-  /*padding: 10px 0 0 0;*/
-}
-
-.form__divInput__textarea {
-  width: 18rem;
-  height: 7rem;
-  /* for IE */
-}
-
-.form__button {
-  width: 8rem;
-  height: 2.5em;
-  /* for IE */
-}
-
-/*formulario en aside de index*/
-/*colores*/
 /*colores*/
 .aside__h {
   text-align: center;
+  font-size: 1.2rem;
   color: #FB6900;
   letter-spacing: 3.09px;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-weight: normal;
 }
 
 .aside__divPublicidad {
   width: 100%;
   margin-bottom: 2rem;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,10 +556,12 @@ a {
   gap: 3rem;
 }
 
-.aside__divPublicidad__divCard {
-  max-width: 18rem;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.03);
+.form {
+  margin-bottom: 5rem;
+  padding: 2rem;
+  border: solid 1px #c8c8c8;
+  max-width: 325px;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,20 +575,43 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1rem;
+}
+
+.form__divInput__input {
+  /*box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid rgb(200, 200, 200);*/
+  width: 15rem;
+  height: 1.8em;
+}
+
+.form__divInput__label {
+  width: 15rem;
+  height: 1rem;
+  /*padding: 10px 0 0 0;*/
+}
+
+.form__divInput__textarea {
+  width: 15rem;
+  height: 7rem;
+}
+
+.form__button {
+  width: 8rem;
+  height: 2.5em;
+}
+
+/*colores*/
+/*colores*/
+.divCardPublicidad {
+  overflow: hidden;
+  width: 19rem;
+  text-align: justify;
+  background-color: rgba(0, 0, 0, 0.03);
   border: 1px solid #c8c8c8;
   border-radius: 4px;
-}
-
-.aside__divPublicidad__divCard__encabezado {
-  width: 100%;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-.aside__divPublicidad__divCard__cuerpo {
+  background: #27272B;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,19 +625,177 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1rem;
+  /*
+    &__divCuerpo--2 {
+        @extend .divCardPublicidad__divCuerpo;
+        background-image: url("../../../multimedia/aside/publicidad2.png"); 
+    }
+    */
 }
 
-.aside__divPublicidad__divCard__cuerpo__h {
+.divCardPublicidad__divEncabezado {
+  /* @include (text-align, width, height, padding, margin, background, border); */
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background: #27272B;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  /*animation: animation-Name, duración, curvaBézier, demora, iteraciones, dirección-Move, modo-Relleno*/
+  -webkit-animation: relampago-A 0.9s linear 0s infinite alternate none;
+          animation: relampago-A 0.9s linear 0s infinite alternate none;
+}
+
+.divCardPublicidad__divEncabezado__a {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #c8c8c8;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  /*animation: animation-Name, duración, curvaBézier, demora, iteraciones, dirección-Move, modo-Relleno*/
+  -webkit-animation: relampago-B 2s linear 0s infinite alternate none;
+          animation: relampago-B 2s linear 0s infinite alternate none;
+}
+
+.divCardPublicidad__divEncabezado__a:hover {
+  color: #BBBB0C;
+}
+
+@-webkit-keyframes relampago-A {
+  0% {
+    background: black;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  35% {
+    background: #b0a06b;
+  }
+  70% {
+    background: black;
+  }
+  100% {
+    background: #b0a06b;
+  }
+}
+
+@keyframes relampago-A {
+  0% {
+    background: black;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  35% {
+    background: #b0a06b;
+  }
+  70% {
+    background: black;
+  }
+  100% {
+    background: #b0a06b;
+  }
+}
+
+@-webkit-keyframes relampago-B {
+  0% {
+    color: #ffffff;
+  }
+  35% {
+    color: #BBBB0C;
+  }
+  70% {
+    color: #ffffff;
+  }
+  100% {
+    color: #457B9D;
+  }
+}
+
+@keyframes relampago-B {
+  0% {
+    color: #ffffff;
+  }
+  35% {
+    color: #BBBB0C;
+  }
+  70% {
+    color: #ffffff;
+  }
+  100% {
+    color: #457B9D;
+  }
+}
+
+.divCardPublicidad__divCuerpo, .divCardPublicidad__divCuerpo--1 {
+  /*se declara un background-image al final del código, dentro de un extends*/
+  width: 100%;
+  height: 24rem;
+  background-size: cover;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divCardPublicidad__divCuerpo__h {
+  margin: 0.7rem 0;
+}
+
+.divCardPublicidad__divCuerpo__h__a {
+  text-align: center;
+  font-size: 1rem;
   color: #FB6900;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-bottom: 0.2rem;
+  /*animar enlace parte #1*/
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cf5053), to(#cf5053));
+  background-image: linear-gradient(#cf5053, #cf5053);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  -webkit-transition: background-size .4s;
+  transition: background-size .4s;
 }
 
-.aside__divPublicidad__divCard__cuerpo__span {
-  width: 80%;
-  text-align: left;
+.divCardPublicidad__divCuerpo__h__a:hover, .divCardPublicidad__divCuerpo__h__h__a:active, .divCardPublicidad__divCuerpo__h__h__a:focus {
+  color: #cf5053;
+  /*animar enlace parte #2*/
+  background-size: 100% 1px;
 }
 
-/*tarjeta de publicidad propia en aside de index*/
+.divCardPublicidad__divCuerpo__span {
+  width: 95%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #27272B;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 0.7rem 0;
+  color: #c8c8c8;
+}
+
+.divCardPublicidad__divCuerpo--1 {
+  background-image: url("../../../multimedia/aside/publicidad2.png");
+}
+
 /*colores*/
 /*colores*/
 .footer {
@@ -517,6 +805,7 @@ a {
 }
 
 .footer__fila1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -529,14 +818,9 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  /*propiedad diferenciadora de  @include flexRowCenter;*/
   gap: 3rem;
   margin: 1rem;
 }
@@ -557,7 +841,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
 }
 
 .footer__fila1__divMenu__ul {
@@ -574,41 +857,14 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 3rem;
+  padding: 0;
 }
 
 .footer__fila1__divMenu__ul__li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-}
-
-.footer__fila1__divMenu__ul__li__a {
-  color: #FEEFDD;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  font-size: 500;
-  text-align: center;
-}
-
-.footer__fila1__divSocial {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -622,39 +878,32 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
-.footer__fila1__divSocial__divSiguenos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.footer__fila1__divMenu__ul__li__a, .footer .itemSiguenos__a {
+  /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
   text-align: center;
-  color: #FB6900;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: #FEEFDD;
   letter-spacing: 2px;
-  font-weight: 600;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
-.footer__fila1__divSocial__divSiguenos__p {
-  margin: 0.1rem;
+.footer__fila1__divMenu__ul__li__a:hover, .footer .itemSiguenos__a:hover {
+  color: #FB6900;
+  -webkit-transform: scale(1.11);
+          transform: scale(1.11);
 }
 
-.footer__fila1__divSocial__divIconos {
+.footer__fila1__divMenu__ul__li__ul {
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -670,12 +919,25 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-  justify-content: center;
+  gap: 1.7rem;
+}
+
+.footer .itemSiguenos__a {
+  /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
+  color: #FB6900;
+  letter-spacing: 3px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  padding-top: 3px;
+  /*alineación minúscula*/
+}
+
+.footer .itemSiguenos__a:hover {
+  color: #FEEFDD;
 }
 
 .footer__fila2 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -691,22 +953,26 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
   margin: 3rem 1rem 0 1rem;
   /*se omite margin bootom ya que el elemento <p> trae por default 1rem abajo */
 }
 
 .footer__fila2__divCopyrigt__p {
-  color: #FEEFDD;
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 1px;
-  font-weight: 500;
+  /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
   text-align: center;
+  font-size: 0.9rem;
+  color: #FEEFDD;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Arial, Helvetica, sans-serif";
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 /*colores*/
 @-webkit-keyframes rotar {
+  /*Así se hace el llamado a este keyframes
+      a:hover {  animation: rotar 1s ease 0s 1 normal forwards;}*/
   0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
@@ -718,6 +984,8 @@ a {
   }
 }
 @keyframes rotar {
+  /*Así se hace el llamado a este keyframes
+      a:hover {  animation: rotar 1s ease 0s 1 normal forwards;}*/
   0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
@@ -730,7 +998,12 @@ a {
 }
 
 /*colores*/
+.prod__aside {
+  margin-top: 3rem;
+}
+
 .prod__aside__div1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -744,19 +1017,18 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1.5em;
-  margin: 30px 0;
+  gap: 1.5rem;
 }
 
 .prod__aside__div1__divTitulo__h {
   text-align: center;
-  color: #969696;
+  font-size: 1.2rem;
+  color: #FB6900;
   letter-spacing: 3px;
   text-decoration: none;
-  font-family: "Calistoga", cursive;
+  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
-  font-size: 1rem;
 }
 
 .prod__aside__div1__divMenu {
@@ -790,7 +1062,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1.5em;
+  gap: 1.5rem;
   padding-left: 0;
   /*reseteo*/
 }
@@ -802,13 +1074,13 @@ a {
 
 .prod__aside__div1__divMenu__ul__li__a {
   text-align: center;
+  font-size: 1rem;
   color: #27272B;
   letter-spacing: 3px;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-weight: normal;
-  font-size: 1rem;
   padding: 10px;
   display: block;
   text-align: center;
@@ -816,16 +1088,16 @@ a {
   transition: all 0.3s;
   background-color: transparent;
   /*transition: Propiedad afectada + 
-                    tiempo de desplazamiento + 
-                    forma de desplazarse +
-                    tiempo para iniciar*/
+                        tiempo de desplazamiento + 
+                        forma de desplazarse +
+                        tiempo para iniciar*/
   transition: all 0.3s;
   background-color: transparent;
 }
 
 .prod__aside__div1__divMenu__ul__li__a:hover {
   /* animation: nombreAnimación duración modoBézier 
-                tiempoDEnicio iteraciones direcciónDEmovimiento modoDErelleno; */
+                    tiempoDEnicio iteraciones direcciónDEmovimiento modoDErelleno; */
   -webkit-animation: rotar 1s ease 0s 1 normal forwards;
           animation: rotar 1s ease 0s 1 normal forwards;
 }
@@ -833,16 +1105,17 @@ a {
 /*colores*/
 .prod__section1__divTitulo__h {
   text-align: center;
+  font-size: 1.8rem;
   color: #645986;
   letter-spacing: 4.09px;
   text-decoration: none;
   font-family: "Calistoga", cursive;
   text-transform: capitalize;
   font-weight: 500;
-  font-size: 1.8rem;
 }
 
 .prod__section1__divContent {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -858,15 +1131,85 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
   gap: 3rem;
   padding: 3rem 0;
 }
 
-.prod__section2__divPag {
-  padding: 3rem;
+/*colores*/
+@keyframes escalar {
+  /*Así se llama a esta @keyframe:
+   img:hover { animation: escalar 1s ease 0.3s 1 normal forwards; } */
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    color: #FEEFDD;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #FEEFDD;
+  }
 }
 
+.divCardProductos {
+  width: 220px;
+  height: 400px;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #b4b4b4;
+}
+
+.divCardProductos__a__img {
+  /*border: 1px solid rgb(200, 200, 200);*/
+  width: 100%;
+  /*padding-top: 1rem;*/
+}
+
+.divCardProductos__a__img:hover {
+  -webkit-animation: escalar 1s ease 0.3s 1 normal forwards;
+          animation: escalar 1s ease 0.3s 1 normal forwards;
+}
+
+.divCardProductos__divDescrip {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divCardProductos__divDescrip__h {
+  text-align: center;
+}
+
+.divCardProductos__divDescrip__p {
+  color: red;
+  margin: 0;
+}
+
+.divCardProductos__divDescrip__a {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.prod__section2__divPag {
+  padding: 1rem 4rem;
+}
+
+/*colores*/
 .desp__main {
   background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
   background-position: 50%;
@@ -885,20 +1228,19 @@ a {
           justify-content: center;
 }
 
-/*colores*/
-/*colores*/
-.titulo__h-left {
-  text-align: left;
-  color: #457B9D;
-  letter-spacing: 3.09px;
-  text-decoration: none;
-  font-family: "Calistoga", cursive;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 1.8rem;
+.desp__main__divLayout__row__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
+/*colores*/
+/*colores*/
 .desp__section1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -914,29 +1256,52 @@ a {
           align-items: center;
   gap: 1rem;
   margin: 2rem 0;
+  padding: 2rem;
+  width: 60%;
+  border: solid 2px #B0A06B;
+  border-radius: 30px;
+  -webkit-box-shadow: #969696 10px 10px 20px 10px;
+          box-shadow: #969696 10px 10px 20px 10px;
 }
 
-.desp__section1__divTitulo {
+.desp__section1__divIsla {
+  width: 80%;
+}
+
+.desp__section1__divIsla__divTitulo {
   width: 100%;
 }
 
-.desp__section1__divTitulo__h3 {
+.desp__section1__divIsla__divTitulo__h2 {
   text-align: left;
+  font-size: 1.8rem;
+  color: #457B9D;
+  letter-spacing: 3.09px;
+  text-decoration: none;
+  font-family: "Calistoga", cursive;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.desp__section1__divIsla__divTitulo__h3 {
+  text-align: left;
+  font-size: 1.2rem;
   color: #457B9D;
   letter-spacing: 2px;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 1.2rem;
 }
 
-.desp__section1__divContent {
+.desp__section1__divIsla__divContent {
   width: 100%;
+  margin-top: 1rem;
 }
 
-.desp__section1__divContent__span__p {
-  color: #666;
+.desp__section1__divIsla__divContent__span__p {
+  color: #6c757d;
+  text-align: justify;
 }
 
 .serv__main {
@@ -945,12 +1310,8 @@ a {
   background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
-.serv__main__divLayout__row__col {
-  width: 100%;
-}
-
-/*colores*/
 .serv__section1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -968,8 +1329,11 @@ a {
   margin: 2rem 0;
 }
 
-.serv__section1__divCard {
+/*colores*/
+/*colores*/
+.divCardPostal {
   max-width: 700px;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -990,9 +1354,11 @@ a {
   background-size: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  -webkit-box-shadow: #969696 5px 5px 10px;
+          box-shadow: #969696 5px 5px 10px;
 }
 
-.serv__section1__divCard__divTitulo {
+.divCardPostal__divTitulo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1006,20 +1372,22 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* @include (text-align, width, height, padding, margin, background, border); */
+  text-align: center;
   width: 100%;
-  margin: 0;
   padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin: 0;
+  background: #27272B;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.serv__section1__divCard__divTitulo_h {
+.divCardPostal__divTitulo__h {
   margin: 0;
   color: #ffffff;
   text-align: center;
 }
 
-.serv__section1__divCard__divCuerpo {
+.divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1035,63 +1403,21 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
-  gap: .1rem;
+  max-height: 20rem;
+  overflow: hidden;
 }
 
-.serv__section1__divCard__divCuerpo__img {
-  width: 34%;
+.divCardPostal__divCuerpo__img {
+  height: 20rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
-.serv__section1__divCard__divCuerpo__span {
+.divCardPostal__divCuerpo__span {
   width: 65%;
   padding: 1rem;
-}
-
-.serv__section1__divCard__divCuerpo__span--p1 {
-  text-align: left;
-}
-
-.serv__section1__divCard__divCuerpo__span--p2__small {
-  color: #6c757d;
-  font-size: .875em;
-  font-weight: 400;
-}
-
-.encabezado1 {
-  background-color: #27272B;
-}
-
-.encabezado2 {
-  background-color: #27272B;
-}
-
-.encabezado3 {
-  background-color: #27272B;
-}
-
-.encabezado4 {
-  background-color: #27272B;
-}
-
-.noso__main {
-  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
-  background-position: 50%;
-  background-size: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.noso__main__divLayout {
-  width: 70%;
-}
-
-.noso__main__divLayout__row__col {
-  width: 100%;
-}
-
-/*colores*/
-.noso__section1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1105,6 +1431,84 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1rem;
+}
+
+.divCardPostal__divCuerpo__span--p {
+  text-align: justify;
+  font-size: 1rem;
+  color: #666666;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.divCardPostal__divCuerpo__span--p2 {
+  text-align: center;
+  color: #6c757d;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+.divCardPostal__divTitulo--par {
+  background: #B0A06B;
+}
+
+.divCardPostal__divCuerpo--par {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+/*colores*/
+.noso__main {
+  /*  background: rgb(250,170,141); */
+  /* background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(254,239,221,1) 42%, rgba(176,160,107,1) 89%, rgba(39,39,43,1) 100%);*/
+  /* background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(254,239,221,1) 42%, rgba(176,160,107,1) 85%, rgba(39,39,43,1) 93%); */
+  /* background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(252,207,184,1) 20%, rgba(254,239,221,1) 37%, 
+    rgba(216,201,166,1) 58%, rgba(176,160,107,1) 70%, rgba(94,87,69,1) 84%, rgba(39,39,43,1) 93%); */
+  background: #faaa8d;
+  /* background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(252,207,184,1) 20%, 
+    rgba(254,239,221,1) 37%, rgba(216,201,166,1) 58%, rgba(176,160,107,1) 70%, rgba(94,87,69,1) 82%,
+    rgba(39,39,43,1) 89%, rgba(39,39,43,1) 89%, rgba(39,39,43,1) 95%, rgba(80,178,192,1) 100%); */
+  /*
+    background: linear-gradient(0deg, rgba(250,170,141,1) 0%, rgba(252,207,184,1) 20%, rgba(254,239,221,1) 37%, rgba(216,201,166,1) 58%, rgba(176,160,107,1) 70%, rgba(94,87,69,1) 82%, rgba(39,39,43,1) 87%, rgba(39,39,43,1) 88%, rgba(39,39,43,1) 94%, rgba(80,178,192,1) 100%);
+    background: linear-gradient(5rad, rgba(250,170,141,1) 0%, rgba(252,207,184,1) 20%, rgba(254,239,221,1) 37%, rgba(216,201,166,1) 53%, rgba(176,160,107,1) 66%, rgba(94,87,69,1) 75%, rgba(49,47,48,1) 84%, rgba(63,108,115,1) 93%, rgba(80,178,192,1) 100%);
+    */
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #312f30), color-stop(20%, #494641), color-stop(30%, #5e5745), color-stop(51%, #b0a06b), color-stop(68%, #d8c9a6), color-stop(85%, #feefdd));
+  background: linear-gradient(90deg, #312f30 10%, #494641 20%, #5e5745 30%, #b0a06b 51%, #d8c9a6 68%, #feefdd 85%);
+}
+
+.noso__main__divLayout {
+  width: 70%;
+}
+
+.noso__main__divLayout__row__col {
+  width: 100%;
+}
+
+/*colores*/
+/*colores*/
+.noso__section1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .noso__section1__divTitulo {
@@ -1113,16 +1517,71 @@ a {
 
 .noso__section1__divTitulo__h {
   text-align: left;
-  color: #645986;
+  font-size: 1.8rem;
+  color: #E8E1EF;
   letter-spacing: 4.09px;
   text-decoration: none;
   font-family: "Calistoga", cursive;
   text-transform: capitalize;
   font-weight: 500;
-  font-size: 1.8rem;
+}
+
+.noso__section1__article {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1rem;
+  text-align: center;
+  background: #FFFFFF;
+  width: 60%;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 20px;
+  -webkit-box-shadow: #FAAA8D 1px 1px 15px 1px inset;
+          box-shadow: #FAAA8D 1px 1px 15px 1px inset;
+}
+
+.noso__section1__article__h {
+  /*($alineación, $tamano, $color, $espaciado, $decoracion, $familia, $mayuscula, $negrita)*/
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #B0A06B;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.noso__section1__article__p {
+  text-align: justify;
+  font-size: 0.9rem;
+  color: #6c757d;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.noso__section1__article2 {
+  /*subclase del artículo #2*/
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .noso__section2 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1145,19 +1604,29 @@ a {
 
 .noso__section2__divTitulo__h3 {
   text-align: left;
-  color: #AF3B6E;
+  font-size: 1.3rem;
+  color: #E8E1EF;
   letter-spacing: 3.09px;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.3rem;
 }
 
 .noso__section2__span {
   -ms-flex-item-align: start;
       align-self: flex-start;
   width: 100%;
+}
+
+.noso__section2__span__p {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #27272B;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 .noso__section2__divCuerpo__iframe {
@@ -1170,11 +1639,21 @@ a {
   body {
     background: blueviolet;
   }
-  .header__divTitulo__h1 {
-    font-size: 1rem;
+  .divModalContainer__divModalDialog {
+    width: 250px;
   }
-  .header__divInteractivo__buscador {
-    width: 60%;
+  .divModalContainer__divModalDialog__h {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .divModalContainer__divModalDialog__img {
+    width: 200px;
+  }
+  .divModalContainer__divModalDialog__p {
+    font-size: .8rem;
+  }
+  .header__divTitulo__h1 {
+    font-size: 1.5rem;
   }
   .nav {
     padding-top: 0.5rem;
@@ -1183,16 +1662,19 @@ a {
   .nav__divBarra {
     /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
     /*
-        Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
-        display: flex;
-        flex-wrap: inherit;
-        justify-content: flex-end;
-        */
+            Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+            display: flex;
+            flex-wrap: inherit;
+            justify-content: flex-end;
+            */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
     gap: 1rem;
+  }
+  .nav__divBarra__divMenu__ul {
+    gap: 0.3rem;
   }
   #nav__divBarra__divMenu__ul__li__a {
     -webkit-transition: none;
@@ -1201,6 +1683,7 @@ a {
   #nav__divBarra__divMenu__ul__li__a:hover {
     -webkit-transform: none;
             transform: none;
+    padding-left: 0.8rem;
   }
   .body__carousel-inner {
     height: 250px;
@@ -1214,21 +1697,6 @@ a {
     width: 14rem;
     padding-left: 2rem;
     padding-right: 0rem;
-  }
-  .footer__fila1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .footer__fila1__divMenu__ul {
     display: -webkit-box;
@@ -1246,13 +1714,19 @@ a {
             align-items: center;
     padding: 0;
   }
-  .footer__fila1__divMenu__ul__li__a {
-    font-size: 0.9rem;
-  }
-  .footer__fila1__divSocial__divSiguenos__p {
-    font-size: 0.9rem;
-  }
   /*productos.html*/
+  .prod__main {
+    padding-top: 2rem;
+  }
+  .prod__main__row {
+    gap: 2rem;
+  }
+  .prod__aside {
+    margin-top: 0rem;
+  }
+  .prod__aside__div1__divTitulo {
+    display: none;
+  }
   .prod__aside__div1__divMenu__ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1269,10 +1743,89 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    text-align: center;
   }
   .prod__aside__div1__divMenu__ul__li {
     width: auto;
+  }
+  .divCardPostal {
+    max-width: 400px;
+  }
+  .divCardPostal__divTitulo__h {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
+    max-height: 40rem;
+    max-width: 20rem;
+    overflow: hidden;
+  }
+  .divCardPostal__divCuerpo__img {
+    width: auto;
+  }
+  .divCardPostal__divCuerpo__span {
+    width: auto;
+    padding: 1rem;
+  }
+  .divCardPostal__divCuerpo__span--p {
+    font-size: 0.9rem;
+  }
+  .divCardPostal__divCuerpo__span--p2 {
+    font-size: 0.875rem;
+  }
+  .desp__section1 {
+    width: 100%;
+    margin: 0;
+    gap: 3rem;
+    /*resetear bordes y sombras usados en breakpoints más grandes */
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .desp__section1__divIsla {
+    width: 100%;
+    padding: 2rem;
+    /*se reconstruyen bordes y sombras para 2 parrafos en lugar de una sola sección*/
+    border: solid 2px #B0A06B;
+    border-radius: 30px;
+    -webkit-box-shadow: #969696 10px 10px 20px 10px;
+            box-shadow: #969696 10px 10px 20px 10px;
+  }
+  .desp__section1__divIsla__divTitulo__h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .noso__main__divLayout {
+    width: 80%;
+  }
+  .noso__section1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__divTitulo__h {
+    text-align: center;
+  }
+  .noso__section1__article {
+    width: 100%;
+    font-size: 0.8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__article__h {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .noso__section1__article__p {
+    width: 100%;
+  }
+  .noso__section1__article2 {
+    /*subclase del artículo #2*/
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .noso__section2__divCuerpo__iframe {
     width: 320px;
@@ -1295,16 +1848,19 @@ a {
   .nav__divBarra {
     /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
     /*
-        Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
-        display: flex;
-        flex-wrap: inherit;
-        justify-content: flex-end;
-        */
+            Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+            display: flex;
+            flex-wrap: inherit;
+            justify-content: flex-end;
+            */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
     gap: 1rem;
+  }
+  .nav__divBarra__divMenu__ul {
+    gap: 0.3rem;
   }
   #nav__divBarra__divMenu__ul__li__a {
     -webkit-transition: none;
@@ -1313,6 +1869,7 @@ a {
   #nav__divBarra__divMenu__ul__li__a:hover {
     -webkit-transform: none;
             transform: none;
+    padding-left: 0.8rem;
   }
   .body__carousel-inner {
     height: 300px;
@@ -1320,7 +1877,7 @@ a {
   .body__carousel-inner__divImagen--img {
     height: 300px;
   }
-  .footer__fila1__divSocial {
+  .footer__fila1__divMenu__ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1334,22 +1891,21 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 1em;
-  }
-  .footer__fila1__divMenu__ul {
     padding: 0;
   }
-  .footer__fila1__divMenu__ul__li__a {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    font-weight: normal;
-  }
-  .footer__fila2__divCopyrigt__p {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    font-weight: normal;
-  }
   /*productos.html*/
+  .prod__main {
+    padding-top: 2rem;
+  }
+  .prod__main__row {
+    gap: 2rem;
+  }
+  .prod__aside {
+    margin-top: 0rem;
+  }
+  .prod__aside__div1__divTitulo {
+    display: none;
+  }
   .prod__aside__div1__divMenu__ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1366,10 +1922,89 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    text-align: center;
   }
   .prod__aside__div1__divMenu__ul__li {
     width: auto;
+  }
+  .divCardPostal {
+    max-width: 500px;
+  }
+  .divCardPostal__divTitulo__h {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
+    max-height: 40rem;
+    max-width: 20rem;
+    overflow: hidden;
+  }
+  .divCardPostal__divCuerpo__img {
+    width: auto;
+  }
+  .divCardPostal__divCuerpo__span {
+    width: auto;
+    padding: 1rem;
+  }
+  .divCardPostal__divCuerpo__span--p {
+    font-size: 0.9rem;
+  }
+  .divCardPostal__divCuerpo__span--p2 {
+    font-size: 0.875rem;
+  }
+  .desp__section1 {
+    width: 100%;
+    margin: 0;
+    gap: 3rem;
+    /*resetear bordes y sombras usados en breakpoints más grandes */
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .desp__section1__divIsla {
+    width: 100%;
+    padding: 2rem;
+    /*se reconstruyen bordes y sombras para 2 parrafos en lugar de una sola sección*/
+    border: solid 2px #B0A06B;
+    border-radius: 30px;
+    -webkit-box-shadow: #969696 10px 10px 20px 10px;
+            box-shadow: #969696 10px 10px 20px 10px;
+  }
+  .desp__section1__divIsla__divTitulo__h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .noso__main__divLayout {
+    width: 80%;
+  }
+  .noso__section1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__divTitulo__h {
+    text-align: center;
+  }
+  .noso__section1__article {
+    width: 100%;
+    font-size: 0.8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__article__h {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .noso__section1__article__p {
+    width: 100%;
+  }
+  .noso__section1__article2 {
+    /*subclase del artículo #2*/
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .noso__section2__divCuerpo__iframe {
     width: 480px;
@@ -1389,16 +2024,19 @@ a {
   .nav__divBarra {
     /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
     /*
-        Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
-        display: flex;
-        flex-wrap: inherit;
-        justify-content: flex-end;
-        */
+            Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+            display: flex;
+            flex-wrap: inherit;
+            justify-content: flex-end;
+            */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
     gap: 1rem;
+  }
+  .nav__divBarra__divMenu__ul {
+    gap: 0.3rem;
   }
   #nav__divBarra__divMenu__ul__li__a {
     -webkit-transition: none;
@@ -1407,6 +2045,7 @@ a {
   #nav__divBarra__divMenu__ul__li__a:hover {
     -webkit-transform: none;
             transform: none;
+    padding-left: 0.8rem;
   }
   .body__carousel-inner {
     height: 400px;
@@ -1414,31 +2053,19 @@ a {
   .body__carousel-inner__divImagen--img {
     height: 400px;
   }
-  .footer__fila1__divMenu__ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-  }
-  .footer__fila1__divMenu__ul__li__a {
-    font-size: 0.9rem;
-  }
-  .footer__fila2__divCopyrigt__p {
-    font-size: 0.8rem;
-  }
   /*productos.html*/
+  .prod__main {
+    padding-top: 2rem;
+  }
+  .prod__main__row {
+    gap: 2rem;
+  }
+  .prod__aside {
+    margin-top: 0rem;
+  }
+  .prod__aside__div1__divTitulo {
+    display: none;
+  }
   .prod__aside__div1__divMenu__ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1455,10 +2082,82 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    text-align: center;
   }
   .prod__aside__div1__divMenu__ul__li {
     width: auto;
+  }
+  .divCardPostal {
+    max-width: 600px;
+  }
+  .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
+    max-height: 19rem;
+  }
+  .divCardPostal__divCuerpo__img {
+    height: 18rem;
+    width: 13rem;
+  }
+  .divCardPostal__divCuerpo__span {
+    -webkit-box-flex: 3;
+        -ms-flex-positive: 3;
+            flex-grow: 3;
+  }
+  .divCardPostal__divCuerpo__span--p {
+    font-size: .9rem;
+  }
+  .desp__section1 {
+    width: 80%;
+    margin: 0;
+    gap: 3rem;
+    /*resetear bordes y sombras usados en breakpoints más grandes */
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .desp__section1__divIsla {
+    width: 100%;
+    padding: 2rem;
+    /*se reconstruyen bordes y sombras para 2 parrafos en lugar de una sola sección*/
+    border: solid 2px #B0A06B;
+    border-radius: 30px;
+    -webkit-box-shadow: #969696 10px 10px 20px 10px;
+            box-shadow: #969696 10px 10px 20px 10px;
+  }
+  .desp__section1__divIsla__divTitulo__h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .noso__main__divLayout {
+    width: 80%;
+  }
+  .noso__section1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__divTitulo__h {
+    text-align: center;
+  }
+  .noso__section1__article {
+    width: 85%;
+    font-size: 0.8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__article__h {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .noso__section1__article__p {
+    width: 100%;
+  }
+  .noso__section1__article2 {
+    /*subclase del artículo #2*/
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -1473,12 +2172,119 @@ a {
   .body__carousel-inner__divImagen--img {
     height: 500px;
   }
-  .form__divInput__input,
-  .form__divInput__label,
-  .form__divInput__textarea {
-    width: 14rem;
-    padding-left: 2rem;
-    padding-right: 0rem;
+  .index__main__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2rem;
+  }
+  .prod__main {
+    padding-top: 2rem;
+  }
+  .prod__main__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2rem;
+  }
+  .prod__aside {
+    margin-top: 0rem;
+  }
+  .prod__aside__div1__divTitulo {
+    display: none;
+  }
+  .prod__aside__div1__divMenu__ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .noso__section1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__divTitulo__h {
+    text-align: center;
+  }
+  .noso__section1__article {
+    width: 85%;
+    font-size: 0.8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__article__h {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .noso__section1__article__p {
+    width: 100%;
+  }
+  .noso__section1__article2 {
+    /*subclase del artículo #2*/
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
+
+/*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  body {
+    background: #5daedd;
+  }
+  .body__carousel-inner {
+    height: 550px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 550px;
+  }
+  .index__main__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2rem;
+  }
+  .noso__section1__article {
+    width: 70%;
+  }
+}
+
+/********  (6)   DISPOSITIVO XXL EXTRA/EXTRA-LARGE     *******/
+@media only screen and (min-width: 1400px) and (max-width: 1400px) {
+  body {
+    background: #ffffff;
+  }
+}
+
+body {
+  background: #ffffff;
+}
+
+/* comentar esta línea para hacer pruebas de responsive*/
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,67 @@
+@import "../../scss/6.UTILIDADES/mixins/param.display-flex";
+
+
+/*******     (4)   DISPOSITIVO LG LARGE      ********/
+@media only screen and (min-width: 992px) and (max-width: 1199px){ 
+    body {
+        background: blue;
+    }
+
+    .body__carousel-inner{
+        height: 500px;
+    
+        &__divImagen--img{
+            height: 500px;
+        }
+    }
+
+    .index__main__row{
+        @include display-flex (null, column, null, center, center, 2rem); 
+    }
+
+    .prod__main{
+        padding-top: 2rem;
+        
+        &__row{
+        @include display-flex (null, column, null, center, center, 2rem); 
+        }
+    }
+
+    .prod__aside{
+        margin-top: 0rem;
+
+        &__div1__divTitulo{
+            display: none;
+        }
+
+        &__div1__divMenu__ul{
+            @include display-flex (null, row, null, null, null, null); 
+        }
+    }
+
+    .noso__section1{
+        align-items: center;
+        
+        &__divTitulo__h{
+            text-align: center;
+        }
+        &__article{
+            width: 85%;
+            font-size: 0.8rem;
+            align-items: center;
+
+            &__h{
+                text-align: center;
+                font-size: 0.9rem;
+            }
+
+            &__p{
+                width: 100%;
+            }
+        }
+    
+        &__article2{ /*subclase del artículo #2*/
+            align-self: center;
+        } 
+    }
+}

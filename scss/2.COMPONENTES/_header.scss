@@ -1,0 +1,37 @@
+@import "../6.UTILIDADES/functions/animaciones/animation-colorsHeader";
+@import "../6.UTILIDADES/mixins/param.display-flex";
+
+.header{
+    background-color:  $salmon;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 0.5rem $turqueza solid;
+    border-bottom: 0.5rem $turqueza solid;
+    /*height: 5.0em; /*(120px aprox)*/
+    animation: colorear 6s ease-in-out 0s infinite reverse none; 
+
+    &__divTitulo__h1{
+    font-size: 2rem;
+    letter-spacing: 0.8rem;
+    text-shadow: #feefdd 3px 3px 7px;
+    }
+
+    &__divInteractivo{
+        /* @include display-flex (display, flex-direccion, flex-wrap, justify-content, align-item, gap)*/
+        @include display-flex (flex, row, wrap, flex-end, center, 1.5rem);
+        padding-right: 1.5rem;
+
+        &__buscador{
+            width: 250px;
+            max-width: 300px;
+            height: 28px;
+            padding: 0 1rem;
+            border: 1px solid;
+            border-color: rgb(150, 150, 150);
+            box-shadow: #feefdd 1px 1px 5px 1px;
+            border-radius: 5px;
+            display: block;
+        }
+        &__a__img {display: block;}
+    }
+}

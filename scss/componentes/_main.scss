@@ -1,6 +1,0 @@
-@import "../utilidades/mixins/flexColumn";
-
-.main {
-    padding: 3rem; 
-    @include flexColumnCenter;
-}

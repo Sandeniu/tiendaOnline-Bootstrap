@@ -1,0 +1,32 @@
+@import "../../scss/6.UTILIDADES/mixins/param.display-flex";
+
+/*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
+@media only screen and (min-width: 1200px) and (max-width: 1399px){ 
+    body {
+        background:#5daedd;
+    }
+
+    .body__carousel-inner{
+        height: 550px;
+    
+        &__divImagen--img{
+            height: 550px;
+        }
+    }
+
+    .index__main__row{
+        @include display-flex (flex, column, null, center, center, 2rem); 
+    }
+
+    .noso__section1__article{
+        width: 70%; 
+    }  
+}
+
+
+/********  (6)   DISPOSITIVO XXL EXTRA/EXTRA-LARGE     *******/
+@media only screen and (min-width: 1400px) and (max-width: 1400px){ 
+    body {
+        background: #ffffff;
+    }
+}

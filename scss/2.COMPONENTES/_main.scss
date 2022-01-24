@@ -1,0 +1,8 @@
+@import "../6.UTILIDADES/mixins/param.display-flex";
+
+.main {
+    padding: 3rem 1rem; 
+    /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+    @include display-flex (flex, column, null, center, center, null);
+           
+}

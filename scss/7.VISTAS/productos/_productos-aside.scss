@@ -1,0 +1,54 @@
+@import "../../6.UTILIDADES/mixins/param.display-flex";
+@import "../../6.UTILIDADES/mixins/font/param.personalized-font";
+@import "../../6.UTILIDADES/functions/animaciones/animation-rotate";
+@import "../../6.UTILIDADES/variables";
+
+.prod__aside{
+    margin-top: 3rem;
+    
+    &__div1 {
+        /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+        @include display-flex (flex, column, null, center, center, 1.5rem);
+    
+        &__divTitulo__h{ 
+            @include letra-personalizada(center, 1.2rem, $naranjoLetter, 3px, none , $tipografia-gral, uppercase, normal);
+        }
+    
+        &__divMenu{
+            @include display-flex (flex, column, null, center, center, 1rem);
+            
+            &__ul{
+                @include display-flex (flex, column, null, center, center, 1.5rem); 
+                padding-left: 0; /*reseteo*/
+            
+                &__li {
+                    width: 100%;
+                    border-bottom: solid .1rem $limon;
+                
+                    &__a{  
+                        @include letra-personalizada(center, 1rem, $marronFooter, 3px, none , $tipografia-roboto, uppercase, normal);
+                        padding: 10px;
+                        display: block;
+                        text-align: center;
+                        transition: all 0.3s;
+                        background-color: transparent;
+    
+                        /*transition: Propiedad afectada + 
+                        tiempo de desplazamiento + 
+                        forma de desplazarse +
+                        tiempo para iniciar*/
+    
+                        transition: all 0.3s;
+                        background-color: transparent;
+                    }
+                }
+    
+                &__li__a:hover {
+                    /* animation: nombreAnimación duración modoBézier 
+                    tiempoDEnicio iteraciones direcciónDEmovimiento modoDErelleno; */
+                    animation: rotar 1s ease 0s 1 normal forwards;
+                }
+            }
+        }
+    }
+}

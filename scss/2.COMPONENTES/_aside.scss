@@ -1,0 +1,11 @@
+@import "../../scss/6.UTILIDADES/mixins/param.display-flex";
+
+.aside{
+    /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+    @include display-flex (flex, column, null, center, center, null);
+    
+    padding: 1rem 0rem;
+    &__h{
+        text-align: center;
+    }
+}

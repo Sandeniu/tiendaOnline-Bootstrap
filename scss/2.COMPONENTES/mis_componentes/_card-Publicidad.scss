@@ -1,0 +1,102 @@
+@import "../../6.UTILIDADES/variables";
+@import "../../6.UTILIDADES/mixins/param.display-flex";
+@import "../../6.UTILIDADES/mixins/param.div-encabezado";
+@import "../../6.UTILIDADES/mixins/font/param.personalized-font";
+
+
+.divCardPublicidad{
+    overflow: hidden;
+    width: 19rem;
+    text-align: justify;
+    background-color: rgba(0,0,0,.03);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 4px; 
+    background: $marronFooter;
+
+    /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+    @include display-flex (flex, column, null, center, center, null);
+
+
+    &__divEncabezado {
+        /* @include (text-align, width, height, padding, margin, background, border); */
+        @include divEncabezado(center, 100%, null, 0.5rem 1rem, 0, #27272B,  1px solid rgba(0,0,0,.125) );
+        
+        /*animation: animation-Name, duración, curvaBézier, demora, iteraciones, dirección-Move, modo-Relleno*/
+        animation: relampago-A 0.9s linear 0s infinite alternate none;
+
+        &__a{
+            @include letra-personalizada(center, 1.2rem, rgb(200, 200, 200), 4px, none, $tipografia-gral, uppercase, normal);
+            /*animation: animation-Name, duración, curvaBézier, demora, iteraciones, dirección-Move, modo-Relleno*/
+            animation: relampago-B 2s linear 0s infinite alternate none;
+            
+        }
+
+        &__a:hover{
+            color: $limon;
+        }
+    }
+
+    @keyframes relampago-A{
+        0% {background: black; transform: scale(1.1); }
+        35% {background: #b0a06b; }
+        70% { background: black; }
+        100% { background: #b0a06b }
+    }
+
+    @keyframes relampago-B{
+        0% {color: #ffffff }
+        35% {color: $limon }
+        70% { color: #ffffff }
+        100% { color: $divEncabezado1 }
+    }
+
+    &__divCuerpo { /*se declara un background-image al final del código, dentro de un extends*/
+        width: 100%;
+        height: 24rem;
+        background-size: cover;
+        /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+        @include display-flex (flex, column, null, flex-start, center, null);
+        
+        &__h{
+            margin: 0.7rem 0;
+
+            &__a{
+                @include letra-personalizada(center, 1rem, $naranjoLetter, 3px, none, $tipografia-gral, uppercase, normal);
+                padding-bottom: 0.2rem;
+
+                /*animar enlace parte #1*/
+                background-image: linear-gradient(#cf5053, #cf5053);
+                background-position: 50% 100%;
+                background-repeat: no-repeat;
+                background-size: 0% 1px;
+                transition: background-size .4s;
+            }
+
+            &__a:hover, &__h__a:active, &__h__a:focus{
+                color: #cf5053;
+
+                /*animar enlace parte #2*/
+                background-size: 100% 1px;
+            }
+        }
+
+        &__span{
+            width: 95%;
+            @include letra-personalizada(center, .9rem, $marronFooter, 2px, none, $tipografia-gral, null, 400);
+            margin: 0.7rem 0;
+            color:rgb(200, 200, 200);
+        }
+    }
+
+    &__divCuerpo--1 {
+        @extend .divCardPublicidad__divCuerpo;
+        background-image: url("../../../multimedia/aside/publicidad2.png"); 
+    }
+
+    /*
+    &__divCuerpo--2 {
+        @extend .divCardPublicidad__divCuerpo;
+        background-image: url("../../../multimedia/aside/publicidad2.png"); 
+    }
+    */
+}

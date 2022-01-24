@@ -1,0 +1,73 @@
+@import "../../6.UTILIDADES/mixins/font/param.personalized-font";
+
+
+.divCard{ /*Esta tarjeta se usa en el index> sección #1*/
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 30px;
+  
+    &__divImagenes { 
+      display: inline-block;
+      position: relative;
+      box-shadow: 5px 5px 15px rgba(100, 100, 100, 0.7);
+      max-width: 250px;
+      max-height: 340px;
+      overflow: hidden;
+    }
+  
+    &__h__a{
+      @include letra-personalizada(center, .8rem, rgb(34, 34, 34), 3px, none, $tipografia-gral, uppercase, 400);
+      padding-bottom: 0.2rem;
+      
+      /*animar enlace parte #1*/
+      background-image: linear-gradient(#cf5053, #cf5053);
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 1px;
+      transition: background-size .4s;
+    }
+
+    &__h__a:hover,
+    &__h__a:active,
+    &__divCard__h__a:focus{
+     color: #cf5053;
+     /*animar enlace parte #2*/
+    background-size: 100% 1px;
+  }
+  
+    &__p__span {
+      @include letra-personalizada(center, 1rem, #cf5053, 3px, none, $tipografia-gral, uppercase, 400);
+    }
+  }
+  
+  
+  .divOverlayImg { /*overlay-img*/
+    /*secuencia 1*/
+   
+    position: absolute;
+    top: 0;
+    left: -100%;
+    right: 100%;
+    visibility: hidden;
+    z-index: 10;
+    transition: all 0.4s ease;
+    background: #FFF;
+  }
+  
+  .divCard:hover .divCard__divImagenes .divOverlayImg,
+  .divCard:focus .divCard__divImagenes .divOverlayImg{
+    left: 0;
+    right: 0;
+    visibility: visible;
+  }
+  
+  
+  .img-responsive {
+    width: auto;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    overflow: hidden;
+  }
