@@ -1,0 +1,12 @@
+
+  @keyframes rotar {
+    /*Así se hace el llamado a este keyframes
+      a:hover {  animation: rotar 1s ease 0s 1 normal forwards;}*/
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    color: #FB6900;
+    }
+  }

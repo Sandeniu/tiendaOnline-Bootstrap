@@ -1,0 +1,32 @@
+@import "./scss/base/tipografias";
+@import "./scss/base/reset";
+@import "./scss/componentes/elementos-generales";
+@import "./scss/componentes/header";
+@import "./scss/componentes/nav";
+@import "./scss/proveedores/bootstrap/bs-carrusel";
+@import "./scss/componentes/main";
+@import "./scss/vistas/index/index-section1";
+@import "./scss/componentes/mis_componentes/card-image-duplex";
+@import "./scss/componentes/aside";
+@import "./scss/vistas/index/index-aside";
+@import "./scss/proveedores/bootstrap/bs-form"; /*formulario en aside de index*/
+@import "./scss/componentes/mis_componenteS/card-Publicidad"; /*tarjeta de publicidad propia en aside de index*/
+@import "./scss/componentes/footer";
+@import "./scss/vistas/productos/productos-aside";
+@import "./scss/vistas/productos/productos-section1";
+@import "./scss/proveedores/bootstrap/bs-card-productos";
+@import "./scss/vistas/productos/productos-section2";
+@import "./scss/vistas/despachos/despachos-main";
+@import "./scss/vistas/despachos/despachos-section1";
+@import "./scss/vistas/servicios/servicios-main";
+@import "./scss/vistas/servicios/servicios-section1";
+@import "./scss/componentes/mis_componentes/card-Postal";
+@import "./scss/vistas/nosotros/nosotros_main";
+@import "./scss/vistas/nosotros/nosotros_section1";
+@import "./scss/responsive/1.xs";
+@import "./scss/responsive/2.sm";
+@import "./scss/responsive/3.md";
+@import "./scss/responsive/4.lg";
+
+
+

@@ -1,0 +1,7 @@
+@import "../../6.UTILIDADES/mixins/param.display-flex";
+
+.serv__section1{
+    /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+    @include display-flex (flex, column, null, center, center, 5rem);
+    margin: 2rem 0;
+}

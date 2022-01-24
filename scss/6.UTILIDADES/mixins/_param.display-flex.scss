@@ -1,0 +1,19 @@
+@mixin display-flex (
+    /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+    /* @include display-flex (flex, row, wrap, center, center, 1rem);  */
+    $desplegar,
+    $flexDireccion,
+    $wrap: wrap,
+    $justifyContent: center,
+    $alignItem: center,
+    $gap: 2rem
+)
+        
+{
+    display: $desplegar;
+    flex-direction: $flexDireccion;
+    flex-wrap: $wrap;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+    gap: $gap;
+}

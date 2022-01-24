@@ -1,0 +1,13 @@
+@import "../../6.UTILIDADES/mixins/param.display-flex";
+@import "../../6.UTILIDADES/mixins/font/param.personalized-font";
+
+.aside__h{
+    @include letra-personalizada(center, 1.2rem, $naranjoLetter, 3.09px, none , $tipografia-gral, uppercase, normal);
+}
+.aside__divPublicidad{
+    width: 100%;
+    margin-bottom: 2rem;
+  
+    /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+    @include display-flex (flex, column, null, center, center, 3rem);
+}

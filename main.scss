@@ -1,29 +1,35 @@
-@import "./scss/base/tipografias";
-@import "./scss/base/reset";
-@import "./scss/componentes/elementos-generales";
-@import "./scss/componentes/header";
-@import "./scss/componentes/nav";
-@import "./scss/proveedores/bootstrap/carrusel";
-@import "./scss/componentes/main";
-@import "./scss/vistas/index/index-section1";
-@import "./scss/proveedores/bootstrap/card-productos";
-@import "./scss/componentes/aside";
-@import "./scss/proveedores/bootstrap/bs-form"; /*formulario en aside de index*/
-@import "./scss/vistas/index/index-aside-publicidad"; /*tarjeta de publicidad propia en aside de index*/
-@import "./scss/componentes/footer";
-@import "./scss/vistas/productos/productos-aside";
-@import "./scss/vistas/productos/productos-section1";
-@import "./scss/vistas/productos/productos-section2";
-@import "./scss/vistas/despachos/despachos-main";
-@import "./scss/vistas/despachos/despachos-section1";
-@import "./scss/vistas/servicios/servicios-main";
-@import "./scss/vistas/servicios/servicios-section1";
-@import "./scss/vistas/nosotros/nosotros_main";
-@import "./scss/vistas/nosotros/nosotros_section1";
-@import "./scss/responsive/1.xs";
-@import "./scss/responsive/2.sm";
-@import "./scss/responsive/3.md";
-@import "./scss/responsive/4.lg";
+@import "./scss/1.BASE/tipografias";
+@import "./scss/1.BASE/reset";
+@import "./scss/2.COMPONENTES/mis_componentes/modal-site-build";
+@import "./scss/2.COMPONENTES/elementos-generales";
+@import "./scss/2.COMPONENTES/header";
+@import "./scss/2.COMPONENTES/nav";
+@import "./scss/3.PROVEEDORES/bootstrap/bs-carrusel";
+@import "./scss/2.COMPONENTES/main";
+@import "./scss/7.VISTAS/index/index-section1";
+@import "./scss/2.COMPONENTES/mis_componentes/card-image-duplex";
+@import "./scss/2.COMPONENTES/aside";
+@import "./scss/7.VISTAS/index/index-aside";
+@import "./scss/3.PROVEEDORES/bootstrap/bs-form";
+@import "./scss/2.COMPONENTES/mis_componenteS/card-Publicidad"; 
+@import "./scss/2.COMPONENTES/footer";
+@import "./scss/7.VISTAS/productos/productos-aside";
+@import "./scss/7.VISTAS/productos/productos-section1";
+@import "./scss/3.PROVEEDORES/bootstrap/bs-card-productos";
+@import "./scss/7.VISTAS/productos/productos-section2";
+@import "./scss/7.VISTAS/despachos/despachos-main";
+@import "./scss/7.VISTAS/despachos/despachos-section1";
+@import "./scss/7.VISTAS/servicios/servicios-main";
+@import "./scss/7.VISTAS/servicios/servicios-section1";
+@import "./scss/2.COMPONENTES/mis_componentes/card-Postal";
+@import "./scss/7.VISTAS/nosotros/nosotros_main";
+@import "./scss/7.VISTAS/nosotros/nosotros_section1";
+@import "./scss/4.RESPONSIVE/1.xs";
+@import "./scss/4.RESPONSIVE/2.sm";
+@import "./scss/4.RESPONSIVE/3.md";
+@import "./scss/4.RESPONSIVE/4.lg";
+@import "./scss/4.RESPONSIVE/5.xl";
+@import "./scss/1.BASE/restaurar_bg_body"; /* comentar esta línea para hacer pruebas de responsive*/
 
 
 

@@ -1,0 +1,70 @@
+@import "../6.UTILIDADES/variables";
+@import "../6.UTILIDADES/mixins/font/param.personalized-font";
+@import "../6.UTILIDADES/mixins/param.display-flex";
+
+.footer{
+    position: relative;
+    background: $marronFooter;
+    /*height: 5.0em; /*(120px aprox)*/
+
+    &__fila1{
+       /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+       @include display-flex (flex, row, wrap, center, flex-start, 3rem);
+        margin: 1rem;
+
+        &__divMenu{
+            @include display-flex (flex, row, wrap, center, center, null);
+
+        
+            &__ul{
+                list-style: none;
+                @include display-flex (flex, row, wrap, center, flex-start, 3rem);
+                padding: 0;
+
+            
+                &__li{
+                    @include display-flex (flex, column, null, center, center, 1.2rem);
+
+                    &__a {
+                        /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
+                        @include letra-personalizada(center, 1.1rem, $blancoRosa, 2px, none, $tipografia-gral, null , 500);
+                        transition: all 0.5s ease-in-out;
+                        transform: scale(1);
+                        }
+
+                        &__a:hover {
+                            color: $naranjoLetter;
+                            transform: scale(1.11);
+                        }
+                    
+                    &__ul{
+                        padding: 0;
+                        @include display-flex (flex, row, wrap, center, center, 1.7rem);
+                    }
+                }
+            }
+        }
+    }
+
+    .itemSiguenos__a{
+        @extend .footer__fila1__divMenu__ul__li__a;
+        /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
+        @include letra-personalizada(null, null, $naranjoLetter, 3px, null, $tipografia-roboto, null, 600);
+        padding-top: 3px; /*alineación minúscula*/             
+    }
+    .itemSiguenos__a:hover { color: $blancoRosa; }    
+
+
+    &__fila2{
+        /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+        @include display-flex (flex, row, wrap, center, center, null);
+        
+        margin: 3rem 1rem 0 1rem; /*se omite margin bootom ya que el elemento <p> trae por default 1rem abajo */
+    
+        &__divCopyrigt__p {
+            /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
+            @include letra-personalizada(center, .9rem, $blancoRosa, 2px, none, "Arial, Helvetica, sans-serif", uppercase, 500);
+        }
+    }
+}
+

@@ -13,36 +13,45 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Animar con libreria AOS en scroll elementos html-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
     <link rel="stylesheet" href="../main.css">
     <title>DC-Nosotros</title>
 </head>
 
 <body>
+    <!-- BODY ------------------------------------------------->
     <div class="container-fluid">
-        <!-- BODY ------------------------------------------------->
+
         <!-- HEADER--------------------------------------------------------------------------->
-        <header class="header">
+           <header class="header">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-none-4 col-sm-4">
+
+                    <div class="col-lg-6">
                         <h1 class="header__divTitulo__h1">Dulce Capricho</h1>
                     </div>
-                    <div class="col-none-8 col-sm-8 d-flex justify-content-end align-items-center gap-3">
+
+                    <div class="col-lg-6 header__divInteractivo">
                         <input class="header__divInteractivo__buscador" type="search" placeholder="Buscar">
-                        <a class="header__divInteractivo_a" href="#">
+                        <a class="header__divInteractivo_a" href="#miModal">
                             <img class="header__divInteractivo__a__img"
                                 src="../multimedia/header/ico-carritoDEcompras-negro.1.svg" width="35px" height="35px">
                         </a>
-                        <a class="header__divInteractivo_a" href="#">
+                        <a class="header__divInteractivo_a" href="#miModal">
                             <img class="header__divInteractivo__a__img" src="../multimedia/header/ico-user.svg"
                                 width="35px" height="35px">
                         </a>
                     </div>
+
                 </div>
             </div>
         </header>
 
-      
+
         <!-- nav----------------------------------------------------------------------------->
 
         <!-- Navbars es una clase de tipo navegación que requiere una especificación de tipo 
@@ -62,9 +71,12 @@
             -  Utilidades de flexibilidad y espaciado para cualquier control y acción de formulario.
         -->
 
-        <nav class="navbar navbar-expand-lg navbar-light nav">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light nav">
             <div class="container-fluid nav__divBarra" id="nav__divBarra">
-                <a class="navbar-brand nav__divBarra__a" href="#">DC</a>
+                <a class="navbar-brand nav__divBarra__a" href="../index.html">
+                    <img class="d-inline-block align-text-top" src="../multimedia/nav/DC.png" alt="" width="50"
+                        height="">
+                </a>
 
                 <!-- 
                 MENÚ HAMBURGUESA EN UN BUTTON:
@@ -103,33 +115,30 @@
                         La clase nav-link de bs, estiliza los elementos <a> quitando el color azul y subrayado
                         los convierte en elementos block, les asigna espaciado y un color gris.    -->
                     <ul class="navbar-nav nav__divBarra__divMenu__ul">
-                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a
-                                class="nav-link dropdown-toogle" id="nav__divBarra__divMenu__ul__li__a" href="../index.html">Home</a></li>
-                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a
-                                class="nav-link dropdown-toogle" id="nav__divBarra__divMenu__ul__li__a"
-                                href="./productos.html">Productos</a></li>
-                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a
-                                class="nav-link dropdown-toogle" id="nav__divBarra__divMenu__ul__li__a"
-                                href="./servicios.html">Servicios</a></li>
-                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a
-                                class="nav-link dropdown-toogle" id="nav__divBarra__divMenu__ul__li__a"
-                                href="./despachos.html">Despachos</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="../index.html">Home</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./productos.html">Productos</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./servicios.html">Servicios</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./despachos.html">Despachos</a></li>
 
                         <!-- SUBMENÚ: la sig. clase dropdown corresponde a las de tipo "listas desplegables 
                             ver "Enlace desplegable": https://getbootstrap.com/docs/5.1/components/dropdowns/  -->
                         <li class="nav-item dropdown nav__divBarra__divMenu__ul__li">
-                            <a class="nav-link dropdown-toogle" id="nav__divBarra__divMenu__ul__li__a" href="#"
+                            <a class="nav-link dropdown-toogle" id="nav__divBarra__divMenu__ul__li__a" href="#miModal"
                                 data-bs-toggle="dropdown">Nosotros</a>
                             <ul class="dropdown-menu nav__divBarra__divMenu__ul__li__ul">
                                 <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
                                         class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
                                         href="./nosotros.html">Nuestra Empresa</a></li>
                                 <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
-                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a" href="#">Galería
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a" href="#miModal">Galería
                                         de Fotos</a></li>
                                 <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
                                         class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
-                                        href="#">Contacto</a></li>
+                                        href="#miModal">Contacto</a></li>
                             </ul>
                         </li><!-- Fin enlace desplegable -->
                     </ul> <!-- Fin lista principal -->
@@ -137,46 +146,58 @@
             </div> <!-- Fin container-fluid" -->
         </nav>
 
-        
+
         <!-- main ---------------------------------------------------------------------------------------->
         <main class="content-fluid main noso__main">
             <div class="content-fluid noso__main__divLayout">
                 <div class="row noso__main__divLayout__row">
 
-                    <!-- SECCIONES - en la siguiente col Se crean 2 secciones.-->
-                    <div class="col-lg-9 noso__main__divLayout__row__col">
+                    <!-- col#1 main> sectiones------------->
+                    <div class="col-lg-12 noso__main__divLayout__row__col">
 
                         <!-- section #1---------------------- -->
                         <section class="section section1 noso__section1">
-                            <!-- Párrafo#1 -->
+
+                            <!-- Título -->
                             <div class="noso__section1__divTitulo">
                                 <h2 class="noso__section1__divTitulo__h">Sobre nosotros</h2>
                             </div><br>
-                            <div class="noso__section1__divContent">
-                                <span class="noso__section1__divContent__span">
-                                    <p class="noso__section1__divContent__span__p">
-                                        Pastelería Dulce Capricho es una empresa familiar nació en el año 2010, a partir
-                                        de la demanda creciente de nuestros clientes en nuestros productos de repostería
-                                        y pastelería que inicialmente solo se fabricaban por encargo. Hoy en día nos
-                                        hemos consolidado manteniendo aquella línea de productos clásicos que nos vio
-                                        nacer.
-                                    </p>
-                                    <p class="noso__section1__divContent__span__p">
-                                        Simultáneamente a nuestra línea clásica, en Dulce Capricho estamos contínuamente
-                                        innovando en la creación de novedosos y finos sabores, utilizando técnicas
-                                        vanguardistas acordes a las tendencias de hoy y a las nuevas tecnologías.
-                                        Nuestros diseños seducen e incitan a experimentar toda una fiesta de sabores en
-                                        el paladar.
-                                    </p>
-                                    <p class="noso__section1__divContent__span__p">
-                                        Nuestra misión es garantizar a nuestros clientes una excelente experiencia al
-                                        elegir nuestros productos. Para ello nuestro enfoque y alineamiento están
-                                        orientados en la mejora contínua, lo que se traduce en la entrega de un buen
-                                        servicio, brindando productos frescos y de calidad. Trabajamos con las mejores
-                                        marcas y con una infraestructura acorde para satisfacer estos requerimientos.
-                                    </p>
-                                </span>
-                            </div> <br>
+
+                            <!-- article #1 -->
+                            <article class="noso__section1__article" data-aos="fade-right">
+                                <h3 class="noso__section1__article__h">Quienes somos</h3>
+                                <p class="noso__section1__article__p">
+                                    Pastelería Dulce Capricho es una empresa familiar nació en el año 2010, a partir
+                                    de la demanda creciente de nuestros clientes en nuestros productos de repostería
+                                    y pastelería que inicialmente solo se fabricaban por encargo. Hoy en día nos
+                                    hemos consolidado manteniendo aquella línea de productos clásicos que nos vio
+                                    nacer.
+                                </p>
+                            </article>
+
+                            <!-- article #2 -->
+                            <article class="noso__section1__article noso__section1__article2" data-aos="fade-left">
+                                <h3 class="noso__section1__article__h">Nuestra Misión y Visión</h3>
+                                <p class="noso__section1__article__p">
+                                    Nuestra misión es garantizar a nuestros clientes una excelente experiencia al
+                                    elegir nuestros productos y nuestra visión es la mejora contínua; es por ello que en nuestros
+                                    procesos de producción aplicamos extrictas medidas sanitarias, trabajamos con las mejores marcas,  
+                                    y contamos con una infraestructura acorde a estos requerimientos.
+                                </p>
+                            </article>
+                    
+                            <!-- article #3 -->
+                            <article class="noso__section1__article" data-aos="fade-up-right"></>
+                                <h3 class="noso__section1__article__h">Nuestra Línea de Productos</h3>
+                                <p class="noso__section1__article__p">
+                                    Simultáneamente a nuestra línea clásica, en Dulce Capricho estamos contínuamente
+                                    innovando en la creación de novedosos y finos sabores, utilizando técnicas
+                                    vanguardistas acordes a las tendencias de hoy y a las nuevas tecnologías.
+                                    Nuestros diseños seducen e incitan a experimentar toda una fiesta de sabores en
+                                    el paladar.
+                                </p>
+                            </article>
+
                         </section>
 
                         <hr class="hr"> <br>
@@ -189,7 +210,8 @@
                             <span class="noso__section2__span">
                                 <p class="noso__section2__span__p">
                                     Lunes a Sábado 11:00 - 19:00 hrs. <br>Domingo 10:30 - 14:00 hrs.
-                                </p><br><hr class="hr"><br>
+                                </p><br>
+                                <hr class="hr"><br>
                             </span><br>
 
 
@@ -198,104 +220,129 @@
                             </div> <br>
                             <span class="noso__section2__span">
                                 <p class="noso__section2__span__p">
-                                    Estamos ubicados en San José de la Estrella 693-699, La Florida, Región Metropolitana.
+                                    Estamos ubicados en San José de la Estrella 693-699, La Florida, Región
+                                    Metropolitana.
                                 </p><br>
                             </span>
                             <div class="noso__section2__divCuerpo">
-                                <iframe class="noso__section2__divCuerpo__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.010550305523!2d-70.58135958508807!3d-33.55310221017346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d15482f9717d%3A0x1af05d602c4b8396!2sDulce%20%26%20Capricho!5e0!3m2!1ses!2scl!4v1636800247312!5m2!1ses!2scl" style="border: 1px solid rgb(200, 200, 200);" allowfullscreen="" loading="lazy"></iframe>
+                                <iframe class="noso__section2__divCuerpo__iframe"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.010550305523!2d-70.58135958508807!3d-33.55310221017346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d15482f9717d%3A0x1af05d602c4b8396!2sDulce%20%26%20Capricho!5e0!3m2!1ses!2scl!4v1636800247312!5m2!1ses!2scl"
+                                    style="border: 1px solid rgb(200, 200, 200);" allowfullscreen=""
+                                    loading="lazy"></iframe>
                             </div>
                         </section>
-                    </div>
+                    </div> <!-- end col#1 main> sectiones--------------->
 
-                    <!-- En la siguiente col se crea el Aside.-->
+
+                    <!-- col#2 main> aside-------------
                     <div class="col-lg-3">
 
-                        <!-- aside ----------------------------------------------->
+                        <!-- aside -----------------------------------------------
                         <aside>
 
                         </aside>
-                    </div> <!-- end col aside------------->
-
-                </div> <!-- end row main------------->
-            </div> <!-- end content main------------->
-
-        </main>
-
-
-        <!-- footer ------------------------------------------------------------------------->
-        <footer class="footer">
-            <div class="content">
-                <div class="row">
-                    <div class="col-lg-12">
-
-
-
-                        <div class="footer__fila1">
-                            <div class="footer__fila1__divMenu">
-                                <ul class="footer__fila1__divMenu__ul">
-                                    <li class="footer__fila1__divMenu__ul__li">
-                                        <a class="footer__fila1__divMenu__ul__li__a" href="#">Políticas de
-                                            Privacidad</a>
-                                    </li>
-                                    <li class="footer__fila1__divMenu__ul__li">
-                                        <a class="footer__fila1__divMenu__ul__li__a" href="#">Medios de pago</a>
-                                    </li>
-                                    <li class="footer__fila1__divMenu__ul__li">
-                                        <a class="footer__fila1__divMenu__ul__li__a" href="#">Servicios de entrega</a>
-                                    </li>
-                                    <li class="footer__fila1__divMenu__ul__li">
-                                        <a class="footer__fila1__divMenu__ul__li__a" href="../paginas/columnas.html"">Opiniones</a>
-                                    </li>
-                                </ul>
-                            </div>
-        
-                            <div class=" footer__fila1__divSocial">
-
-                                            <div class="footer__fila1__divSocial__divSiguenos">
-                                                <p class="footer__fila1__divSocial__divSiguenos__p">Siguenos</p>
-                                            </div>
-
-                                            <div class="footer__fila1__divSocial__divIconos">
-                                                <a class="footer__fila1__divSocial__divIconos__a" href="#">
-                                                    <img class="footer__fila1__divSocial__divIconos__a__img"
-                                                        src="../multimedia/rrss/logos-facebook.svg">
-                                                </a>
-                                                <a class="footer__fila1__divSocial__divIconos__a" href="#">
-                                                    <img class="footer__fila1__divSocial__divIconos__a__img"
-                                                        src="../multimedia/rrss/logos-twitter.svg">
-                                                </a>
-                                                <a class="footer__fila1__divSocial__divIconos__a" href="#">
-                                                    <img class="footer__divSocial__divIconos__a__img"
-                                                        src="../multimedia/rrss/logos-instagram.svg">
-                                                </a>
-                                            </div>
-                            </div>
-                        </div> <!-- FIN FILA 1 FOOTER---------------------->
-
-
-                        <div class="footer__fila2">
-                            <div class="footer__fila2__divCopyrigt">
-                                <p class="footer__fila2__divCopyrigt__p">&copy; Todos los Derechos Reservados 2021</p>
-                            </div>
-                        </div> <!-- FIN FILA 2 FOOTER---------------------->
+                    </div> <!-- col#2 main> aside------------->
 
 
 
 
-                    </div> <!-- end col footer------------->
-                </div> <!-- end row footer------------->
-            </div> <!-- end content footer------------->
+                </div> <!-- end row------------>
+            </div> <!-- end content ------------->
+        </main><!-- end main ------------->
 
-        </footer>
+      <!-- footer ------------------------------------------------------------------------->
+      <footer class="footer">
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="footer__fila1">
+                        <div class="footer__fila1__divMenu">
+                            <ul class="footer__fila1__divMenu__ul">
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Políticas de
+                                        Privacidad</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Medios de pago</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Servicios de
+                                        entrega</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Opiniones</a>
+                                </li>
 
 
+                                <!-- Item RRSS "SÍGUENOS" > de aquí se desprende SUBMENÚ con íconos de facebook, instagram y twiter -->
+                                <li class="footer__fila1__divMenu__ul__li itemSiguenos">
+                                    <a class="footer__fila1__divMenu__ul__li__a itemSiguenos__a" href="#miModal">SIGUENOS</a>
+                                    <ul class="footer__fila1__divMenu__ul__li__ul">
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="../multimedia/rrss/logos-facebook.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="../multimedia/rrss/logos-instagram.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="../multimedia/rrss/logos-twitter.svg" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li> <!-- fin Item-Sub-menú---------------------->
+                            </ul> <!-- fin Menú---------------------->
+                        </div> <!-- fin fila#1 > divMenú---------------------->
+                    </div> <!-- fin footer > fila#1---------------------->
 
-    </div>
-    <!--FIN DIV GENERAL DEL BODY  -->
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+                    <div class="footer__fila2">
+                        <div class="footer__fila2__divCopyrigt">
+                            <p class="footer__fila2__divCopyrigt__p">&copy; Todos los Derechos Reservados 2022</p>
+                        </div>
+                    </div> <!-- fin footer > fila#2---------------------->
+
+                </div> <!-- end col footer------------->
+            </div> <!-- end row footer------------->
+        </div> <!-- end content footer------------->
+
+    </footer>
+
+    </div> <!--FIN DIV GENERAL DEL BODY  -->
+
+      <!-- VENTANA MODAL -->
+    <!-- Nota #1: Poner este código antes del cierre del body ya que debido a las sentencias en cascada 
+         El enlace que llama al modal debe estar antes de la construcción del mismo. -->
+    <!-- Nota #2: ENLACE QUE ACTIVARÁ AL MODAL (puede ser cualquier enlace, la cosa es que haga referencia al id modal)
+         <a class="header__divInteractivo_a" href="#miModal"> Texto </a> -->
+
+         <div id="miModal" class="divModalContainer">
+            <div class="divModalContainer__divModalDialog">
+                <a href="#close" title="Close" class="divModalContainer__divModalDialog__a">X</a>
+                <h2 class="divModalContainer__divModalDialog__h">Estimado Usuario</h2>
+                <img class="divModalContainer__divModalDialog__img" src="../multimedia/site-build.png" width="350">
+                <p class="divModalContainer__divModalDialog__p">Lamentamos los inconvenientes. Estamos trabajando en la
+                    disponibilidad e integridad de esta página. </p>
+                <p class="divModalContainer__divModalDialog__p">Agradecemos tu comprensión.</p>
+            </div>
+        </div> <!-- fin VENTANA MODAL -->
+
+
+    <!--  Bootstrap Option 1: Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+    <!-- Animar con libreria AOS en scroll elementos html -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,11 @@
+@mixin fondo-gradienes1 {
+    background: 
+    radial-gradient(#50B2C0 2px, transparent 3px),
+    radial-gradient(#50B2C0 2px, transparent 3px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #FAAA8D 75px, #FAAA8D 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #FAAA8D 76px, #FAAA8D 77px, transparent 78px, transparent 109px),#fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    
+}

@@ -1,0 +1,162 @@
+/*******    (2)  DISPOSITIVO SM - SMALL*********/
+@import "../6.UTILIDADES/mixins/param.display-flex";
+
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    body{background: tomato;}
+
+    .header__divTitulo__h1{
+        font-size: 1.5rem;
+    }
+    
+    .nav{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+
+        &__divBarra{ /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
+            /*
+            Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+            display: flex;
+            flex-wrap: inherit;
+            justify-content: flex-end;
+            */
+            flex-direction: row-reverse;
+            gap: 1rem;
+            
+            &__divMenu__ul {
+                gap: 0.3rem;
+            }
+        }
+    }
+
+
+    #nav__divBarra__divMenu__ul__li__a {
+        transition: none;
+    }
+    #nav__divBarra__divMenu__ul__li__a:hover {
+        transform: none;   
+        padding-left: 0.8rem;
+    }
+
+    .body__carousel-inner{
+        height: 300px;
+    
+        &__divImagen--img{
+            height: 300px;
+        }
+    }
+
+    .footer__fila1__divMenu__ul{
+        @include display-flex (flex, column, null, center, center, null);
+        padding: 0;
+    }
+
+    /*productos.html*/
+
+    .prod__main{
+        padding-top: 2rem;
+        &__row{
+            gap: 2rem;
+        }
+    }
+
+    .prod__aside{
+        margin-top: 0rem;
+
+        &__div1__divTitulo{
+            display: none;
+        }
+        
+        &__div1__divMenu__ul{
+            @include display-flex (flex, row, wrap, center, center, null);
+            
+            &__li {
+                width: auto;
+            }
+        }
+    }
+
+    .divCardPostal {
+        max-width: 500px;
+
+        &__divTitulo__h{
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    
+        &__divCuerpo{
+            max-height: 40rem;
+            max-width: 20rem;
+            overflow: hidden;
+
+            &__img{
+                width: auto;
+            }
+
+            &__span{
+                width: auto;
+                padding: 1rem;
+                &--p{font-size: 0.9rem;}
+                &--p2{font-size: 0.875rem;}
+            }
+        }
+    }
+   
+    .desp__section1{
+        width: 100%;
+        margin: 0;
+        gap: 3rem;
+        /*resetear bordes y sombras usados en breakpoints más grandes */
+        border: none;
+        border-radius: 0px;
+        box-shadow:none;
+
+
+        &__divIsla {
+            width: 100%;
+            padding: 2rem;
+            /*se reconstruyen bordes y sombras para 2 parrafos en lugar de una sola sección*/
+            border: solid 2px #B0A06B;
+            border-radius: 30px;
+            box-shadow: #969696 10px 10px 20px 10px;
+
+            &__divTitulo__h2{ 
+                font-size: 1.5rem; 
+                letter-spacing: 1px;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .noso__main__divLayout{
+        width: 80%;
+    }
+    .noso__section1{
+        align-items: center;
+        
+        &__divTitulo__h{
+            text-align: center;
+        }
+        &__article{
+            width: 100%;
+            font-size: 0.8rem;
+            align-items: center;
+
+            &__h{
+                text-align: center;
+                font-size: 0.9rem;
+            }
+
+            &__p{
+                width: 100%;
+            }
+        }
+        &__article2{ /*subclase del artículo #2*/
+            align-self: center;
+        }
+    }
+    
+    .noso__section2__divCuerpo__iframe {
+        width: 480px;
+        height: 300px;
+    }
+}
