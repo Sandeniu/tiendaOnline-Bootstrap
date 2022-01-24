@@ -56,7 +56,19 @@
         background-size: cover;
         /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
         @include display-flex (flex, column, null, flex-start, center, null);
-        
+
+        &--1 {
+            @extend .divCardPublicidad__divCuerpo;
+            background-image: url("./multimedia/aside/publicidad2.png"); 
+        /*   
+        }
+        &--2 {
+            @extend .divCardPublicidad__divCuerpo;
+            background-image: url("../../../multimedia/aside/publicidad2.png"); 
+        } */
+            
+        }
+    
         &__h{
             margin: 0.7rem 0;
 
@@ -72,7 +84,7 @@
                 transition: background-size .4s;
             }
 
-            &__a:hover, &__h__a:active, &__h__a:focus{
+            &__a:hover, &__a:active, &__a:focus{
                 color: #cf5053;
 
                 /*animar enlace parte #2*/
@@ -87,16 +99,4 @@
             color:rgb(200, 200, 200);
         }
     }
-
-    &__divCuerpo--1 {
-        @extend .divCardPublicidad__divCuerpo;
-        background-image: url("../../../multimedia/aside/publicidad2.png"); 
-    }
-
-    /*
-    &__divCuerpo--2 {
-        @extend .divCardPublicidad__divCuerpo;
-        background-image: url("../../../multimedia/aside/publicidad2.png"); 
-    }
-    */
 }

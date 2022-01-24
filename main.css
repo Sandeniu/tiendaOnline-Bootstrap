@@ -625,12 +625,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*
-    &__divCuerpo--2 {
-        @extend .divCardPublicidad__divCuerpo;
-        background-image: url("../../../multimedia/aside/publicidad2.png"); 
-    }
-    */
 }
 
 .divCardPublicidad__divEncabezado {
@@ -749,6 +743,16 @@ a {
           align-items: center;
 }
 
+.divCardPublicidad__divCuerpo--1 {
+  background-image: url("./multimedia/aside/publicidad2.png");
+  /*   
+        }
+        &--2 {
+            @extend .divCardPublicidad__divCuerpo;
+            background-image: url("../../../multimedia/aside/publicidad2.png"); 
+        } */
+}
+
 .divCardPublicidad__divCuerpo__h {
   margin: 0.7rem 0;
 }
@@ -773,7 +777,7 @@ a {
   transition: background-size .4s;
 }
 
-.divCardPublicidad__divCuerpo__h__a:hover, .divCardPublicidad__divCuerpo__h__h__a:active, .divCardPublicidad__divCuerpo__h__h__a:focus {
+.divCardPublicidad__divCuerpo__h__a:hover, .divCardPublicidad__divCuerpo__h__a:active, .divCardPublicidad__divCuerpo__h__a:focus {
   color: #cf5053;
   /*animar enlace parte #2*/
   background-size: 100% 1px;
@@ -790,10 +794,6 @@ a {
   font-weight: 400;
   margin: 0.7rem 0;
   color: #c8c8c8;
-}
-
-.divCardPublicidad__divCuerpo--1 {
-  background-image: url("../../../multimedia/aside/publicidad2.png");
 }
 
 /*colores*/
