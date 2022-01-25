@@ -5,7 +5,7 @@
 .section1__divTitulo__h{
     /* alineación, tamano, color, espacio, decoracion, familia, mayuscula, negrita*/
    /*@include letra-personalizada (center, 1.8rem, $divEncabezado1, 4.09px, none, $tipografia-h, uppercase, 500)*/
-    @include letra-personalizada (center, 1.8rem, $divEncabezado1, 4.09px, none, $tipografia-h, uppercase, 500);
+   @include letra-personalizada(center, 1.25rem, $marronLetter, 3px, none, $tipografia-gral, uppercase, 400);
 }
 
 .section1__divContent{

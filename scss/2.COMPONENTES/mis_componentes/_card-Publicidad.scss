@@ -94,7 +94,7 @@
 
         &__span{
             width: 95%;
-            @include letra-personalizada(center, .9rem, $marronFooter, 2px, none, $tipografia-gral, null, 400);
+            @include letra-personalizada(center, .9rem, $marronLetter, 2px, none, $tipografia-gral, null, 400);
             margin: 0.7rem 0;
             color:rgb(200, 200, 200);
         }

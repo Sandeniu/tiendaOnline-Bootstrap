@@ -15,10 +15,6 @@
         }
     }
 
-    .index__main__row{
-        @include display-flex (null, column, null, center, center, 2rem); 
-    }
-
     .prod__main{
         padding-top: 2rem;
         

@@ -2,7 +2,7 @@
 @import "../../6.UTILIDADES/mixins/font/param.personalized-font";
 
 .aside__h{
-    @include letra-personalizada(center, 1.2rem, $naranjoLetter, 3.09px, none , $tipografia-gral, uppercase, normal);
+    @include letra-personalizada(center, 1rem, $naranjoLetter, 3px, none , $tipografia-gral, uppercase, normal);
 }
 .aside__divPublicidad{
     width: 100%;

@@ -1,4 +1,5 @@
 @import "../../6.UTILIDADES/mixins/param.display-flex";
+@import "../../6.UTILIDADES/variables";
 
 .form{
     margin-bottom: 5rem;
@@ -14,21 +15,44 @@
         border: 1px solid rgb(200, 200, 200);*/
         width : 15rem;
         height: 1.8em;
+        font : 1rem "typewriter", sans-serif;
+    }
+    &__divInput__input:focus {/*color resaltado al recibir foco*/
+        background:#FEEFDD;
     }
 
+
     &__divInput__label{
-            width : 15rem;
-            height: 1rem;
-            /*padding: 10px 0 0 0;*/
+        width : 15rem;
+        height: 1rem;
+        /*padding: 10px 0 0 0;*/
+        font : 1rem "typewriter", sans-serif;
+        color: $grisLetter;
     }
 
     &__divInput__textarea{
         width : 15rem;
         height: 7rem;
     }
+
+    &__divInput__textarea:focus {/*color resaltado al recibir foco*/
+        background:#FEEFDD;
+    }
     
     &__button{
         width : 8rem;
         height: 2.5em;
-    }
+        /*mantener la coherencia de los formularios con el resto de elementos*/
+        font-family : inherit;
+        font-size   : 100%;
+        font: bold 1rem sans-serif;
+        background: #201E1F;
+        color: #FFF;
+        cursor: pointer;
+        }
+
+    
+    &__button:after {content: " >>>";}
+    &__button:hover, 
+    &__button:focus {background:  #FF4000;;}
 }

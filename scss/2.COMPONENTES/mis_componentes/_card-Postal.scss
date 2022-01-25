@@ -19,12 +19,11 @@
         @include display-flex (flex, column, null, center, center, null);
 
         /* @include (text-align, width, height, padding, margin, background, border); */
-        @include divEncabezado(center, 100%, null, 0.5rem 1rem, 0, #27272B,  1px solid rgba(0,0,0,.125) );
+        @include divEncabezado(center, 100%, null, .5rem 1rem, 0, #27272B,  1px solid rgba(0,0,0,.125) );
 
         &__h{
             margin: 0;
-            color: #ffffff;
-            text-align: center;
+            @include letra-personalizada(null, 1rem, #ffffff, 1px, none, $tipografia-gral, uppercase, 400);
         }
     } 
    

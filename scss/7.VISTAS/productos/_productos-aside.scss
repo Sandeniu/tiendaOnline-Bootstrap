@@ -11,7 +11,7 @@
         @include display-flex (flex, column, null, center, center, 1.5rem);
     
         &__divTitulo__h{ 
-            @include letra-personalizada(center, 1.2rem, $naranjoLetter, 3px, none , $tipografia-gral, uppercase, normal);
+            @include letra-personalizada(center, 1rem, $naranjoLetter, 3px, none , $tipografia-gral, uppercase, normal);
         }
     
         &__divMenu{
@@ -26,7 +26,7 @@
                     border-bottom: solid .1rem $limon;
                 
                     &__a{  
-                        @include letra-personalizada(center, 1rem, $marronFooter, 3px, none , $tipografia-roboto, uppercase, normal);
+                        @include letra-personalizada(center, .8rem, $marronLetter, 2px, none , $tipografia-roboto, uppercase, normal);
                         padding: 10px;
                         display: block;
                         text-align: center;

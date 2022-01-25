@@ -40,7 +40,8 @@
     }
     #nav__divBarra__divMenu__ul__li__a:hover {
         transform: none;   
-        padding-left: 0.8rem;
+        padding: .5rem .8rem;
+
      }
     
     .body__carousel-inner{
@@ -88,13 +89,10 @@
         }
     }
 
+    /*servicios.html*/
     .divCardPostal {
-        max-width: 400px;
+        max-width: 20rem;
 
-        &__divTitulo__h{
-            font-size: 1rem;
-            font-weight: 500;
-        }
     
         &__divCuerpo{
             max-height: 40rem;
@@ -132,8 +130,8 @@
             border-radius: 30px;
             box-shadow: #969696 10px 10px 20px 10px;
 
-            &__divTitulo__h2{ 
-                font-size: 1.5rem; 
+            &__divTitulo__h2, &__divTitulo__h3 { 
+                font-size: 1.05rem; 
                 letter-spacing: 1px;
                 margin-bottom: 1rem;
             }

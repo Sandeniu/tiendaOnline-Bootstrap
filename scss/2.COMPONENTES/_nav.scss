@@ -1,18 +1,25 @@
 @import "../6.UTILIDADES/variables";
 @import "../6.UTILIDADES/functions/animaciones/animation-scale";
+@import "../6.UTILIDADES/mixins/font/param.personalized-font";
 
 .nav{
-    background-color: #FEEFDD;
+    background-color: $rosaNav;
     border-width: 1px;
     border-bottom: 2px solid $turqueza;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
 
     &__divBarra__divMenu__ul{ /*padre (menú)*/
-        gap: 1rem;
-    
+        gap: 0.1rem;
+        /* lex-start alinea los box (cajas) hacia la izquierda, 
+        mientras que text-alingn:left alinea el texto dentro del box hacia la izquierda */
+        align-items: flex-start;
+
+        
         &__li{ /*padre (hijo (item de menú)*/
             position: relative; /*posición relativa para el menú padre*/
+            padding: 0.1rem;
+            
 
             &__ul{ /* nieto (submenú, hijo del item y nieto del menú) */
                 display: none;
@@ -28,30 +35,33 @@
         } 
     }   
 
-
     &__divBarra__divMenu__ul__li:hover {
         background: $turqueza;
-        /*#6D5959;*/
+        box-shadow: rgba(0, 0, 0, 0.500) 3px 3px 5px;
+        border-radius: 2px;
+            /*#6D5959;*/
     }
+    
 
     &__divBarra__divMenu__ul__li__ul__li__a:hover {
         border-bottom: 1px solid rgb(150,150,150);
     }
 
+}
     .nav__divBarra__divMenu__ul__li:hover .nav__divBarra__divMenu__ul__li__ul {
         display: block;
     }
-}
 
 /*los siguientes id se crean para establecer prioridad sobre clases propias de bootstrap, 
   ya que boostrap configuró el componente nav usando clases que no permiten la sobre-escritura de 
   sus propiedades. La sobre-escritura de propiedades solo es posible con id */
 
 #nav__divBarra__divMenu__ul__li__a {
+    /* @include letra-personalizada (text-align, font-size, color, letter-spacing,  text-decoration, font-family, text-transform, font-weight) */
+    @include letra-personalizada(left, 1rem, null, 1px, null, $tipografia-gral, null, null);
+
     /*Propiedad afectada + tiempo de desplazamiento + forma de desplazarse +tiempo para iniciar; */
-    font-size: 1.1rem;
     transition: all 0.5s linear;
-    transform: scale(1); 
 }
 
 #nav__divBarra__divMenu__ul__li__a:hover {

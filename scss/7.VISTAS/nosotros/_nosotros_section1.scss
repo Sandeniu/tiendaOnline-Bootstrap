@@ -9,7 +9,8 @@
     &__divTitulo{
         width: 100%;
         &__h{
-            @include letra-personalizada(left, 1.8rem, $lavandaLetter, 4.09px, none , $tipografia-h, capitalize, 500);
+            @include letra-personalizada(left, 1.25rem, $marronLetter, 3px, none , $tipografia-gral, uppercase, 400);
+            text-shadow: black, 1px, 1px, 5px;
         }
     }
 
@@ -23,17 +24,18 @@
         padding: 1.5rem;
         margin: 2rem 0;
         border-radius: 20px;
-        box-shadow: #FAAA8D 1px 1px 15px 1px inset;
+        box-shadow: rgba(0, 0, 0, 0.8) 1px 1px 15px 1px;
 
         &__h{
             /*($alineación, $tamano, $color, $espaciado, $decoracion, $familia, $mayuscula, $negrita)*/
-            @include letra-personalizada(justify, 1.2rem, $marronBorder, 2px, none , $tipografia-gral, uppercase, 500);
+            @include letra-personalizada(left, 1rem, $marronBorder, 3px, none , $tipografia-gral, uppercase, 500);
         }
     
         &__p{
             @include letra-personalizada(justify, 0.9rem, $grisLetter, 0.1rem, none , $tipografia-gral, null, 400);   
         }
     }
+
     &__article2{ /*subclase del artículo #2*/
         align-self: flex-end;
     } 
@@ -48,15 +50,15 @@
         width: 100%;
     
         &__h3{
-            @include letra-personalizada(left, 1.3rem, $lavandaLetter, 3.09px, none , $tipografia-roboto, uppercase, 700);
-
+            @include letra-personalizada(left, 1.25rem, $marronBorder, 3px, none , $tipografia-gral, uppercase, 500);
+            text-shadow: black, 1px, 1px, 5px;
         }  
     }
     &__span {
         align-self: flex-start;
         width: 100%;
         &__p {
-            @include letra-personalizada(left, 0.9rem, $marronFooter, 0.1rem, none , $tipografia-gral, null, 400);
+            @include letra-personalizada(left, 1rem, $marronLetter, 0.1rem, none , $tipografia-gral, null, 400);
         }
     }
 

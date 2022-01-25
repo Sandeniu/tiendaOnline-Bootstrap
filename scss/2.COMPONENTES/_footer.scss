@@ -27,7 +27,7 @@
 
                     &__a {
                         /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
-                        @include letra-personalizada(center, 1.1rem, $blancoRosa, 2px, none, $tipografia-gral, null , 500);
+                        @include letra-personalizada(center, 1rem, $blancoRosa, 2px, none, $tipografia-gral, null , 500);
                         transition: all 0.5s ease-in-out;
                         transform: scale(1);
                         }
@@ -63,8 +63,9 @@
     
         &__divCopyrigt__p {
             /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
-            @include letra-personalizada(center, .9rem, $blancoRosa, 2px, none, "Arial, Helvetica, sans-serif", uppercase, 500);
+            @include letra-personalizada(center, .750rem, $blancoRosa, 2px, none, "Arial, Helvetica, sans-serif", uppercase, 500);
         }
+        
     }
 }
 
