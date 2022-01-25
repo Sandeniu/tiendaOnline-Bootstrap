@@ -2285,5 +2285,9 @@ a {
   }
 }
 
-/* @import "./scss/1.BASE/restaurar_bg_body"; comentar esta línea para hacer pruebas de responsive*/
+body {
+  background: #ffffff;
+}
+
+/* comentar esta línea para hacer pruebas de responsive*/
 /*# sourceMappingURL=main.css.map */
