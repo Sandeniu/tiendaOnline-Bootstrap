@@ -3,9 +3,8 @@
 @import "../6.UTILIDADES/mixins/param.display-flex";
 
 @media only screen and (min-width: 768px) and (max-width: 991px){ 
-    body {
-        background: green;
-    }
+    body {background: green;}
+    .body__divGlobal{padding: 0 12px;} /*para ver la línea vertical de color*/
 
     .nav{
         padding-top: 0.5rem;
@@ -69,27 +68,17 @@
         }
     }
 
-     /*servicios.html*/
-    .divCardPostal{
-        max-width: 600px;
+     /*página servicios.html*/
 
-        &__divCuerpo{
-            max-height: 19rem;
-            
-            &__img{
-                height: 18rem;
-                width: 13rem;
-            }
-
-            &__span{
-                flex-grow: 3;
-
-                &--p{
-                    font-size: .9rem;
-                }
-            }
+    .divCardPostal{max-width: 620px;
+        &__divTitulo{font-size: 1rem;}
+        &__divCuerpo {align-items: flex-start; height: 260px;
+            &__divP--p {font-size: .950rem; margin-bottom: 3px;}
+            &__divP--p2 {font-size: .9rem; margin-bottom: 3px;}
+            &__divImg__img {height: 260px;}
         }
     }
+    
 
      .desp__section1{
         width: 80%;

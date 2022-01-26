@@ -3,9 +3,8 @@
 
 /*******     (4)   DISPOSITIVO LG LARGE      ********/
 @media only screen and (min-width: 992px) and (max-width: 1199px){ 
-    body {
-        background: blue;
-    }
+    body { background: blue; }
+    .body__divGlobal{padding: 0 12px;} /*para ver la línea vertical de color*/
 
     .body__carousel-inner{
         height: 500px;

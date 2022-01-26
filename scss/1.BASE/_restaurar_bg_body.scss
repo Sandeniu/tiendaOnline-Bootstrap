@@ -1,1 +1,6 @@
+
+/* Psando las pruebas de responsive es necesario restaurar el color y anchura total del body.
+dado que para realizar pruebas de responsive a cada breackpoint se le otorgó un color específico 
+y un padding para hacer visible el color*/
 body{ background: #ffffff;}
+.body__divGlobal {padding: 0;}

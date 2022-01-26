@@ -2,4 +2,8 @@
 
 .serv__main{
     @include fondo-gradienes1;
+
+    &__divLayout__row{
+        margin: 0;
+    }
 }

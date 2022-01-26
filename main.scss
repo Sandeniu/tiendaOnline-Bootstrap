@@ -1,7 +1,9 @@
+
 @import "./scss/1.BASE/tipografias";
 @import "./scss/1.BASE/reset";
 @import "./scss/2.COMPONENTES/mis_componentes/modal-site-build";
 @import "./scss/2.COMPONENTES/elementos-generales";
+@import "./scss/2.COMPONENTES/body";
 @import "./scss/2.COMPONENTES/header";
 @import "./scss/2.COMPONENTES/nav";
 @import "./scss/3.PROVEEDORES/bootstrap/bs-carrusel";
@@ -29,7 +31,7 @@
 @import "./scss/4.RESPONSIVE/3.md";
 @import "./scss/4.RESPONSIVE/4.lg";
 @import "./scss/4.RESPONSIVE/5.xl";
-@import "./scss/1.BASE/restaurar_bg_body"; /* comentar esta línea para hacer pruebas de responsive*/
+@import "./scss/1.BASE/restaurar_bg_body";  /*comentar esta línea para hacer pruebas de responsive*/
 
 
 

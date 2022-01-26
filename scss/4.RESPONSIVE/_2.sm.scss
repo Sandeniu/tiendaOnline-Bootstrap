@@ -3,6 +3,7 @@
 
 @media only screen and (min-width: 576px) and (max-width: 767px){
     body{background: tomato;}
+    .body__divGlobal{padding: 0 12px;} /*para ver la línea vertical de color*/
 
     .header__divTitulo__h1{
         font-size: 1.5rem;
@@ -75,27 +76,15 @@
         }
     }
 
-     /*servicios.html*/
-    .divCardPostal {
-        max-width: 20rem;
-    
-        &__divCuerpo{
-            max-height: 40rem;
-            max-width: 20rem;
-            overflow: hidden;
+     /*página servicios.html*/
 
-            &__img{
-                width: auto;
-            }
-
-            &__span{
-                width: auto;
-                padding: 1rem;
-                &--p{font-size: 0.9rem;}
-                &--p2{font-size: 0.875rem;}
-            }
-        }
+    .divCardPostal__divTitulo{font-size: .8rem;}
+    .divCardPostal__divCuerpo {align-items: flex-start; height: 250px;
+        &__divP--p {font-size: .9rem; margin-bottom: 3px;}
+        &__divP--p2 {font-size: .9rem; margin-bottom: 3px;}
+        &__divImg__img {height: 250px;}
     }
+    
    
     .desp__section1{
         width: 100%;

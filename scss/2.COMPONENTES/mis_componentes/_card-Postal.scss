@@ -12,11 +12,9 @@
 
     border-radius: 5px;
     border: 1px solid rgb(180, 180, 180);
-    @include fondo-plomo;
     box-shadow: rgb(150, 150, 150) 5px 5px 10px;
 
     &__divTitulo{
-        @include display-flex (flex, column, null, center, center, null);
 
         /* @include (text-align, width, height, padding, margin, background, border); */
         @include divEncabezado(center, 100%, null, .5rem 1rem, 0, #27272B,  1px solid rgba(0,0,0,.125) );
@@ -27,17 +25,26 @@
         }
     } 
    
+    
     &__divCuerpo{
+        @include fondo-plomo;
         @include display-flex (flex, row, wrap, center, center, null);
-        max-height: 20rem;
+        height: 350px;
+        max-height: 350px;
         overflow: hidden;
+        background: #ffffff;
 
-        &__img{
-            height: 20rem;
+        &__divImg{
             flex-grow: 1;
+            width: 35%;
+
+            &__img{
+                max-width: 100%; /* el 100% del max-width es en relación a su contenedor padre */
+            }
         }
 
-        &__span{
+        &__divP{
+            flex-grow: 2;
             width: 65%;
             padding: 1rem;
             /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */

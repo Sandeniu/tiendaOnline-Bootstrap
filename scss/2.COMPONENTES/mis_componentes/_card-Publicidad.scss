@@ -52,14 +52,14 @@
 
     &__divCuerpo { /*se declara un background-image al final del código, dentro de un extends*/
         width: 100%;
-        height: 24rem;
+        height: 17rem;
         background-size: cover;
         /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
         @include display-flex (flex, column, null, flex-start, center, null);
 
         &--1 {
             @extend .divCardPublicidad__divCuerpo;
-            background-image: url("./multimedia/aside/publicidad2.png"); 
+            background-image: url("./multimedia/aside/publicidad3.png"); 
         /*   
         }
         &--2 {
@@ -97,6 +97,10 @@
             @include letra-personalizada(center, .9rem, $marronLetter, 2px, none, $tipografia-gral, null, 400);
             margin: 0.7rem 0;
             color:rgb(200, 200, 200);
+
+            &__p {
+                margin-bottom: 0.8rem;
+            }
         }
     }
 }

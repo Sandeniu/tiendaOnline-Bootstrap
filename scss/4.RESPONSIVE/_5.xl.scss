@@ -2,9 +2,8 @@
 
 /*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
 @media only screen and (min-width: 1200px) and (max-width: 1399px){ 
-    body {
-        background:#5daedd;
-    }
+    body { background:#5daedd; }
+    .body__divGlobal{padding: 0 12px;} /*para ver la línea vertical de color*/
 
     .body__carousel-inner{
         height: 550px;

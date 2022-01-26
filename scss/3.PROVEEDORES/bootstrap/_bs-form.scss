@@ -2,7 +2,7 @@
 @import "../../6.UTILIDADES/variables";
 
 .form{
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     padding: 2rem;
     border: solid 1px rgb(200, 200, 200);
     max-width: 325px;
@@ -14,8 +14,8 @@
         border-radius: 5px;
         border: 1px solid rgb(200, 200, 200);*/
         width : 15rem;
-        height: 1.8em;
-        font : 1rem "typewriter", sans-serif;
+        height: 1.6rem;
+        font : .9rem "typewriter", sans-serif;
     }
     &__divInput__input:focus {/*color resaltado al recibir foco*/
         background:#FEEFDD;
@@ -24,7 +24,7 @@
 
     &__divInput__label{
         width : 15rem;
-        height: 1rem;
+        height: .9rem;
         /*padding: 10px 0 0 0;*/
         font : 1rem "typewriter", sans-serif;
         color: $grisLetter;
@@ -32,7 +32,7 @@
 
     &__divInput__textarea{
         width : 15rem;
-        height: 7rem;
+        height: 5rem;
     }
 
     &__divInput__textarea:focus {/*color resaltado al recibir foco*/
@@ -41,7 +41,7 @@
     
     &__button{
         width : 8rem;
-        height: 2.5em;
+        height: 2.3rem;
         /*mantener la coherencia de los formularios con el resto de elementos*/
         font-family : inherit;
         font-size   : 100%;

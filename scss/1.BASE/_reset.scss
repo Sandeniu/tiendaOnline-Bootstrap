@@ -7,9 +7,12 @@
    /* border: none;*/
     outline: none;
     box-sizing: border-box; /*permite incluir el relleno y el borde en el ancho 
-                             y alto total de un elemento*/
+                             y alto total de un elemento*/                           
   }
-  .header, .nav, .main, .section .aside, .footer, .body{
-    /* border: 1px solid rgb(150, 150, 150);*/
-     background: #ffffff;
+
+  body {
+    min-height: 100vh;
+    width: 100%;
+    background: #ffffff;
  }
+

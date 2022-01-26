@@ -21,8 +21,9 @@
                              y alto total de un elemento*/
 }
 
-.header, .nav, .main, .section .aside, .footer, .body {
-  /* border: 1px solid rgb(150, 150, 150);*/
+body {
+  min-height: 100vh;
+  width: 100%;
   background: #ffffff;
 }
 
@@ -127,6 +128,10 @@ a {
   text-decoration: none;
 }
 
+.body__divGlobal {
+  padding: 0;
+}
+
 @-webkit-keyframes colorear {
   /*ANIMACIÓN PARA EL HEADER
     Parámetros de la animación:
@@ -197,6 +202,7 @@ a {
   }
 }
 
+/*colores*/
 .header {
   background-color: #FAAA8D;
   padding-top: 25px;
@@ -570,7 +576,7 @@ a {
 
 /*colores*/
 .form {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   padding: 2rem;
   border: solid 1px #c8c8c8;
   max-width: 325px;
@@ -595,8 +601,8 @@ a {
         border-radius: 5px;
         border: 1px solid rgb(200, 200, 200);*/
   width: 15rem;
-  height: 1.8em;
-  font: 1rem "typewriter", sans-serif;
+  height: 1.6rem;
+  font: .9rem "typewriter", sans-serif;
 }
 
 .form__divInput__input:focus {
@@ -606,7 +612,7 @@ a {
 
 .form__divInput__label {
   width: 15rem;
-  height: 1rem;
+  height: .9rem;
   /*padding: 10px 0 0 0;*/
   font: 1rem "typewriter", sans-serif;
   color: #6c757d;
@@ -614,7 +620,7 @@ a {
 
 .form__divInput__textarea {
   width: 15rem;
-  height: 7rem;
+  height: 5rem;
 }
 
 .form__divInput__textarea:focus {
@@ -624,7 +630,7 @@ a {
 
 .form__button {
   width: 8rem;
-  height: 2.5em;
+  height: 2.3rem;
   /*mantener la coherencia de los formularios con el resto de elementos*/
   font-family: inherit;
   font-size: 100%;
@@ -766,7 +772,7 @@ a {
 .divCardPublicidad__divCuerpo, .divCardPublicidad__divCuerpo--1 {
   /*se declara un background-image al final del código, dentro de un extends*/
   width: 100%;
-  height: 24rem;
+  height: 17rem;
   background-size: cover;
   /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
@@ -785,7 +791,7 @@ a {
 }
 
 .divCardPublicidad__divCuerpo--1 {
-  background-image: url("./multimedia/aside/publicidad2.png");
+  background-image: url("./multimedia/aside/publicidad3.png");
   /*   
         }
         &--2 {
@@ -835,6 +841,10 @@ a {
   font-weight: 400;
   margin: 0.7rem 0;
   color: #c8c8c8;
+}
+
+.divCardPublicidad__divCuerpo__span__p {
+  margin-bottom: 0.8rem;
 }
 
 /*colores*/
@@ -1351,6 +1361,10 @@ a {
   background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
+.serv__main__divLayout__row {
+  margin: 0;
+}
+
 .serv__section1 {
   /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
   display: -webkit-box;
@@ -1390,29 +1404,11 @@ a {
           align-items: center;
   border-radius: 5px;
   border: 1px solid #b4b4b4;
-  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
-  background-position: 50%;
-  background-size: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
   -webkit-box-shadow: #969696 5px 5px 10px;
           box-shadow: #969696 5px 5px 10px;
 }
 
 .divCardPostal__divTitulo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   /* @include (text-align, width, height, padding, margin, background, border); */
   text-align: center;
   width: 100%;
@@ -1434,6 +1430,11 @@ a {
 }
 
 .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
+  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1449,18 +1450,28 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-height: 20rem;
+  height: 350px;
+  max-height: 350px;
   overflow: hidden;
+  background: #ffffff;
 }
 
-.divCardPostal__divCuerpo__img {
-  height: 20rem;
+.divCardPostal__divCuerpo__divImg {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  width: 35%;
 }
 
-.divCardPostal__divCuerpo__span {
+.divCardPostal__divCuerpo__divImg__img {
+  max-width: 100%;
+  /* el 100% del max-width es en relación a su contenedor padre */
+}
+
+.divCardPostal__divCuerpo__divP {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
   width: 65%;
   padding: 1rem;
   /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
@@ -1480,7 +1491,7 @@ a {
   gap: 1rem;
 }
 
-.divCardPostal__divCuerpo__span--p {
+.divCardPostal__divCuerpo__divP--p {
   text-align: justify;
   font-size: 1rem;
   color: #666666;
@@ -1490,7 +1501,7 @@ a {
   font-weight: 400;
 }
 
-.divCardPostal__divCuerpo__span--p2 {
+.divCardPostal__divCuerpo__divP--p2 {
   text-align: center;
   color: #6c757d;
   letter-spacing: 1px;
@@ -1676,6 +1687,10 @@ a {
   body {
     background: blueviolet;
   }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
   .divModalContainer__divModalDialog {
     width: 250px;
   }
@@ -1784,27 +1799,26 @@ a {
   .prod__aside__div1__divMenu__ul__li {
     width: auto;
   }
-  /*servicios.html*/
-  .divCardPostal {
-    max-width: 20rem;
+  /*página servicios.html*/
+  .divCardPostal__divTitulo {
+    font-size: .8rem;
   }
   .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
-    max-height: 40rem;
-    max-width: 20rem;
-    overflow: hidden;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 220px;
   }
-  .divCardPostal__divCuerpo__img {
-    width: auto;
+  .divCardPostal__divCuerpo__divP--p {
+    font-size: .7rem;
+    margin-bottom: 3px;
   }
-  .divCardPostal__divCuerpo__span {
-    width: auto;
-    padding: 1rem;
+  .divCardPostal__divCuerpo__divP--p2 {
+    font-size: .8rem;
+    margin-bottom: 3px;
   }
-  .divCardPostal__divCuerpo__span--p {
-    font-size: 0.9rem;
-  }
-  .divCardPostal__divCuerpo__span--p2 {
-    font-size: 0.875rem;
+  .divCardPostal__divCuerpo__divImg__img {
+    height: 220px;
   }
   .desp__section1 {
     width: 100%;
@@ -1872,6 +1886,10 @@ a {
   body {
     background: tomato;
   }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
   .header__divTitulo__h1 {
     font-size: 1.5rem;
   }
@@ -1960,27 +1978,26 @@ a {
   .prod__aside__div1__divMenu__ul__li {
     width: auto;
   }
-  /*servicios.html*/
-  .divCardPostal {
-    max-width: 20rem;
+  /*página servicios.html*/
+  .divCardPostal__divTitulo {
+    font-size: .8rem;
   }
   .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
-    max-height: 40rem;
-    max-width: 20rem;
-    overflow: hidden;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 250px;
   }
-  .divCardPostal__divCuerpo__img {
-    width: auto;
+  .divCardPostal__divCuerpo__divP--p {
+    font-size: .9rem;
+    margin-bottom: 3px;
   }
-  .divCardPostal__divCuerpo__span {
-    width: auto;
-    padding: 1rem;
+  .divCardPostal__divCuerpo__divP--p2 {
+    font-size: .9rem;
+    margin-bottom: 3px;
   }
-  .divCardPostal__divCuerpo__span--p {
-    font-size: 0.9rem;
-  }
-  .divCardPostal__divCuerpo__span--p2 {
-    font-size: 0.875rem;
+  .divCardPostal__divCuerpo__divImg__img {
+    height: 250px;
   }
   .desp__section1 {
     width: 100%;
@@ -2048,6 +2065,10 @@ a {
   body {
     background: green;
   }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
   .nav {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -2117,24 +2138,29 @@ a {
   .prod__aside__div1__divMenu__ul__li {
     width: auto;
   }
-  /*servicios.html*/
+  /*página servicios.html*/
   .divCardPostal {
-    max-width: 600px;
+    max-width: 620px;
+  }
+  .divCardPostal__divTitulo {
+    font-size: 1rem;
   }
   .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
-    max-height: 19rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 260px;
   }
-  .divCardPostal__divCuerpo__img {
-    height: 18rem;
-    width: 13rem;
+  .divCardPostal__divCuerpo__divP--p {
+    font-size: .950rem;
+    margin-bottom: 3px;
   }
-  .divCardPostal__divCuerpo__span {
-    -webkit-box-flex: 3;
-        -ms-flex-positive: 3;
-            flex-grow: 3;
-  }
-  .divCardPostal__divCuerpo__span--p {
+  .divCardPostal__divCuerpo__divP--p2 {
     font-size: .9rem;
+    margin-bottom: 3px;
+  }
+  .divCardPostal__divCuerpo__divImg__img {
+    height: 260px;
   }
   .desp__section1 {
     width: 80%;
@@ -2198,6 +2224,10 @@ a {
   body {
     background: blue;
   }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
   .body__carousel-inner {
     height: 500px;
   }
@@ -2267,6 +2297,10 @@ a {
   body {
     background: #5daedd;
   }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
   .body__carousel-inner {
     height: 550px;
   }
@@ -2285,9 +2319,16 @@ a {
   }
 }
 
+/* Psando las pruebas de responsive es necesario restaurar el color y anchura total del body.
+dado que para realizar pruebas de responsive a cada breackpoint se le otorgó un color específico 
+y un padding para hacer visible el color*/
 body {
   background: #ffffff;
 }
 
-/* comentar esta línea para hacer pruebas de responsive*/
+.body__divGlobal {
+  padding: 0;
+}
+
+/*comentar esta línea para hacer pruebas de responsive*/
 /*# sourceMappingURL=main.css.map */
