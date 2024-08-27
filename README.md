@@ -1,5 +1,4 @@
-Enlace a servidor Firebase:
-https://dulce-capricho-chile.web.app
+Enlace a servidor github https://sandeniu.github.io/tiendaOnline-Bootstrap/
 
 
 24/01/2022 git commit -m "Entrega de proyecto front-end"
