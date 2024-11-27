@@ -29,17 +29,18 @@
     &__divCuerpo{
         @include fondo-plomo;
         @include display-flex (flex, row, wrap, center, center, null);
-        height: 350px;
-        max-height: 350px;
-        overflow: hidden;
+        // height: 350px;
+        // max-height: 350px;
+        // overflow: hidden;
         background: #ffffff;
 
         &__divImg{
             flex-grow: 1;
             width: 35%;
-
             &__img{
                 max-width: 100%; /* el 100% del max-width es en relación a su contenedor padre */
+                height: 300px;
+                width: 200px;
             }
         }
 

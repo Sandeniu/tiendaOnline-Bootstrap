@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="En pastelería Dulce Capricho te ofrecemos productos de pastelería clásica, así como recetas inovadoras que harán vibrar tu paladar">
+    <meta name="keywords"
+        content="productos pastelería, pasteles, tortas, tortas clásicas, fondant, kuchen, gelatería, dulces, cupkake, banquetería dulce">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./main.css">
+
+    <title>Dulce Capricho</title>
+</head>
+
+<body><!-- BODY ------------------------------------------------->
+    
+    <div class="container-fluid body__divGlobal">
+
+        <!-- HEADER--------------------------------------------------------------------------->
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <h1 class="header__divTitulo__h1">Dulce Capricho</h1>
+                    </div>
+
+                    <div class="col-lg-6 header__divInteractivo">
+                        <input class="header__divInteractivo__buscador" type="search" placeholder="Buscar">
+                        <a class="header__divInteractivo_a" href="#miModal">
+                            <img class="header__divInteractivo__a__img"
+                                src="./multimedia/header/ico-carritoDEcompras-negro.1.svg" width="35px" height="35px">
+                        </a>
+                        <a class="header__divInteractivo_a" href="#miModal">
+                            <img class="header__divInteractivo__a__img" src="./multimedia/header/ico-user.svg"
+                                width="35px" height="35px">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- nav----------------------------------------------------------------------------->
+
+        <!-- Navbars es una clase de tipo navegación que requiere una especificación de tipo 
+            .navbar-expand{-sm|-md|-lg|-xl|-xxl} para plegar
+
+            LA CLASE NAVBARS ACEPTA EL SIGUIENTE TIPO DE CONTENIDO:
+            - .navbar-brand para poner la marca/logo de la empresa, producto o proyecto.
+            - .navbar-nav para una navegación ligera y de altura completa (incluida la compatibilidad 
+               con menús desplegables).
+            - .navbar-toggler para usar con nuestro complemento de colapso y otros comportamientos de 
+               alternancia de navegación .
+            - .navbar-text para agregar cadenas de texto centradas verticalmente.
+            - .collapse.navbar-collapse para agrupar y ocultar el contenido de la barra de navegación por 
+               un punto de interrupción principal.
+            -  Agregue un opcional .navbar-scrollpara configurar max-heighty desplazarse por el contenido 
+               de la barra de navegación expandida .
+            -  Utilidades de flexibilidad y espaciado para cualquier control y acción de formulario.
+        -->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light nav">
+            <div class="container-fluid nav__divBarra" id="nav__divBarra">
+                <a class="navbar-brand nav__divBarra__a" href="./home.html">
+                    <img class="d-inline-block align-text-top" src="./multimedia/nav/DC.png" alt="" width="50"
+                        height="">
+                </a>
+
+                <!-- 
+                MENÚ HAMBURGUESA EN UN BUTTON:
+                Consiste en un button con características "navbar-toggler" lo cual significa "alternador"
+                porque aterna entre el modo visible e invisible del menú, esto sucederá cuando el ancho
+                de la pantalla llegue a 992px, ya que el navbar está configurado en expand-lg
+
+                Atributos del button:
+                bs = bootstrap
+
+                data-bs-toggle="collapse" 
+                Atributo bs, que le indica al botón que  se despliegue alternadamente,
+                Con esta instrucción el botón ya sabrá como actuar, pero aun no se le indica sobre quien 
+                actuar.
+               
+
+                data-bs-target="#miMenu" 
+                atributo bs, que le indica al botón sobre quien actuar, quien será su target u "objetivo" 
+                designado con e identificador único (#id), sobre el cual se realizará la acción desisgnada 
+                en atributo anterior. En este caso el elemento target es #miMenu y la acción a 
+                realizar es togle collapse (despliegue alternado). -->
+
+                <button class="navbar-toggler nav__divBarra__button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#miMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <!--
+                 la clase collapse es un elemento de tipo oculto que se puede desplegar y ocultar
+                 #navbarNavAltMarkup  es el identificador sobre quien se ejecutará la acción toogle collapse
+                 interpuesto por el elemento button -->
+                <div class="collapse navbar-collapse nav__divBarra__divMenu" id="miMenu">
+
+                    <!-- la clase navbar-var transforma el contenedor en un flexbox 
+                        La clase nav-link de bs, estiliza los elementos <a> quitando el color azul y subrayado
+                        los convierte en elementos block, les asigna espaciado y un color gris.    -->
+                    <ul class="navbar-nav nav__divBarra__divMenu__ul">
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="home.html">Home</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./paginas/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./paginas/servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./paginas/despachos.html">Despachos</a>
+                        </li>
+
+                        <!-- SUBMENÚ: la sig. clase dropdown corresponde a las de tipo "listas desplegables 
+                            ver "Enlace desplegable": https://getbootstrap.com/docs/5.1/components/dropdowns/  -->
+                        <li class="nav-item dropdown nav__divBarra__divMenu__ul__li">
+                            <a class="nav-link dropdown-toogle" id="nav__divBarra__divMenu__ul__li__a" href="#miModal"
+                                data-bs-toggle="dropdown">Nosotros</a>
+                            <ul class="dropdown-menu nav__divBarra__divMenu__ul__li__ul">
+                                <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
+                                        href="./paginas/nosotros.html">Nuestra Empresa</a></li>
+                                <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
+                                        href="#miModal">Galería
+                                        de Fotos</a></li>
+                                <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
+                                        href="#miModal">Contacto</a></li>
+                            </ul>
+                        </li><!-- Fin enlace desplegable -->
+                    </ul> <!-- Fin lista principal -->
+                </div> <!-- Fin class="collapse navbar-collapse" id="miMenu" -->
+            </div> <!-- Fin container-fluid" -->
+        </nav>
+
+        <!-- Carrusel ------------------------------------------------------------>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner body__carousel-inner">
+                <div class="carousel-item active body__carousel-inner__divImagen">
+                    <img src="./multimedia/Portada/1.png" class="d-block w-100 body__carousel-inner__divImagen--img"
+                        alt="...">
+                </div>
+                <div class="carousel-item body__carousel-inner__divImagen">
+                    <img src="./multimedia/Portada/2.png"
+                        class="d-block w-100 d-block w-100 body__carousel-inner__divImagen--img" alt="...">
+                </div>
+                <div class="carousel-item body__carousel-inner__divImagen">
+                    <img src="./multimedia/Portada/3.png"
+                        class="d-block w-100 d-block w-100 body__carousel-inner__divImagen--img" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div> <!-- fin carrusel de bootstrap -->
+
+    <main class="content-fluid main">
+        <div class="content-fluid">
+            <!-- El main tendrá una sola row  -->
+            <div class="row index__main__row">
+            <!-- En la row se crean 2 columnas (secciones + aside) -->
+
+                <!-- col#1 main> sectiones --------------------->
+                <div class="col-lg-8">
+                        <!-- col#1 contendrá a las sectiones-->
+
+                        <!-- Section #1  ----------------------->
+                        <section class="section section1">
+
+                            <!-- div Título -->
+                            <div class="section1__divTitulo">
+                                <h2 class="section1__divTitulo__h">productos destacados</h2>
+                            </div><br>
+
+                            <!-- div content -->
+                            <div class="section1__divContent">
+
+                                <!-- =========PRODUCTO DESTACADO # 1===================-->
+                                <div class="divCard">
+
+                                    <!-- DIV Imagen Duplex -->
+                                    <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                                        <a href="#miModal">
+                                            <img class="img-responsive" src="./multimedia/Portada/Destacados/1.png"
+                                                alt="Torta Selva Negra" width="260px;" height="350px;">
+                                        </a>
+                                    </div>
+
+                                    <!-- Imagen Secundaria -->
+                                    <a href="#miModal">
+                                        <div class="divOverlayImg">
+                                            <img class="img-responsive" src="./multimedia/Portada/Destacados/1.1.png"
+                                                alt="Torta Selva Negra" width="260px;" height="350px;">
+                                        </div>
+                                    </a>
+
+                                </div>
+
+                                <!-- DIV Descripción -->
+                                <h3 class="divCard__h">
+                                    <a class="divCard__h__a" href="#miModal">Torta de Selva Negra</a>
+                                </h3>
+                                <p class="divCard_p">
+                                    <ins><span class="divCard__p__span">$6.990</span></ins>
+                                </p>
+                            </div>
+
+
+                            <!-- ===========PRODUCTO DESTACADO # 2===================-->
+                            <div class="divCard">
+
+                                <!-- DIV Imagen Duplex -->
+                                <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                                    <a href="#miModal">
+                                        <img class="img-responsive" src="./multimedia/Portada/Destacados/2.png"
+                                            alt="Bollería Dulce" width="260px;" height="350px;">
+                                    </a>
+                                </div>
+
+                                <!-- Imagen Secundaria -->
+                                <a href="#miModal">
+                                    <div class="divOverlayImg">
+                                        <img class="img-responsive" src="./multimedia/Portada/Destacados/2.1.png"
+                                            alt="Bollería Dulce" width="260px;" height="350px;">
+                                    </div>
+                                </a>
+
+                            </div>
+
+                            <!-- DIV Descripción -->
+                            <h3 class="divCard__h">
+                                <a class="divCard__h__a" href="#href=" #miModal">Bollería Dulce (un)</a>
+                            </h3>
+                            <p class="divCard_p">
+                                <ins><span class="divCard__p__span">desde $390 </span></ins>
+                            </p>
+                    </div>
+
+
+                    <!-- ===========PRODUCTO DESTACADO # 3===================-->
+                    <div class="divCard">
+
+                        <!-- DIV Imagen Duplex -->
+                        <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                            <a href="#miModal">
+                                <img class="img-responsive" src="./multimedia/Portada/Destacados/3.1.png"
+                                    alt="Galletas chip Chocolate" width="260px;" height="350px;">
+                            </a>
+                        </div>
+
+                        <!-- Imagen Secundaria -->
+                        <a href="#miModal">
+                            <div class="divOverlayImg">
+                                <img class="img-responsive" src="./multimedia/Portada/Destacados/3.png"
+                                    alt="Galletas chip Chocolate" width="260px;" height="350px;">
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- DIV Descripción -->
+                    <h3 class="divCard__h">
+                        <a class="divCard__h__a" href="#miModal">Galletas chip (100 grs)</a>
+                    </h3>
+                    <p class="divCard_p">
+                        <ins><span class="divCard__p__span">$790</span></ins>
+                    </p>
+                </div>
+
+
+                <!-- ===========PRODUCTO DESTACADO # 4===================-->
+                <div class="divCard">
+
+                    <!-- DIV Imagen Duplex -->
+                    <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                        <a href="#miModal">
+                            <img class="img-responsive" src="./multimedia/Portada/Destacados/4.png"
+                                alt="Tartaleta de frutas" width="260px;" height="350px;">
+                        </a>
+                    </div>
+
+                    <!-- Imagen Secundaria -->
+                    <a href="#miModal">
+                        <div class="divOverlayImg">
+                            <img class="img-responsive" src="./multimedia/Portada/Destacados/4.1.png"
+                                alt="Tartaleta de frutas" width="260px;" height="350px;">
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- DIV Descripción -->
+                <h3 class="divCard__h">
+                    <a class="divCard__h__a" href="#miModal">Tartaleta de frutas</a>
+                </h3>
+                <p class="divCard_p">
+                    <ins><span class="divCard__p__span">$5.990</span></ins>
+                </p>
+            </div>
+
+
+            <!-- ===========PRODUCTO DESTACADO # 5===================-->
+            <div class="divCard">
+
+                <!-- DIV Imagen Duplex -->
+                <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                    <a href="#miModal">
+                        <img class="img-responsive" src="./multimedia/Portada/Destacados/5.1.png"
+                            alt="Biscocho volcán 16 mm" width="260px;" height="350px;">
+                    </a>
+                </div>
+
+                <!-- Imagen Secundaria -->
+                <a href="#miModal">
+                    <div class="divOverlayImg">
+                        <img class="img-responsive" src="./multimedia/Portada/Destacados/5.png" alt="Biscocho volcán"
+                            width="260px;" height="350px;">
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- DIV Descripción -->
+            <h3 class="divCard__h">
+                <a class="divCard__h__a" href="#miModal">Biscocho volcán 16 mm</a>
+            </h3>
+            <p class="divCard_p">
+                <ins><span class="divCard__p__span">$3.990</span></ins>
+            </p>
+    </div>
+
+
+    <!-- ===========PRODUCTO DESTACADO # 6===================-->
+    <div class="divCard">
+
+        <!-- DIV Imagen Duplex -->
+        <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+            <a href="#miModal">
+                <img class="img-responsive" src="./multimedia/Portada/Destacados/6.1.png" alt="cupcake" width="260px;"
+                    height="350px;">
+            </a>
+        </div>
+
+        <!-- Imagen Secundaria -->
+        <a href="#miModal">
+            <div class="divOverlayImg">
+                <img class="img-responsive" src="./multimedia/Portada/Destacados/6.png" alt="cupcake" width="260px;"
+                    height="350px;">
+            </div>
+        </a>
+
+    </div>
+
+    <!-- DIV Descripción -->
+    <h3 class="divCard__h">
+        <a class="divCard__h__a" href="#miModal">cupcake (un)</a>
+    </h3>
+    <p class="divCard_p">
+        <ins><span class="divCard__p__span">$1.490</span></ins>
+    </p>
+    </div>
+
+    </div> <!-- fin div content que contiene los productos Destacados-->
+    </section>
+
+    <!-- Section #2  ----------------------->
+    <section class="section">
+        <div class="titulo"></div>
+        <div class="content"></div>
+    </section>
+
+                </div> <!-- fin col#1> sectiones--------- -->
+
+                <!-- col#2 main> aside --------------------->
+                <div class="col-lg-4">
+        <!-- col#2 contendrá al Aside-->
+        <!-- ASIDE --------------------------------------------------- -->
+        <aside class="aside">
+
+            <div>
+                <h3 class="aside__h">Solicita Información</h3><br>
+            </div>
+            <form class="form" method="get" action="#miModal">
+                <div class="mb-3 form__divInput">
+                    <label for="nom" class="form-label form__divInput__label">Nombre Completo</label>
+                    <input type="text" class="form-control form__divInput__input" id="nom" aria-describedby="nomHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="mail" class="form__divInput__label">Correo</label>
+                    <input type="mail" class="form-control form__divInput__input" id="mail">
+                </div>
+                <div class="mb-3">
+                    <label for="tel" class="form__divInput__label">Celular</label>
+                    <input type="tel" class="form-control form__divInput__input" id="mail">
+                </div>
+                <div class="mb-3">
+                    <label for="msj" class="form__divInput__label">Déjanos tu
+                        mensaje</label>
+                    <textarea class="form-control form__divInput__textarea" id="msj"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form__button">Enviar</button>
+            </form>
+
+
+            <!-- Aquí Publicidad ASIDE -->
+            <div class="aside__divPublicidad">
+
+                <!-- Publicidad #1 -->
+                <div class="divCardPublicidad">
+
+                    <div class="divCardPublicidad__divEncabezado">
+                        <a class="divCardPublicidad__divEncabezado__a" href="https://villard.cl/">VIÑA VILLARD</a>
+                    </div>
+
+                    <!-- "divCuerpo--1 será la clase hija que cargue un background-image de forma autónoma   -->
+                    <div class="divCardPublicidad__divCuerpo divCardPublicidad__divCuerpo--1">
+                        <h5 class="divCardPublicidad__divCuerpo__h">
+                            <a class="divCardPublicidad__divCuerpo__h__a" href="https://villard.cl/">VINOS DE ALTA GAMA
+                            </a>
+                        </h5>
+
+                    </div>
+                    <span class="divCardPublicidad__divCuerpo__span">
+                        <p class="divCardPublicidad__divCuerpo__span--p">
+                            Visitar VILLARD es internarse en la cultura del vino. Consultas y reservas a turismo@villard.cl
+                        </p>
+                    </span>
+
+                </div> <!-- end Publicidad #1 -->
+            </div> <!-- end div Publicidad -->
+        </aside>
+                </div> <!-- fin col#2> aside --------------------->
+
+            </div> <!-- fin row-------- -->
+        </div> <!-- fin content-------- -->
+    </main> <!-- fin main-------- -->
+
+
+    <!-- footer ------------------------------------------------------------------------->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="footer__fila1">
+                        <div class="footer__fila1__divMenu">
+                            <ul class="footer__fila1__divMenu__ul">
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Políticas de
+                                        Privacidad</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Medios de pago</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Servicios de
+                                        entrega</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Opiniones</a>
+                                </li>
+
+
+                                <!-- Item RRSS "SÍGUENOS" > de aquí se desprende SUBMENÚ con íconos de facebook, instagram y twiter -->
+                                <li class="footer__fila1__divMenu__ul__li itemSiguenos">
+                                    <a class="footer__fila1__divMenu__ul__li__a itemSiguenos__a" href="#miModal">SIGUENOS</a>
+                                    <ul class="footer__fila1__divMenu__ul__li__ul">
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="./multimedia/rrss/logos-facebook.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="./multimedia/rrss/logos-twitter.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="./multimedia/rrss/logos-instagram.svg" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li> <!-- fin Item-Sub-menú---------------------->
+                            </ul> <!-- fin Menú---------------------->
+                        </div> <!-- fin fila#1 > divMenú---------------------->
+                    </div> <!-- fin footer > fila#1---------------------->
+
+
+                    <div class="footer__fila2">
+                        <div class="footer__fila2__divCopyrigt">
+                            <p class="footer__fila2__divCopyrigt__p">&copy; Todos los Derechos Reservados 2022</p>
+                        </div>
+                    </div> <!-- fin footer > fila#2---------------------->
+
+                </div> <!-- end col footer------------->
+            </div> <!-- end row footer------------->
+        </div> <!-- end content footer------------->
+
+    </footer>
+
+    </div> <!--FIN DIV GENERAL DEL BODY  -->
+
+
+      <!-- VENTANA MODAL -->
+    <!-- Nota #1: Poner este código antes del cierre del body ya que debido a las sentencias en cascada 
+         El enlace que llama al modal debe estar antes de la construcción del mismo. -->
+    <!-- Nota #2: ENLACE QUE ACTIVARÁ AL MODAL (puede ser cualquier enlace, la cosa es que haga referencia al id modal)
+         <a class="header__divInteractivo_a" href="#miModal"> Texto </a> -->
+
+         <div id="miModal" class="content-fluid divModalContainer">
+            <div class="divModalContainer__divModalDialog">
+                <a href="#close" title="Close" class="divModalContainer__divModalDialog__a">X</a>
+                <h2 class="divModalContainer__divModalDialog__h">Estimado Usuario</h2>
+                <img class="divModalContainer__divModalDialog__img" src="./multimedia/site-build.png" width="350">
+                <p class="divModalContainer__divModalDialog__p">Lamentamos los inconvenientes. Estamos trabajando en la
+                    disponibilidad e integridad de esta página. </p>
+                <p class="divModalContainer__divModalDialog__p">Agradecemos tu comprensión.</p>
+            </div>
+        </div> <!-- fin VENTANA MODAL -->
+    
+  
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>
