@@ -21,15 +21,8 @@
         padding-bottom: 0.5rem;
 
         &__divBarra{ /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
-            /*
-            Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
-            display: flex;
-            flex-wrap: inherit;
-            justify-content: flex-end;
-            */
             flex-direction: row-reverse;
             gap: 1rem;
-            
             &__divMenu__ul {
                 gap: 0.3rem;
             }
@@ -60,12 +53,13 @@
         padding-left: 2rem;
         padding-right: 0rem;
     }
-     
+
+    
     .footer__fila1__divMenu__ul{
         @include display-flex (flex, column, null, center, center, null);
         padding: 0;
     }
-
+    
     /*productos.html*/
     .prod__main{
         padding-top: 2rem;
@@ -73,10 +67,10 @@
             gap: 2rem;
         }
     }
-
+    
     .prod__aside{
         margin-top: 0rem;
-
+        
         &__div1__divTitulo{
             display: none;
         }
@@ -89,17 +83,30 @@
             }
         }
     }
-
-
-    /*página servicios.html*/
-
-    .divCardPostal__divTitulo{font-size: .8rem;}
-    .divCardPostal__divCuerpo {align-items: flex-start; height: 220px;
-        &__divP--p {font-size: .7rem; margin-bottom: 3px;}
-        &__divP--p2 {font-size: .8rem; margin-bottom: 3px;}
-        &__divImg__img {height: 220px;}
-    }
     
+
+
+    .divCardPostal{
+        max-width: 80%;
+        gap: 0;
+        &__divTitulo{
+            padding: .3rem 0;
+            &__h{font-size: .8rem;}
+        }
+        &__divCuerpo {
+            align-items: flex-start;
+            padding: .7rem;
+            &__divP{
+                padding: 1rem;
+                &--p {font-size: .7rem; margin: 0;}
+            } 
+            &__divImg__img {
+                width: 100%;
+                height: 100%;
+                padding: .5rem;
+            }
+        }
+    }
 
     .desp__section1{
         width: 100%;

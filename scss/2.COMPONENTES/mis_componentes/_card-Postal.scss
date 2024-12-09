@@ -6,7 +6,7 @@
 
 
 .divCardPostal {
-    max-width: 700px;
+    max-width: 50rem;
     /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
     @include display-flex (flex, column, null, center, center, null);
 
@@ -27,27 +27,20 @@
    
     
     &__divCuerpo{
-        @include fondo-plomo;
-        @include display-flex (flex, row, wrap, center, center, null);
-        // height: 350px;
-        // max-height: 350px;
-        // overflow: hidden;
+        @include display-flex (flex, row, wrap, center, null, null);
         background: #ffffff;
 
         &__divImg{
-            flex-grow: 1;
-            width: 35%;
             &__img{
                 max-width: 100%; /* el 100% del max-width es en relación a su contenedor padre */
-                height: 300px;
-                width: 200px;
+                max-height: 18.75rem;
             }
         }
 
         &__divP{
             flex-grow: 2;
             width: 65%;
-            padding: 1rem;
+            padding: 2rem;
             /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
             @include display-flex (flex, column, null, center, center, 1rem);
 

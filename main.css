@@ -953,7 +953,7 @@ a {
 /*colores*/
 /*colores*/
 .divCardPostal {
-  max-width: 700px;
+  max-width: 50rem;
   /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: flex;
   flex-direction: column;
@@ -983,32 +983,20 @@ a {
   font-weight: 400;
 }
 .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
-  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
-  background-position: 50%;
-  background-size: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  height: 350px;
-  max-height: 350px;
-  overflow: hidden;
   background: #ffffff;
-}
-.divCardPostal__divCuerpo__divImg {
-  flex-grow: 1;
-  width: 35%;
 }
 .divCardPostal__divCuerpo__divImg__img {
   max-width: 100%; /* el 100% del max-width es en relación a su contenedor padre */
+  max-height: 18.75rem;
 }
 .divCardPostal__divCuerpo__divP {
   flex-grow: 2;
   width: 65%;
-  padding: 1rem;
+  padding: 2rem;
   /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
   display: flex;
   flex-direction: column;
@@ -1186,12 +1174,6 @@ a {
     padding-bottom: 0.5rem;
   }
   .nav__divBarra { /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
-    /*
-    Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
-    display: flex;
-    flex-wrap: inherit;
-    justify-content: flex-end;
-    */
     flex-direction: row-reverse;
     gap: 1rem;
   }
@@ -1248,24 +1230,31 @@ a {
   .prod__aside__div1__divMenu__ul__li {
     width: auto;
   }
-  /*página servicios.html*/
+  .divCardPostal {
+    max-width: 80%;
+    gap: 0;
+  }
   .divCardPostal__divTitulo {
+    padding: 0.3rem 0;
+  }
+  .divCardPostal__divTitulo__h {
     font-size: 0.8rem;
   }
   .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
     align-items: flex-start;
-    height: 220px;
+    padding: 0.7rem;
+  }
+  .divCardPostal__divCuerpo__divP {
+    padding: 1rem;
   }
   .divCardPostal__divCuerpo__divP--p {
     font-size: 0.7rem;
-    margin-bottom: 3px;
-  }
-  .divCardPostal__divCuerpo__divP--p2 {
-    font-size: 0.8rem;
-    margin-bottom: 3px;
+    margin: 0;
   }
   .divCardPostal__divCuerpo__divImg__img {
-    height: 220px;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
   }
   .desp__section1 {
     width: 100%;
@@ -1390,23 +1379,25 @@ a {
     width: auto;
   }
   /*página servicios.html*/
+  .divCardPostal {
+    max-width: 50%;
+  }
   .divCardPostal__divTitulo {
     font-size: 0.8rem;
   }
   .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
     align-items: flex-start;
-    height: 250px;
   }
   .divCardPostal__divCuerpo__divP--p {
     font-size: 0.9rem;
-    margin-bottom: 3px;
   }
   .divCardPostal__divCuerpo__divP--p2 {
     font-size: 0.9rem;
-    margin-bottom: 3px;
   }
   .divCardPostal__divCuerpo__divImg__img {
-    height: 250px;
+    width: 100%;
+    padding-top: 1rem;
+    height: 100%;
   }
   .desp__section1 {
     width: 100%;
